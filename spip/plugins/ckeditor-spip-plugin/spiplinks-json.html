@@ -1,0 +1,47 @@
+#CACHE{0}
+[(#HTTP_HEADER{Content-type: application/json[; charset=(#CHARSET)]})]
+<BOUCLE_si(CONDITION){si #SESSION{statut}|<{2}}>
+{
+	"article":{
+		"label":"<:ckeditor:type_article:>",
+		"selectCategorie":[(#URL_PAGE{rubriques-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_section:>",
+		"selectItem":[(#URL_PAGE{articles-links-json}|concat{'&id_rubrique='}|json_encode)],
+		"nomItem":"<:ckeditor:label_article:>"
+	},
+
+	"breve":{
+		"label":"<:ckeditor:type_breve:>",
+		"selectCategorie":[(#URL_PAGE{rubriques-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_section:>",
+		"selectItem":[(#URL_PAGE{breves-links-json}|concat{'&id_rubrique='}|json_encode)],
+		"nomItem":"<:ckeditor:label_breve:>"
+	},
+
+	"rubrique":{
+		"label":"<:ckeditor:type_section:>",
+		"selectCategorie":[(#URL_PAGE{rubriques-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_section:>"
+	},
+[(#REM)
+	"groupemots":{
+		"label":"<:ckeditor:type_groupemot:>",
+		"selectCategorie":[(#URL_PAGE{groupemots-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_groupe_mots:>"
+	},
+]
+	"mot":{
+		"label":"<:ckeditor:type_mot:>",
+		"selectCategorie":[(#URL_PAGE{groupemots-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_groupe_mots:>",
+		"selectItem":[(#URL_PAGE{mots-links-json}|concat{'&id_groupe='}|json_encode)],
+		"nomItem":"<:ckeditor:label_mot:>"
+	},
+
+	"auteur":{
+		"label":"<:ckeditor:type_auteur:>",
+		"selectCategorie":[(#URL_PAGE{auteurs-links-json}|json_encode)],
+		"nomCategorie":"<:ckeditor:label_auteur:>"
+	}
+}
+</BOUCLE_si>

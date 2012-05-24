@@ -1,0 +1,49 @@
+#CACHE{0}
+<!--#hierarchie-->
+<!--/#hierarchie-->
+
+<?php
+	if ($_GET["copy"]) {
+		$myconfig_php = file_get_contents(find_in_path('pgrfilemanager-myconfig.php')) ;
+		$dest = find_in_path('lib/pgrfilemanager').'/myconfig.php' ;
+		$file = @fopen($dest, 'w') ;
+		if ($file) {
+			fwrite($file, $myconfig_php) ;
+			fclose($file) ;
+			print("<div class='cadre-info'><:pgrfilemanager:copie_ok:></div>");
+		} else {
+			print("<div class='cadre-info' style='background-color:#fcc;color:#f00;'><:pgrfilemanager:copie_erreur:></div>");
+		}
+		print('<br/>');
+	}
+?>		<div class='cadre-info'><:pgrfilemanager:comment_configurer_pgrfilemanager:></div>
+		<div style='margin:10px;'>
+			<button title="<:pgrfilemanager:copier_aide:>" onclick="document.location='?exec=pgrconfig&copy=true';"><:pgrfilemanager:copier:></button>
+			<button title="<:pgrfilemanager:telecharger_aide:>" onclick="document.location='#CHEMIN{download-myconfig.php}';"><:pgrfilemanager:telecharger:></button>
+		</div>
+		<div style="padding:4px;margin:0;width:100%;background-color:#eee;border:1px inset black;overflow:auto;">
+		<?php
+			highlight_file(find_in_path('pgrfilemanager-myconfig.php'));
+		?>
+		</div>
+ 
+<!--#navigation-->
+<!--/#navigation-->
+ 
+<!--#extra-->
+<div class='cadre-info'>
+<?php
+	$myconfig = find_in_path('lib/pgrfilemanager/myconfig.php') ;
+		if ($myconfig) {
+			$content=file_get_contents($myconfig);
+		} else {
+			$content='' ;
+		}
+		if (preg_match("~/\*PGRFILEMANAGER_SPIP_CONFIG\*/~", $content)) {
+			echo _T('pgrfilemanager:deja_configure') ;
+		} else {
+			echo _T('pgrfilemanager:pas_configure') ;
+		}
+?>
+</div>
+<!--/#extra-->

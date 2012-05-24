@@ -1,0 +1,1 @@
+(function(){var b={modes:{wysiwyg:1,source:1},exec:function(d){var c=d.element.$.form;if(c){c.save.click()}}};var a="spipsave";CKEDITOR.plugins.add(a,{init:function(c){var d=c.addCommand(a,b);d.modes={wysiwyg:!!(c.element.$.form)};c.ui.addButton("SpipSave",{label:c.lang.save,command:a,iconOffset:2,icon:c.skinPath+"icons.png"})}})})();

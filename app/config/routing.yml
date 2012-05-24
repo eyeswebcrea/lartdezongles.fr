@@ -1,0 +1,42 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+_sitemap:
+     resource: @AvalancheSitemapBundle/Resources/config/routing.yml
+
+SiteHomeBundle:
+    resource: "@SiteHomeBundle/Resources/config/routing.yml"
+
+EyeswebcreaAliasContentViewerBundle:
+    resource: "@EyeswebcreaAliasContentViewerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+EyeswebcreaSecuserSpaceUserBundle:
+    resource: "@EyeswebcreaSecuserSpaceUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+EyeswebcreaSecuserSpaceAdminBundle:
+    resource: "@EyeswebcreaSecuserSpaceAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+EyeswebcreaAliasContentEditorBundle:
+    resource: "@EyeswebcreaAliasContentEditorBundle/Resources/config/routing.yml"
+    prefix:   /admin/cms
+    
+EyeswebcreaAssetServiceBundle:
+    resource: "@EyeswebcreaAssetServiceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+EyeswebcreaReferencementBundle:
+    resource: "@EyeswebcreaReferencementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+EyeswebcreaSliderBundle:
+    resource: "@EyeswebcreaSliderBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+SpipAccesContentBundle:
+    resource: "@SpipAccesContentBundle/Resources/config/routing.yml"
+    prefix: /spip

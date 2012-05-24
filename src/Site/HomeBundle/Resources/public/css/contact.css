@@ -1,0 +1,8 @@
+div#contact h2 {
+	color: white;
+	border-bottom: solid #C3C3C3 2px;
+}
+
+div#conteneur-bandeau {
+	display: none;
+}

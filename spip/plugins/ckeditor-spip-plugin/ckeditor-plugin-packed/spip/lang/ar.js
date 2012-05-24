@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("spip","ar",{spip:{title:"إضافةرابط SPIP",linktext:"نص الرابط:",linktype:"نوع الرابط:",article:"مقال",section:"قسم",shortnews:"خبر",checkconfig:"You should check site url of your site in CKeditor spip plugin."}});

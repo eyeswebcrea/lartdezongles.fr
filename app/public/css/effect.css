@@ -1,0 +1,38 @@
+:root .transition-effect
+{
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+:root .transition-effect.transition-effect-out:hover  
+{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	box-shadow: 1px 2px 25px gray;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 2px 25px gray;
+	-moz-border-radius: 5px;
+	-webkit-box-shadow: 1px 2px 25px gray;
+	-webkit-border-radius: 5px;
+	z-index: 5;
+}
+
+:root .transition-effect.transition-effect-out:hover div.block-content img { 
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+:root div.block:hover > h2.block-title.transition-effect.transition-effect-zoomtitre {
+	background: transparent !important;
+	text-shadow: 1px 1px 10px #C3C3C3;
+	-moz-text-shadow: 1px 1px 10px #C3C3C3;
+	-webkit-text-shadow: 1px 1px 10px #C3C3C3;
+	font-size: 25px;
+	color: fuchsia;
+	top: 0px;
+	left: 0px;
+	width: 130px;
+	height: auto;
+}

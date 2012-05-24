@@ -1,0 +1,59 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:choix_et_telechargement:></legend>
+	<div class='cke-div'>
+		<input type="checkbox" name="utilise_upload"[(#ENV{utilise_upload}|?{' checked',''})] /><label for="utilise_upload"><:ckeditor:utilise_upload:></label><br/>
+		<input type="checkbox" name="autorise_parcours"[(#ENV{autorise_parcours}|?{' checked',''})] /><label for="autorise_parcours"><:ckeditor:autoriser_parcours_dossier_spip:></label><br/>
+		<input type="checkbox" name="autorise_telechargement"[(#ENV{autorise_telechargement}|?{' checked',''})] /><label for="autorise_telechargement"><:ckeditor:autoriser_telechargement_dossier_spip:></label>
+		<blockquote class="cke-align-topbottom">
+			<input type="checkbox" name="autorise_telechargement_redacteur"[(#ENV{autorise_telechargement_redacteur}|?{' checked',''})] /><label for="autorise_telechargement_redacteur"><?php echo _T('ckeditor:autoriser_redacteurs', array('plus'=>'')); ?></label>
+		</blockquote>
+		<input type="checkbox" name="autorise_mkdir"[(#ENV{autorise_mkdir}|?{' checked',''})] /><label for="autorise_mkdir"><?php echo _T('ckeditor:autoriser_mkdir', array('plus'=> _T('ckeditor:kcfinder_ignore'))); ?></label>
+		<blockquote class="cke-align-topbottom">
+			<input type="checkbox" name="autorise_mkdir_redacteur"[(#ENV{autorise_mkdir_redacteur}|?{' checked',''})] /><label for="autorise_mkdir_redacteur"><?php echo _T('ckeditor:autoriser_redacteurs', array('plus'=>_T('ckeditor:kcfinder_ignore'))) ; ?></label>
+		</blockquote>
+		<label for="base_dir"><strong><:ckeditor:repertoire_de_base:></strong></label>
+		<input type="text" name="base_dir" value="[(#ENV{base_dir})]" />
+		<blockquote style='margin-left:15px;'>
+			<label for="images_dir"><strong><:ckeditor:repertoire_des_images:></strong></label>
+			<blockquote>
+				<input type="text" name="images_dir" value="[(#ENV{images_dir})]" />
+				<br/>
+				<label for="images_extensions_autorisees"><:ckeditor:images_extensions_autorisees:></label>
+				<input type="text" name="images_extensions_autorisees" value="[(#ENV{images_extensions_autorisees})]" />
+				<span class='cke-aide'><span><:ckeditor:extensions_autorisees_descriptif:></span></span>
+			</blockquote>
+			<label for="flash_dir"><strong><:ckeditor:repertoire_des_flash:></strong></label>
+			<blockquote>
+				<input type="text" name="flash_dir" value="[(#ENV{flash_dir})]" />
+				<br/>
+				<label for="flash_extensions_autorisees"><:ckeditor:flash_extensions_autorisees:></label>
+				<input type="text" name="flash_extensions_autorisees" value="[(#ENV{flash_extensions_autorisees})]" />
+				<span class='cke-aide'><span><:ckeditor:extensions_autorisees_descriptif:></span></span>
+			</blockquote>
+			<label for="files_dir"><strong><:ckeditor:repertoire_des_fichiers:></strong></label>
+			<blockquote>
+				<input type="text" name="files_dir" value="[(#ENV{files_dir})]" />
+				<br/>
+				<label for="files_extensions_autorisees"><:ckeditor:files_extensions_autorisees:></label>
+				<input type="text" name="files_extensions_autorisees" value="[(#ENV{files_extensions_autorisees})]" />
+
+				<span class='cke-aide'><span><:ckeditor:extensions_autorisees_descriptif:></span></span>
+			</blockquote>
+		</blockquote>
+	</div>
+</fieldset>
+	<div class='cke-div'>
+		<input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+		<input type="submit" name="_cfg_delete" value="<:ckeditor:supprimer:>" />
+	</div>
+
+
+</div></form>

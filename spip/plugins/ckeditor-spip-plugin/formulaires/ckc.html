@@ -1,0 +1,180 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+#SET{aff, #EVAL{$_GET['aff']}}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+[<p class="formulaire_message">(#GET{aff}|=={'reinit'}|oui)<:ckeditor:ck_reinit:></p>]
+<form method="post" action="[(#ENV{action}|parametre_url{aff,''})]"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:config_avancee:></legend>
+	<div class='cke-div'>
+		<label for="protectedtags"><strong><:ckeditor:balises_spip_autoriser:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:balises_spip_autoriser_descriptif:></span></span>
+		<br/>
+		<input type="text" name="protectedtags"[ value="(#ENV{protectedtags})"] size="55%"/>
+	</div>
+	<div class='cke-div'>
+		<label><strong><:ckeditor:options_html2spip:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:utiliser_html2spip_descriptif:></span></span>
+		<br/>
+		<input type="radio" name="conversion" value="aucune"[(#ENV{conversion}|=={aucune}|oui)checked]><:ckeditor:aucune_conversion:></input><br/>
+		<input type="radio" name="conversion" value="partielle"[(#ENV{conversion}|=={partielle}|oui)checked]><:ckeditor:conversion_partielle_vers_spip:></input><br/>
+<?php
+	include_spip('inc/ckeditor_constantes') ;
+	if (find_in_path('lib/'._CKE_HTML2SPIP_VERSION)) {
+?>
+		<input type="radio" name="conversion" value="complete"[(#ENV{conversion}|=={complete}|oui)checked]><:ckeditor:utiliser_html2spip:></input><br/>
+		<label for="identitytags"><:ckeditor:html2spip_identite:></label>
+		<input type="text" name="html2spip_identite"[ value="(#ENV{html2spip_identite})"] size="55%"/><br/>
+		<input type="checkbox" name="html2spip_limite"[ (#ENV{html2spip_limite}|?{'checked'})]><:ckeditor:html2spip_limite:></input><br/>
+<?php
+	} else {
+?>
+	<div style='border:1px solid #555;background-color:#eee;margin:3px 15px 0px 15px;padding:3px;'>
+		<:ckeditor:aide_html2spip_non_trouvee:>
+	</div>
+<?php
+	}
+?>
+	</div>
+	<div class='cke-div'>
+		<label><strong><:ckeditor:utiliser_ckeditor_avec:></strong></label><br/>
+		<div style="margin:0 0 0 15px;">
+			<input name="crayons" type="checkbox"[(#ENV{crayons}|oui)checked]> <:ckeditor:les_crayons:> </input>
+			<strong> &mdash; </strong><label><:ckeditor:toolbar:></label>
+			<input name="crayons_tb" type="radio" value="Basic"[(#ENV{crayons_tb}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+			<input name="crayons_tb" type="radio" value="Full"[(#ENV{crayons_tb}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+			</input>
+			<br/>
+			<input name="forums" type="checkbox"[(#ENV{forums}|oui)checked]> <:ckeditor:les_forums:> </input>
+			<strong> &mdash; </strong><label><:ckeditor:toolbar:></label>
+			<input name="forums_tb" type="radio" value="Basic"[(#ENV{forums_tb}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+			<input name="forums_tb" type="radio" value="Full"[(#ENV{forums_tb}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+			</input>
+			<br/>
+			<input name="cisf" type="checkbox"[(#ENV{cisf}|oui)checked]> <:ckeditor:cisf:> </input>
+			<strong> &mdash; </strong><label><:ckeditor:toolbar:></label>
+			<input name="cisf_tb" type="radio" value="Basic"[(#ENV{cisf_tb}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+			<input name="cisf_tb" type="radio" value="Full"[(#ENV{cisf_tb}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+			</input>
+
+			<B_ce>
+			<br/>
+			<:ckeditor:les_champs_extras:>
+			<blockquote style="margin:0 0 0 15px;">
+				<BOUCLE_ce(POUR){tableau #CHAMPS_EXTRAS}>
+				<input name="champs_extras[#VALEUR]" type="checkbox"[(#ENV{champs_extras}|table_valeur{#VALEUR}|oui)checked]> #VALEUR </input>
+				<strong> &mdash; </strong><label><:ckeditor:toolbar:></label>
+				<input name="extras_tb[#VALEUR]" type="radio" value="Basic"[(#ENV{extras_tb}|table_valeur{#VALEUR}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+				<input name="extras_tb[#VALEUR]" type="radio" value="Full"[(#ENV{extras_tb}|table_valeur{#VALEUR}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+				</input>
+				<br/>
+				</BOUCLE_ce>
+			</blockquote>
+			</B_ce>
+			<br/>
+			<input name="partie_publique" type="checkbox"[(#ENV{partie_publique}|oui)checked]><:ckeditor:partie_publique:></input>
+			<blockquote style="margin:0 0 0 15px;">
+				<label for="class_publique"><:ckeditor:class_partie_publique:></label>
+				<input name="class_publique" type="text" value="[(#ENV{class_publique})]"/>
+				<span class='cke-aide'><span><:ckeditor:aide_class_css_formulaire:></span></span>
+				<br/>
+				<label><:ckeditor:toolbar:></label>
+				<input name="publique_tb" type="radio" value="Basic"[(#ENV{publique_tb}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+				<input name="publique_tb" type="radio" value="Full"[(#ENV{publique_tb}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+				</input>
+			</blockquote>
+
+			<input name="partie_prive" type="checkbox"[(#ENV{partie_prive}|oui)checked]><:ckeditor:partie_prive:></input>
+			<blockquote style="margin:0 0 0 15px;">
+				<label for="class_prive"><:ckeditor:class_partie_prive:></label>
+				<input name="class_prive" type="text" value="[(#ENV{class_prive})]"/>
+				<span class='cke-aide'><span><:ckeditor:aide_class_css_formulaire:></span></span>
+				<br/>
+				<label><:ckeditor:toolbar:></label>
+				<input name="prive_tb" type="radio" value="Basic"[(#ENV{prive_tb}|=={'Basic'}|?{'checked',''})]> <:ckeditor:tb_basic:> </input>
+				<input name="prive_tb" type="radio" value="Full"[(#ENV{prive_tb}|=={'Full'}|?{'checked',''})]> <:ckeditor:tb_full:> 
+				</input>
+			</blockquote>
+		</div>
+	</div>
+	<div class='cke-div'>
+		<label><strong><:ckeditor:options_spip:></strong></label><br/>
+		<input type="checkbox" name="spiplinks"[ (#ENV{spiplinks}|?{'checked'})]><:ckeditor:autoriser_liens_spip:></input><br/>
+		<input type="checkbox" name="insertall"[ (#ENV{insertall}|?{'checked'})]><:ckeditor:autoriser_insertion_documents:></input><br/>
+	</div>
+	<div class='cke-div'>
+			<strong><:ckeditor:largeur_barre_outils:></strong><br/>
+			<label for='cktoolslenlarge'><:ckeditor:large:></label>
+			<input type="text" name="cktoolslenlarge"[ value="(#ENV{cktoolslenlarge})"] size="5"/><br/>
+			<label for='cktoolslenetroit'><:ckeditor:etroit:></label>
+			<input type="text" name="cktoolslenetroit"[ value="(#ENV{cktoolslenetroit})"] size="5"/><br/>
+	</div>
+	<div class='cke-div'>
+		<label for='cklanguage'><strong><:ckeditor:langue_ckeditor:></strong></label>
+		<select name='cklanguage'>
+			[(#ENV{cklanguage}|ck_lang_options)]
+		</select>
+	</div>
+	<div class='cke-div'>
+		<label for="entermode"><strong><:ckeditor:entermode:></strong></label>
+		<select name="entermode">
+			<option value="ENTER_P"[ (#ENV{entermode}|=={'ENTER_P'}|?{'selected'})]><:ckeditor:enter_p:></option>
+			<option value="ENTER_BR"[ (#ENV{entermode}|=={'ENTER_BR'}|?{'selected'})]><:ckeditor:enter_br:></option>
+			<option value="ENTER_DIV"[ (#ENV{entermode}|=={'ENTER_DIV'}|?{'selected'})]><:ckeditor:enter_div:></option>
+		</select>
+		<div class='cke-aide'><div>
+			<ul>
+				<li><:ckeditor:explique_p:></li>
+				<li><:ckeditor:explique_div:></li>
+			</ul>
+		</div></div>
+	</div>
+	<div class='cke-div'>
+		<label for="shiftentermode"><strong><:ckeditor:shiftentermode:></strong></label>
+		<select name="shiftentermode">
+			<option value="ENTER_P"[ (#ENV{shiftentermode}|=={'ENTER_P'}|?{'selected'})]><:ckeditor:enter_p:></option>
+			<option value="ENTER_BR"[ (#ENV{shiftentermode}|=={'ENTER_BR'}|?{'selected'})]><:ckeditor:enter_br:></option>
+			<option value="ENTER_DIV"[ (#ENV{shiftentermode}|=={'ENTER_DIV'}|?{'selected'})]><:ckeditor:enter_div:></option>
+		</select>
+		<div class='cke-aide'><div>
+			<ul>
+				<li><:ckeditor:explique_p:></li>
+				<li><:ckeditor:explique_div:></li>
+			</ul>
+		</div></div>
+	</div>
+	<div class='cke-div'>
+		<label><strong><:ckeditor:options_css:></strong></label><br/>
+		<div style='margin-left:15px;'>
+			<label for='sitecss'><strong><:ckeditor:css_site:></strong></label>
+			<span class='cke-aide'><span><:ckeditor:aide_css_site:></span></span>
+			<br/>
+			<input type="text" name="csssite"[ value="(#ENV{csssite})"] size="50" />
+		</div>
+		<div style='margin-left:15px;'>
+			<label for='contextes'><strong><:ckeditor:liste_de_contextes:></strong></label>
+			<span class='cke-aide'><span><:ckeditor:aide_contextes:></span></span>
+			<br/>
+			<input type="text" name="contextes"[ value="(#ENV{contextes})"] size="50" /><br/>
+		</div>
+	</div>
+	<div class='cke-div'>
+		<label for='siteurl'><strong><:ckeditor:url_site:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:normalement_detectee:><code><?php echo lire_meta('adresse_site'); ?></code></span></span>
+		<br/>
+		<input type="text" name="siteurl"[ value="(#ENV{siteurl})"] size="50" /><br/>
+	</div>
+
+</fieldset>
+	<div class='cke-div'>
+		<input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+		<input type="submit" name="_cfg_delete" value="<:ckeditor:supprimer:>" />
+		<input type="submit" name="_cfg_reinit" onclick="javascript:if (confirm('<:ckeditor:confirme_reinitialiser_plugin:>')){ [document.location.href='(#SELF|parametre_url{_cfg_reinit,'on'})';]} return false;" value="<:ckeditor:reinitialiser_le_plugin:>"/>
+	</div>
+</div>
+</form>
+

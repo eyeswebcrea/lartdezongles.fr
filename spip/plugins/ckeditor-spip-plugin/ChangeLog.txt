@@ -1,0 +1,2911 @@
+2011-09-22  fredlefred
+
+	* [r795] ckeditor_fonctions.php, formulaires/ckf.html: fix:
+	  ckeditor n'apparait pas sur la page de configuration des modèles
+	  de documents
+
+2011-09-17  fredlefred
+
+	* [r794] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: fix:
+	  https://code.google.com/p/ckeditor-spip-plugin/issues/detail?id=29
+	* [r793] articles-links-json.html, auteurs-links-json.html,
+	  breves-links-json.html, ckdoc.html, ckeditor4spip.js.html,
+	  filebrowser.html, groupemots-links-json.html,
+	  mots-links-json.html, rubriques-links-json.html,
+	  select_documents.html, spip-styles.html, spiplinks-json.html,
+	  spiplistes-json.html, spiptags-json.html, templates.js.html: fix:
+	  restauration du fonctionnement avec le plugin autorité
+	  (incompatibilité avec le mode "pas d'ascès à l'espace privé")
+
+2011-09-10  fredlefred
+
+	* [r792] formulaires/ckg.html, lang/ckeditor_fr.php: feature: choix
+	  de l'ordre des boutons des plugins avec '<select>'
+	* [r791] ckeditor_fonctions.php: feature: nouveau point d'entrée
+	  <ckeditor_prepare_champs_post> pour modifier la liste des champs
+	  sur lesquels activer ckeditor
+
+2011-09-09  fredlefred
+
+	* [r790] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: fix: fichiers de traduction : les chaînes
+	  de langues manquantes sont mises à jour
+
+2011-09-08  fredlefred
+
+	* [r789] ckeditor_fonctions.php, formulaires/ckg.html: feature:
+	  possibilité de choisir l'ordre des boutons
+
+2011-09-07  fredlefred
+
+	* [r788] ckeditor4spip.js.html, inc/ckeditor_tools.php: fix:
+	  gestion des tag protégés imbriqués, fix: léger problème lié au
+	  scayt et au copier/coller
+
+2011-09-03  mehdi.cherifi@gmail.com
+
+	* [r787] lang/ckeditor_en.php: de retour, un petit truc juste pour
+	  vérifer que svn marche bien chez moi !
+
+2011-09-01  fredlefred
+
+	* [r786] inc/ckeditor_constantes_inc.php: fix: nouvelles valeurs de
+	  constantes (ceci peut casser la compatibilité avec de vieille
+	  version de ckeditor)
+
+2011-08-31  fredlefred
+
+	* [r785] ckspip_convert.html: fix: meilleure conversion utf-8
+	  (TRANSLIT ET IGNORE) permettant de mieux gérer les erreurs de
+	  conversion (intérêt ? aléatoire)
+	* [r784] select_documents.html, spip-styles.html: fix: charset
+	  oublié
+
+2011-08-30  fredlefred
+
+	* [r783] ckspip_convert.html: fix: au cas ou le charset ne serait
+	  pas défini, on évite de planter iconv
+	* [r782] ckeditor4spip.js.html, ckspip_convert.html: fix: revert
+	  les deux dernières modifications, et convertion au bon endroi
+	* [r781] ckeditor4spip.js.html: fix : ";" utilisé à la place de ","
+	* [r780] ckeditor4spip.js.html: fix: tentative de régler les pb de
+	  charset exotique
+
+2011-08-28  fredlefred
+
+	* [r779] ckeditor_fonctions.php: fix: on évite une erreur
+	  javascript si onAjaxLoad n'existe pas.
+
+2011-08-27  fredlefred
+
+	* [r778] ckeditor_fonctions.php, formulaires/cka.html,
+	  formulaires/cka.php, inc/ckeditor_constantes.php,
+	  lang/ckeditor_fr.php: feature: possibilité d'utiliser la version
+	  de developpement de ckeditor + chargement du plugin [devtools]
+	  affichant les informations relatives aux identifiants des champs
+	  dans les dialogues
+	* [r777] css/cked-cfg.css: fix: cosmetique
+	* [r776] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js: fix:
+	  cosmetique
+	* [r775] ckeditor4spip.js.html: fix: regression inutile
+	* [r774] ckeditor4spip.js.html: fix: regression empêchant le plugin
+	  de fonction sous wamp. (AMHA: c'est un bug de spip, de
+	  spip-bonux, ou de php)
+
+2011-08-26  fredlefred
+
+	* [r773] css/cked-cfg.css, fonds/cfg_ckeditor.html,
+	  fonds/cfg_ckeditor_b.html, fonds/cfg_ckeditor_c.html,
+	  fonds/cfg_ckeditor_d.html, fonds/cfg_ckeditor_e.html,
+	  fonds/cfg_ckeditor_f.html, fonds/cfg_ckeditor_g.html,
+	  fonds/cfg_ckeditor_h.html, lang/ckeditor_fr.php: feature:
+	  cosmétique, affichage plus sympa des onglets de configuration
+
+2011-08-25  fredlefred
+
+	* [r772] ckeditor4spip.js.html: fix: suppression de l'apparition du
+	  porteplume avant l'activation de ckeditor (modification de la
+	  logique)
+
+2011-08-23  fredlefred
+
+	* [r771] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  spiptags-json.html: fix: spipmodeles: problème avec les listes
+	  vides de valeurs de paramètres
+	* [r770] spiptags-json.html: fix: oubli d'une ',' dans un tableau
+	* [r769] ckeditor_fonctions.php, formulaires/ckh.html,
+	  lang/ckeditor_fr.php: feature: plus d'aide
+
+2011-08-17  fredlefred
+
+	* [r768] ckeditor4spip.js.html, ckspip_convert.html: fix: bug
+	  ajoutant un paragraphe à chaque insertion (par exemple lors de
+	  l'utilisaton du bouton 'caratères spéciaux' : un paragraphe était
+	  ajouté autour du caractère ajouté...)
+
+2011-08-15  fredlefred
+
+	* [r767] ckeditor4spip.js.html: fix: bug avec saisie facile (erreur
+	  js: params is null)
+	* [r766] ckeditor4spip.js.html, ckeditor_fonctions.php: fix:
+	  réapparition des barres d'outils de l'éditeur spip, feature:
+	  réapparition du redimensionnement horizontal (mais sans
+	  possibilité de sortir de la colonne)
+
+2011-08-14  fredlefred
+
+	* [r765] ckeditor4spip.js.html: cleanup
+	* [r764] ckeditor4spip.js.html: fix: bug(regression) le passage de
+	  ckeditor à spipeditor ne fonctionnait plus
+	* [r763] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/cka.html, formulaires/cka.php: fix: on supprime la
+	  possibilité de redimensionner horizontalement l'éditeur qui
+	  plante dans l'état la gestion du curseur par firefox. A voir:
+	  comment la rétablir.
+
+2011-08-12  fredlefred
+
+	* [r762] ckeditor_fonctions.php, formulaires/ckg.html: fix: on
+	  règle définivement cette histoire de chemin relatif des plugins
+	* [r761] ckeditor_fonctions.php: fix: cleanup
+	* [r760] ckeditor_fonctions.php: feature: documentation du code
+	* [r759] ckeditor_fonctions.php: fix:
+	  http://www.spip-contrib.net/CKeditor-3-0#forum448526
+
+2011-07-31  fredlefred
+
+	* [r758] ckeditor_fonctions.php: fix: bug empêchant ckeditor pour
+	  la bio des auteurs
+
+2011-07-29  fredlefred
+
+	* [r757] ckeditor_fonctions.php: workaround: previent l'affichage
+	  d'un warning
+
+2011-07-13  fredlefred
+
+	* [r756]
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/download-myconfig.php[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/lang[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/lang/pgrfilemanager_fr.php[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/pgrfilemanager-myconfig.php[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/plugin.xml,
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/prive[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/prive/exec[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/prive/exec/pgrconfig.html[ADD]:
+	  feature: possibilité d'utiliser vraiment pgrfilemanager comme
+	  gestionnaire de fichier, la configuration est prise en charge
+	  (partiellement)
+
+2011-07-11  fredlefred
+
+	* [r755] filebrowsers/pgrfilemanager-ckeditor-plugin/images[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/images/ckspip-logo.png[ADD]:
+	  fix: fichiers oubliés
+	* [r754] filebrowsers/pgrfilemanager-ckeditor-plugin[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/pgrfilemanager_options.php[ADD],
+	  filebrowsers/pgrfilemanager-ckeditor-plugin/plugin.xml[ADD]:
+	  feature: préview d'un nouveau plugin 'filebrowsers' pour ckeditor
+	  (pour l'instant inutilisable en l'état : il faut configurer
+	  pgrfilebrowser)
+	* [r753] formulaires/ckb.html, inc/toolbars.php,
+	  lang/ckeditor_fr.php: feature: présentation des outils des barres
+	  (d'outils) avec des icônes lors de la configuration
+	* [r752] ckeditor_fonctions.php: fix: oubli d'une options de
+	  konfiguration
+
+2011-07-06  fredlefred
+
+	* [r751] inc/ckeditor_install.php[CPY], inc/install.php[DEL],
+	  plugin.xml: fix: bug
+	  http://www.spip-contrib.net/CKeditor-3-0#comment447458
+	* [r750] ckeditor_fonctions.php: feature: possibilité de charger un
+	  plugin ckeditor dans un plugin-filebrowser pour le plugin :
+	  ckeditor-spip-plugin (va falloir trouver un autre nom pour les
+	  plugins ckeditor)
+
+2011-07-05  fredlefred
+
+	* [r749] ckeditor_fonctions.php: fix: typo
+	* [r748] ckeditor_fonctions.php: fix: bug
+	  http://www.spip-contrib.net/CKeditor-3-0#comment447444
+
+2011-07-02  fredlefred
+
+	* [r747] lang/ckeditor_fr.php: fix: meilleure descriptions des
+	  options de conversion
+	* [r746] formulaires/ckc.html, lang/ckeditor_fr.php: feature:
+	  message d'aide pour l'insersion de ckeditor aux formulaires
+	* [r745] ckeditor_fonctions.php: fix: problème de squelettes lors
+	  de la création d'un nouvel objet
+	* [r744] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: fix: mauvaise version d'html2spip dans les
+	  fichiers de langue
+	* [r743] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, inc/ckeditor_tools.php,
+	  lang/ckeditor_fr.php: feature: possibilité de ne plus passer par
+	  le filtre de conversion en typographie SPIP (3 mode de
+	  conversion: aucune, partielle (version classique), complète
+	  (version html2spip))
+
+2011-06-30  mehdi.cherifi@gmail.com
+
+	* [r742] lang/ckeditor_ar.php, lang/ckeditor_en.php: pareil SPIP
+	  3.0 (pas de 2.2)
+	  
+	  ps: bientot une mise à jour des fichiers lanague (arabe et
+	  anglais) @+
+	* [r741] lang/ckeditor_fr.php: petite coquille, SPIP 2.2 ne vas pas
+	  sortir c'est plutot la 3.0 (qui intègre en elle les fonctions du
+	  plugin itérateur).
+	* [r740] inc/ckeditor_constantes.php: maintenant c'est la version
+	  0.6.
+
+2011-06-28  fredlefred
+
+	* [r739] ckeditor_fonctions.php, lang/ckeditor_fr.php: feature:
+	  choisir, si possible, la langue de l'article/rubrique pour la
+	  correction orthographique, sinon, utiliser la langue
+	  sélectionnée.
+
+2011-06-22  fredlefred
+
+	* [r738] inc/ckeditor_constantes.php, inc/ckeditor_tools.php: fix:
+	  pb avec les ponctuations doubles (trop d'espaces insérés)
+	* [r737] inc/ckeditor_tools.php: fix: pb avec l'espace insécable
+	  dans les tag protégés
+
+2011-06-20  fredlefred
+
+	* [r736] ckeditor4spip.js.html: fix: bug (de ckeditor / du plugin
+	  ?) lié à IE qui laissait l'éditeur en mode lecture seule (apparu
+	  avec cke 3.6)
+
+2011-06-17  fredlefred
+
+	* [r735] ckeditor_fonctions.php, formulaires/ckc.html,
+	  formulaires/ckc.php, inc/ckeditor_constantes.php,
+	  lang/ckeditor_fr.php, plugin.xml: feature: passage à ckeditor
+	  3.6.1 feature: ckeditor dans les formulaires
+
+2011-06-13  fredlefred
+
+	* [r734] ckeditor-plugin/spipmodeles/plugin.js,
+	  inc/ckeditor_tools.php: fix: protection des tag multilignes
+	  (entre autres : <br/> => \n)
+	* [r733] ckeditor-plugin/spipmodeles/plugin.js: fix: valeurs par
+	  défaut
+	* [r732] lang/ckeditor_fr.php: fix: traduction
+
+2011-06-12  fredlefred
+
+	* [r731] css/cked-cfg.css, formulaires/ckh.html,
+	  lang/ckeditor_fr.php: feature: quelques messages d'aide fix: une
+	  typo
+	* [r730] find-missing-trad.sh, formulaires/ckh.html,
+	  formulaires/ckh.php, inc/ckeditor_tools.php,
+	  lang/ckeditor_fr.php, spiptags-json.html: feature: les modèles
+	  fermés peuvent ne pas interprétés par la fonction propre (ils
+	  sont convertis en &#xxx; )
+
+2011-06-11  fredlefred
+
+	* [r729] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js: fix:
+	  le séparateur de paramètres pour la syntaxe html n'était pas
+	  correct
+	* [r728] lang/ckeditor_fr.php: fix: traduction oubliée
+
+2011-06-10  fredlefred
+
+	* [r727] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  ckeditor-plugin/spipmodeles/plugin.js, ckeditor_fonctions.php,
+	  css/cked-editor.css[ADD], formulaires/ckc.php,
+	  formulaires/ckh.html, formulaires/ckh.php,
+	  inc/ckeditor_tools.php, spiptags-json.html: fix: problème
+	  impossibilité de supprimer un modèle feature: gestion de la
+	  syntaxe type html pour les paramètres des modèles feature:
+	  echappement du contenu des modèles à contenu pour permettre, en
+	  particulier les modèles <cadre> todo: rendre cette dernière
+	  possibilité optionnelle
+
+2011-06-09  fredlefred
+
+	* [r726] inc/ckeditor_tools.php: fix: les modeles spip protégés ne
+	  sont plus traité par la fonction propre (cad: ils sont vraiment
+	  protégés !)
+
+2011-06-08  fredlefred
+
+	* [r725] ckeditor_fonctions.php, inc/ckeditor_constantes.php:
+	  feature: valeur par défaut pour la position des plugins ckeditor
+	* [r724] inc/ckeditor_constantes.php, inc/ckeditor_tools.php:
+	  feature: passage à html2spip-0.5 - utilisation des documents
+	  distants
+
+2011-06-07  fredlefred
+
+	* [r723]
+	  filebrowsers/kcfinder-ckeditor-plugin/kcfinder_options.php:
+	  cleanup: nettoyage de la création de session pour kcfinder
+	* [r722] ckeditor_fonctions.php: feature: possibilité d'inclure du
+	  js depuis un plugin filebrowser pour ckeditor
+
+2011-06-02  fredlefred
+
+	* [r721]
+	  filebrowsers/kcfinder-ckeditor-plugin/kcfinder_options.php: fix:
+	  protection contre les doubles déclarations
+	* [r720] ckeditor_fonctions.php: fix: pb avec le chemin des images
+	* [r719] ckeditor_fonctions.php: fix: on laisse au navigateur de
+	  fichier le loisir de définir ses dimensions, sinon on en donne
+	  par défaut
+	* [r718] ckeditor_fonctions.php, ckeditor_options.php,
+	  filebrowsers[ADD], filebrowsers/kcfinder-ckeditor-plugin[ADD],
+	  filebrowsers/kcfinder-ckeditor-plugin/images[ADD],
+	  filebrowsers/kcfinder-ckeditor-plugin/images/ckspip-logo.png[ADD],
+	  filebrowsers/kcfinder-ckeditor-plugin/kcfinder_options.php[ADD],
+	  filebrowsers/kcfinder-ckeditor-plugin/plugin.xml[ADD],
+	  formulaires/ckd.html, formulaires/ckd.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php, pack-js.sh,
+	  plugin.xml: feature: plugin-ification des navigateurs de
+	  fichiers, pour l'instant seul, kcfinder est disponible
+
+2011-05-31  fredlefred
+
+	* [r717] inc/ckeditor_tools.php: fix: suppression des attribus :
+	  data-cke-saved-xxxx
+	* [r716] inc/ckeditor_tools.php: fix: pour la conversion -> vers
+	  spip, on gère aussi le cas des alignement de type css en plus de
+	  la propriété align
+	* [r715] ckeditor4spip.js.html: fix: on utilise un id aussi pour
+	  les l'édition de mot
+	* [r714] ckspip_convert.html: feature: pour debuggage, possibilité
+	  de ne pas traduire dans le filtre "ckspip_convert"
+
+2011-05-30  fredlefred
+
+	* [r713] ckeditor4spip.js.html: cleanup
+	* [r712] ckeditor4spip.js.html: fix: on efface plus tot (pas encore
+	  assez ...) le porteplume
+	* [r711] formulaires/ckg.html: feature: valeur par défaut du bouton
+	  explicite
+
+2011-05-27  fredlefred
+
+	* [r710] ckspip_convert.html: fix: un problème "connexion
+	  réinitialisé"
+
+2011-05-26  fredlefred
+
+	* [r709] formulaires/cka.html: cleanup: mise en page
+	* [r708] ckeditor_fonctions.php: feature: compatibilité avec le
+	  plugin 'Edition directe'
+	* [r707] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/cka.html, formulaires/cka.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_fr.php: feature:
+	  possibilité d'ignorer l'avertissement de version
+
+2011-05-25  fredlefred
+
+	* [r706] ckeditor_fonctions.php, formulaires/ckh.php,
+	  inc/ckeditor_constantes.php, inc/install.php[ADD], plugin.xml:
+	  feature: procedure d'installation
+
+2011-05-23  fredlefred
+
+	* [r705] find-ckeditor-cst.sh, inc/ckeditor_constantes_inc.php:
+	  fix: quelques constantes oubliées, pour cause de mauvaise
+	  expression régulière (les tabulations oubliés comme espace)
+	* [r704] formulaires/ckf.html, formulaires/ckh.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php: fix: il était
+	  impossible de traduire les options par défaut des modeles spip
+	* [r703] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js: fix:
+	  Object.keys n'existe pas sur tous les navigateurs où fonctionne
+	  ckeditor, on définit une fonction pour la remplacer
+
+2011-05-21  fredlefred
+
+	* [r702] ckeditor4spip.js.html: fix(hope): la position de l'éditeur
+	  était (parfois: souvent avec les crayons) plus basse qu'il
+	  n'aurait fallu, recouvrant les bouton de validation
+	* [r701] ckeditor4spip.js.html: cleanup: évitons le travail inutile
+	  (s'il n'y a pas d'editeur du type demandé : on quitte de suite)
+	* [r700] ckeditor_fonctions.php: feature: on essaie de déterminer
+	  le contexte aussi pour les crayons
+	* [r699] ckeditor_fonctions.php: fix: on n'insere le script que si
+	  c'est nécessaire
+
+2011-05-20  fredlefred
+
+	* [r698] inc/ckeditor_constantes.php: fix: oubli des champs 'info'
+	* [r697] inc/ckeditor_constantes.php: fix: intitulé explicite pour
+	  les modèles spip
+	* [r696] ChangeLog.txt[DEL]: suppression du ChangeLog du SVN : il
+	  n'a rien à y faire, il faut le générer à la création du package
+	* [r695] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  ckeditor-plugin/spipmodeles/lang/fr.js: feature: on affiche le
+	  nom du modèle dans le dialogue plutôt que le tag si celui-ci est
+	  disponible
+
+2011-05-19  fredlefred
+
+	* [r694] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js:
+	  feature: cache les parametres s'il n'y en a pas dans spipmodeles
+	* [r693] ChangeLog.txt,
+	  ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  ckeditor_fonctions.php, formulaires/ckh.html,
+	  lang/ckeditor_fr.php: feature: nouvelle option pour les modeles
+	  spip : la valeur numérique proposée peut maintenant être
+	  l'identifiant de l'objet en cours d'édition
+
+2011-05-18  fredlefred
+
+	* [r692] ckeditor_fonctions.php: feature: compatibilité avec
+	  "Articles en Edition Directe" (AED)
+
+2011-05-17  fredlefred
+
+	* [r691] ckeditor_fonctions.php: fix: le pipeline
+	  "ckeditor_config_post" n'était pas toujours chargé
+	* [r690] inc/ckeditor_constantes.php: fix: bug qui empeche le
+	  chargement du squelette ckeditor4spip.js.html
+
+2011-05-16  fredlefred
+
+	* [r689] ChangeLog.txt, ckeditor4spip.js.html,
+	  ckeditor_fonctions.php: fix: simplication du code js par
+	  utilisation de modeles spip
+
+2011-05-13  mehdi.cherifi@gmail.com
+
+	* [r688] lang/ckeditor_en.php: mise à jour fichier anglais (avec
+	  quelques corrections)
+
+2011-05-13  fredlefred
+
+	* [r687] inc/ckeditor_constantes.php,
+	  inc/ckeditor_constantes_inc.php, plugin.xml: feature: passage à
+	  CKeditor 3.6
+
+2011-05-10  fredlefred
+
+	* [r686] ChangeLog.txt, inc/ckeditor_tools.php: fix: pb avec les
+	  alignements d'images (entre autre)
+
+2011-05-08  fredlefred
+
+	* [r685] articles-links-json.html, auteurs-links-json.html,
+	  breves-links-json.html, ckdoc.html, ckeditor4spip.js.html,
+	  ckspip_convert.html, filebrowser.html,
+	  groupemots-links-json.html, mots-links-json.html,
+	  rubriques-links-json.html, select_documents.html,
+	  spip-styles.html, spiplinks-json.html, spiplistes-json.html,
+	  spiptags-json.html, templates.js.html: feature: protection contre
+	  les appels malveillants des 'helpers'
+
+2011-05-06  fredlefred
+
+	* [r684] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  spiplistes-json.html: fix: bug dans l'affichage des nom de
+	  'documents' (etc) et dans la sélection du premier 'document'
+	* [r683] css/cked-cfg.css, formulaires/ckd.html,
+	  formulaires/ckf.html, formulaires/ckh.html: cleanup: meilleure
+	  utilisation de la css
+	* [r682] inc/ckeditor_tools.php, js[DEL]: feature: gestion des
+	  images au format "date:images/type,base64:..." par création d'une
+	  image dans IMG/type/ et insertion dans la DB spip
+	* [r681] ckdoc.html: fix: petit bug empêchant l'affichage des
+	  images insérées par double clique sur le lien <imgXX|align>
+	* [r680] ckeditor_fonctions.php: cleanup: nettoyage du code
+	  d'insertion des polices
+
+2011-05-05  fredlefred
+
+	* [r679] ckeditor_fonctions.php, filebrowser.html,
+	  formulaires/ckd.php, inc/ckeditor_constantes.php: fix: mise en
+	  cohérence des noms des constantes
+
+2011-05-04  fredlefred
+
+	* [r678] inc/ckeditor_tools.php: cleanup, fix: problème avec les
+	  documents distants 'spip'
+
+2011-05-03  fredlefred
+
+	* [r677] ckeditor_fonctions.php, formulaires/ckc.html,
+	  lang/ckeditor_fr.php: fix: meilleure information
+	* [r676] lang/ckeditor_fr.php: typo
+
+2011-05-02  fredlefred
+
+	* [r675] ChangeLog.txt: update Changelog.txt
+	* [r674] css/cked-cfg.css, formulaires/cka.html,
+	  formulaires/ckb.html, formulaires/ckc.html, formulaires/ckd.html,
+	  formulaires/cke.html, formulaires/ckf.html, formulaires/ckg.html,
+	  formulaires/ckh.html: cleanup: meilleure utilisation de la css
+	  privée
+	* [r673] pack-js.sh: feature: on fixe les droits des fichiers
+	  compactés, pour permettre leur lecture par le serveur http
+	* [r672] inc/json_encode.php: fix: erreur d'importation,
+	  __json_encode -> json_encode
+	* [r671] ckeditor4spip.js.html: cleanup: encore un petit effort
+	* [r670] ckeditor4spip.js.html: cleanup: plus encore
+	* [r669] ckeditor4spip.js.html: cleanup: conversion des
+	  commentaires js en commentaire spip : réduction du code js à
+	  télécharger
+	* [r668] ckeditor4spip.js.html: cleanup.
+	* [r667] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  pack-js.sh[ADD]: fix: utilisation d'un identifiant au lieu d'une
+	  classe pour les crayons, feature: possibilité d'utiliser une
+	  version 'pack' des plugins pour ckeditor
+
+2011-05-01  fredlefred
+
+	* [r666] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/cka.html, formulaires/cka.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_fr.php: feature:
+	  possibilité de ne pas afficher les boutons de redimensionnement
+
+2011-04-29  fredlefred
+
+	* [r665] ckeditor4spip.js.html: feature: cosmetique, le cadre des
+	  forums est effacé si ckeditor est activé
+	* [r664] ckeditor_fonctions.php: fix: un seul appel a prepare
+	  script
+	* [r663] inc/ckeditor_tools.php: fix: problème avec les images spip
+	  dans la partie public, l'url relative était fausse, on utilise
+	  des url absolues
+	* [r662] ckeditor4spip.js.html, ckeditor_fonctions.php: fix: le
+	  porte plume n'était pas toujours caché, fix: les choix de barre
+	  d'outils n'étaient pas toujours respectés
+	* [r661] inc/ckeditor_constantes.php, inc/ckeditor_tools.php: fix:
+	  problème avec les liens contentant des "$", fix/feature:
+	  insertion des images en tant que document spip(si html2spip) au
+	  lieu de planter le convertisseur
+
+2011-04-27  fredlefred
+
+	* [r660] ckeditor_fonctions.php, formulaires/ckc.html,
+	  formulaires/ckc.php, inc/ckeditor_constantes.php,
+	  lang/ckeditor_fr.php: feature: configuration complète de saisie
+	  facile (activation ou non, et barres d'outils), fix: valeur par
+	  défaut respectées pour les champs extras
+	* [r659] find-missing-trad.sh: feature: valeur par défaut : fr
+
+2011-04-26  fredlefred
+
+	* [r658] ChangeLog.txt, ckeditor_fonctions.php: fix: ça remarche
+	  avec cisf
+	* [r657] ckeditor4spip.js.html: fix: simplification du code
+	* [r656] ckeditor4spip.js.html, ckeditor_fonctions.php: fix: bug si
+	  plusieurs crayons étaient activés en même temps, on utilise
+	  maintenant des identifiants de crayons plutot qu'une class css
+
+2011-04-25  fredlefred
+
+	* [r655] ckeditor_fonctions.php: fix: bug empéchant ckeditor de
+	  s'afficher pour les forums autrement qu'après un recalcul de la
+	  page (il semble que ce soit un bug de php ou de spip... : $_GET
+	  ne semble pas défini et donc _request ne fonctionne pas)
+	* [r654] ckeditor-plugin/zpippreview/plugin.js,
+	  ckeditor4spip.js.html, ckeditor_fonctions.php: cleaning:
+	  suppression d'une variable inutile
+	* [r653] ckeditor-plugin/zpippreview/plugin.js,
+	  ckeditor4spip.js.html, ckeditor_fonctions.php: fix: 'aperçu
+	  zpip', cleaning: suppression du passage de chaine de trad au js,
+	  utilisation du mécanisme de spip, fix: les barres d'outils
+	  s'appelle 'Full' et pas 'SpipFull'
+
+2011-04-24  fredlefred
+
+	* [r652] ckeditor4spip.js.html: fix: on pouvait tenter de demander
+	  le zapping d'éditeur alors que ckeditor n'était pas fini de
+	  chargé, plantant le réaffichage de l'éditeur spip avec les
+	  crayons
+	* [r651] ckeditor4spip.js.html: fix: en cas de multiples éditeurs
+	  sur une page, n'afficher qu'une fois les copyrights du plugin (la
+	  mégalomanie, ça suffit)
+	* [r650] ckeditor_fonctions.php: fix: paste remplacé par pastetexte
+	  dans la barre 'basic', feature: utilisation d'une fonction
+	  surchargeable pour json_encode (permet par exemple le pretty
+	  printing)
+	* [r649] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_fr.php: feature: on
+	  peut choisir la barre d'outils (Full, Basic) à utiliser avec les
+	  crayons, les forums, et les champs extra2
+	* [r648] ckeditor_fonctions.php: feature: une meilleure barre
+	  d'outils 'Basic' (renommée : SpipBasic)
+
+2011-04-23  fredlefred
+
+	* [r647] ckeditor_fonctions.php: fix: cas des champs extra2 oubliés
+	* [r646] ckeditor4spip.js.html, ckeditor_fonctions.php: feature:
+	  les crayons et les forums utilisent une barre d'outils basique
+	  (configuration à venir)
+	* [r645] ckeditor4spip.js.html, ckeditor_fonctions.php: fix:
+	  l'edition avec les crayons et les forums sont maintenant
+	  compatible
+
+2011-04-21  fredlefred
+
+	* [r644] ChangeLog.txt, lang/ckeditor_fr.php: fix: typo
+	* [r643] ckeditor_fonctions.php, formulaires/ckc.html,
+	  formulaires/ckc.php, inc/ckeditor_constantes.php,
+	  lang/ckeditor_fr.php: feature: ckeditor dans les forums
+	  désactivable
+	* [r642] ckeditor4spip.js.html, ckeditor_fonctions.php: feature:
+	  utilisation de ckeditor avec les forums (problèmes: un conflit
+	  avec les crayons empeche d'utiliser les crayons + ckeditor sur la
+	  page des forums, on ne peut pas désactiver ckeditor sur les
+	  forums)
+
+2011-04-20  fredlefred
+
+	* [r641] ckeditor-plugin/spipmodeles/plugin.js,
+	  ckeditor_fonctions.php: feature: cosmetique (on utilise des
+	  couleurs moins criardes)
+
+2011-04-19  fredlefred
+
+	* [r640] spiptags-json.html[ADD]: fix: fichier oublié nécessaire
+	  pour le plugin spipmodeles
+	* [r639] ChangeLog.txt, ckeditor_fonctions.php: fix: cosmétique
+	* [r638] ckeditor4spip.js.html, ckeditor_fonctions.php: fix: bugs
+	  liés aux crayons (n'apparaissaient plus en partie privée, porte
+	  plume ne se cachait pas avec les crayons)
+	* [r637] ckeditor_fonctions.php: fix: nettoyage de code
+
+2011-04-18  fredlefred
+
+	* [r636] formulaires/ckc.html: fix: cosmétique
+	* [r635] css/cked-cfg.css, formulaires/ckc.html,
+	  formulaires/cke.html, lang/ckeditor_fr.php: fix: cosmetique
+
+2011-04-17  fredlefred
+
+	* [r634] ChangeLog.txt, ckeditor_fonctions.php: feature: ckeditor
+	  sur les documents
+	* [r633] ckeditor4spip.js.html, ckeditor_fonctions.php: fix:
+	  ckeditor sur les groupe de mots cles, fix: bouton modifier auteur
+
+2011-04-16  fredlefred
+
+	* [r632] images/aide.gif[ADD]: fichier oublié
+	* [r631] ckeditor_fonctions.php, css/cked-cfg.css[ADD],
+	  formulaires/cka.html, formulaires/ckc.html, formulaires/ckd.html,
+	  formulaires/cke.html: feature: utilisation d'une css privée pour
+	  afficher des bulles d'aide plutôt qu'un texte en permanence
+	  (allègement de l'interface)
+	* [r630] lang/ckeditor_fr.php: fix: orthographe, exemple de tailles
+	  de polices
+	* [r629] formulaires/cke.html: fix: meilleurs place pour les
+	  tailles de polices
+
+2011-04-14  fredlefred
+
+	* [r628] ckeditor_fonctions.php, formulaires/ckg.html: fix: les
+	  plugins pour ckeditor ne se chargeaient plus pour cause
+	  d'url_absolue mal placée
+	* [r627] plugin.xml: fix: credits
+
+2011-04-13  fredlefred
+
+	* [r626] ckeditor_fonctions.php, find-missing-trad.sh,
+	  formulaires/cke.html, formulaires/cke.php,
+	  inc/ckeditor_constantes.php, lang.inc.php, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php: feature: possibilité
+	  de mofifier la liste des tailles de polices, fix: typo dans
+	  fichier de trad (en)
+	* [r625] inc/ckeditor_constantes_inc.php: fix: maj des constantes
+	  ckeditor pour la version 3.5.3
+	* [r624] inc/ckeditor_constantes.php, plugin.xml: feature: ckeditor
+	  3.5.3
+	* [r623] lang/ckeditor_fr.php: fix: typo
+
+2011-04-12  fredlefred
+
+	* [r622] ChangeLog.txt, lang/ckeditor_fr.php: fix: meilleure
+	  explication
+	* [r621] lang/ckeditor_fr.php: feature: lien vers le plugin
+	  itérateur en cas de nécessité.
+
+2011-04-08  mehdi.cherifi@gmail.com
+
+	* [r620] lang/ckeditor_fr.php: spip et pas SPIP dans les urls
+	* [r619] lang/ckeditor_en.php: spip et pas SPIP dans les urls
+	* [r618] lang/ckeditor_en.php, lang/ckeditor_fr.php: fichier de
+	  langue - FR : petites corrections (respect et pas réspect ! lol)
+	  - EN : mise à jour finalisée !
+
+2011-04-07  manu@netbsd.org
+
+	* [r617] inc/ckeditor_constantes.php, lang/ckeditor_fr.php,
+	  plugin.xml: html2spip-0.4
+
+2011-03-24  fredlefred
+
+	* [r616] ChangeLog.txt, ckeditor4spip.js.html: fix: position des
+	  éditeurs s'il y a plusieurs et qu'on zap spipediteur <=> ckeditor
+
+2011-03-23  fredlefred
+
+	* [r615] ckeditor4spip.js.html: fix: le bouton de sauvegarde de
+	  ckeditor fonctionne aussi avec les crayons
+	* [r614] ckeditor4spip.js.html, ckeditor_fonctions.php: cleanup:
+	  suppression de code mort
+	* [r613] ckeditor4spip.js.html: feature: on cache l'ui portlume
+	  mais aussi celle des crayons...
+	* [r612] ckeditor4spip.js.html, ckeditor_fonctions.php: cleanup
+
+2011-03-22  fredlefred
+
+	* [r611] find-ckeditor-cst.sh[ADD], inc/ckeditor_constantes.php,
+	  inc/ckeditor_constantes_inc.php[ADD]: feature: définition des
+	  constantes ckeditor en tant que constantes php (CKEDITOR.CONST =>
+	  devient, en php => CKEDITOR_CONST), pour utilisation dans
+	  ckeditor_config_post
+	* [r610] ckeditor4spip.js.html, inc/ckeditor_constantes.php:
+	  feature: 3 constantes nécessaires pour definir les raccourcis
+	  clavier via ckeditor_config_post
+	* [r609] ChangeLog.txt, ckeditor4spip.js.html: cleanup: suppression
+	  d'espaces, suppression d'une heuristique, remplacée par un appel
+	  à la fonction qui renvoie d'id du contenant de l'editeur
+	* [r608] ckeditor4spip.js.html: fix: les boutons de
+	  redimensionnement étaient cachées si le bouton swap était
+	  inexistant
+	* [r607] ckeditor4spip.js.html: cleanup: suppression d'espaces
+	  inutiles
+	* [r606] ckeditor4spip.js.html: cleanup: suppression de beaucoup
+	  d'espaces inutiles, on scinde la fonction fixEditorOffset en :
+	  fixEditorOffset et fixEditorHeight
+	* [r605] ChangeLog.txt, ckeditor_fonctions.php: cleanup: une
+	  fonction dans une fonction, ce n'est pas beau
+
+2011-03-21  fredlefred
+
+	* [r604] ckeditor4spip.js.html: feature: meilleure valeur par
+	  défaut, commentaire
+	* [r603] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  formulaires/ckf.html: feature: factorisation du code d'insertion
+	  de ckeditor
+	* [r602] ChangeLog.txt, ckeditor_fonctions.php: fix: il ne faut pas
+	  de baseHref
+	* [r601] ckeditor_fonctions.php: fix: meilleure solution
+	* [r600] ckeditor4spip.js.html, ckeditor_fonctions.php:
+	  fix/feature: meilleur gestion des champs éditables par défaut
+	* [r599] ckeditor4spip.js.html, ckeditor_fonctions.php: fix: erreur
+	  de codage, feature: on ne peut pas être sur de la façon dont nous
+	  allons recevoir les <imgXX|align>
+
+2011-03-20  fredlefred
+
+	* [r598] ChangeLog.txt,
+	  ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  ckeditor-plugin/spipmodeles/plugin.js, ckeditor4spip.js.html:
+	  fix: commentares
+	* [r597] ckeditor-plugin/spip/dialogs/spip.js: fix: référence à
+	  _cke_saved_href inutile
+	* [r596] ChangeLog.txt, lang/ckeditor_fr.php, plugin.xml: fix:
+	  avertissement sur le coté expérimentale de certaines
+	  fonctionnalité, feature: on signale qu'on peut utiliser les
+	  crayons
+	* [r595] ChangeLog.txt, ckeditor4spip.js.html,
+	  ckeditor_fonctions.php: fix: les crayons fonctionnent aussi en
+	  partie privée ...
+
+2011-03-19  fredlefred
+
+	* [r594] ckeditor4spip.js.html: fix: bug si aucun contexte n'est
+	  défini
+	* [r593] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js: fix:
+	  divers oublis
+	* [r592] ckeditor_fonctions.php: cleanup: on fixe le 'href' pour
+	  l'editeur
+	* [r591] ckeditor-plugin/spipdoc/plugin.js: feature: icone pour le
+	  menu contextuel des documents spip
+	* [r590] ckeditor4spip.js.html, ckeditor_fonctions.php: cleanup:
+	  utilisation de la configuration pour supprimer un 'dialogTabs'
+
+2011-03-18  fredlefred
+
+	* [r589] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  inc/ckeditor_constantes.php, lang/ckeditor_fr.php,
+	  spiplistes-json.html: fix: problème avec #ENV{type} remplacé par
+	  #ENV{doctype}, traductions, une valeur est donnée même si
+	  #TITRE|documents est vide, idem pour les sites, valeurs par
+	  défaut
+	* [r588] ckeditor4spip.js.html, lang/ckeditor_fr.php: traduction
+	  manquantes
+	* [r587] formulaires/ckh.html, spiplistes-json.html: nouveau type
+	  de balises 'documents', 'mots', 'groupes_mots', et 'sites'
+	* [r586] inc/ckeditor_constantes.php: on met une valeur par défaut
+	  pour les vignettes
+
+2011-03-16  fredlefred
+
+	* [r585] ckeditor_fonctions.php, ckeditor_spip.png[DEL],
+	  images/ckeditor.png[ADD], images/ckeditor_spip.png[CPY]:
+	  nettoyage
+	* [r584] ckeditor4spip.js.html: nettoyage
+	* [r583] ChangeLog.txt, ckeditor4spip.js.html,
+	  ckeditor_fonctions.php, images/searching.gif[ADD]: icone animée
+	  (celle des crayons) sur le swapeditor
+	* [r582] ckeditor4spip.js.html: fix: lors du passage à l'éditeur
+	  spip le cke_fixheight gardait la taille de l'éditeur (alors qu'à
+	  ce moment, elle doit être nulle)
+	* [r581] ChangeLog.txt, ckeditor4spip.js.html,
+	  ckeditor_fonctions.php, ckeditor_spip.png[ADD],
+	  lang/ckeditor_fr.php: features:icone à la place de texte pour le
+	  bouton swapeditor, fix: suppression du vilain hack pour la
+	  position/hauteur de l'éditeur
+	* [r580] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  ckeditor_options.php, formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, lang/ckeditor_fr.php: fix: taille
+	  des vignettes respectées à l'insertion, features:utilisation de
+	  ckeditor avec les champs extras 2 et les crayons, features:choix
+	  es champs extras utilisant ckeditor
+
+2011-03-14  fredlefred
+
+	* [r579] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  lang/ckeditor_fr.php: on synchronise les positions des différents
+	  éditeurs présents sur une page (pour l'instant ce n'est pas
+	  visible, vu qu'il n'y a qu'un seul éditeur de visible : mais ce
+	  travail est nécessaire pour afficher l'éditeur pour les champs
+	  extra2)
+
+2011-03-13  fredlefred
+
+	* [r578] ckeditor4spip.js.html: finalement, on parse l'appelle
+	  'barre_inserer' pour savoir quoi et ou insérer les documents
+	* [r577] ckeditor4spip.js.html: fix: bug: le click sur
+	  <docXX|align> insérait dans tous les ckeditor, on choisit de
+	  n'insérer que dans le premier
+	* [r576] ckeditor4spip.js.html: fix:divers bug d'affichage (au
+	  zoome et un-zoom essentiellement)
+	* [r575] ckeditor4spip.js.html: on fait en sorte de vraiment
+	  pouvoir avoir plusieurs éditeur sur la même page, reste un
+	  problème avec les largeurs de barre d'outils, pour l'instant ça
+	  pose problème si les largeurs d'éditeurs sont différentes ...
+	* [r574] ckeditor4spip.js.html: on laisse aussi apparaitre les
+	  boutons 'ok' et 'cancel' en cas de 'zoom'
+	* [r573] ChangeLog.txt, ckeditor4spip.js.html: positionnement
+	  correcte des bouton 'ok' et 'cancel' des crayons lorsque ckeditor
+	  est actif
+
+2011-03-12  fredlefred
+
+	* [r572] ckeditor4spip.js.html, ckeditor_fonctions.php: l'édition
+	  avec les crayons respecte aussi la préférence : ckeditor /
+	  spipeditor
+	* [r571] ckeditor4spip.js.html, ckeditor_fonctions.php: preview :
+	  ckeditor avec les crayons
+	* [r570] ckeditor4spip.js.html: nettoyage
+	* [r569] ckeditor4spip.js.html: typo + on tente l'insertion spip
+	  (au cas ou)
+	* [r568] ckeditor4spip.js.html: fix: bug potentiel si on ne sait
+	  pas ce qu'il faut insérer via un double click
+	* [r567] ChangeLog.txt, ckeditor4spip.js.html: suppression code
+	  inutile
+	* [r566] ckeditor4spip.js.html: là où c'est possible, on met 'spip'
+	  comme classe par défaut
+	* [r565] ckeditor4spip.js.html, inc/ckeditor_tools.php: on place le
+	  fix dans le code php plutot que le code js : pour mettre toutes
+	  les conversion au même endroi
+	* [r564] inc/ckeditor_tools.php: require => require_once (eviter
+	  les doubles définitions de fonctions)
+	* [r563] ckeditor4spip.js.html: fix: définitif ?
+	* [r562] ckeditor4spip.js.html: meilleur fix
+	* [r561] ckeditor4spip.js.html: fix: mauvais pretty printing de
+	  code qui occassionne des erreurs dans html2spip
+
+2011-03-11  fredlefred
+
+	* [r560] ckeditor_fonctions.php: on ajoute la css
+	  prive/spip_style.css pour que les tableau de spip apparaissent
+	* [r559] ckeditor4spip.js.html: correction du placement de
+	  l'éditeur pour l'affichage dans la colonne
+	* [r558] ChangeLog.txt, inc/ckeditor_tools.php: bug: avec les
+	  datafilter, il faut tenir compte du fait que IE (au moins)
+	  renvoie des balises en majuscule alors que Firefox(au moins)
+	  renvoie des balises en minuscule
+
+2011-03-10  fredlefred
+
+	* [r557] ChangeLog.txt, contenu/page-preview.html: j'ai oublié
+	  l'aperçu dans l'utilisation des dataFilter de ckeditor,
+	  maintenant l'appel direct de html2spip / spip2html n'est plus à
+	  faire
+	* [r556] ckeditor4spip.js.html: pretty printing du code
+	* [r555] ckeditor4spip.js.html, ckeditor_fonctions.php: ckeditor
+	  sauve maintenant directement au format spip (si demandé),
+	  suppression de la nécessité du pipeline pre_edition (maintenu au
+	  cas ou)
+
+2011-03-09  fredlefred
+
+	* [r554] contenu/page-preview.html: l'aperçu respecte les modèles
+	  spip
+	* [r553] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: fix: le
+	  doctype et docparam n'étaient pas toujours respectés à
+	  l'insersion d'image via spipdoc
+
+2011-03-08  fredlefred
+
+	* [r552] ChangeLog.txt, ckeditor4spip.js.html: protection contre
+	  les motif barre_inserer inconnu
+	* [r551] ckdoc.html[ADD], ckeditor4spip.js.html: l'insertion de
+	  document ou d'image depuis l'interface spip, insère les images et
+	  ou les documents de la même façon que le plugin spip pour
+	  ckeditor
+	* [r550] ckeditor4spip.js.html: on active l'insertion de document
+	  via double click sur <tagXX|align>
+
+2011-03-07  fredlefred
+
+	* [r549] ckeditor-plugin/zpippreview/plugin.js: oubli d'un code de
+	  deboggage
+	* [r548] ckeditor4spip.js.html: une seule pile plutôt que de
+	  multiple, les boutons des redimensionnements restent aparent lors
+	  de l'agrandissement
+	* [r547] ckeditor-plugin/zpippreview/plugin.js: meilleur gestion de
+	  l'aperçu spip
+	* [r546] ckeditor-plugin/zpippreview/plugin.js,
+	  contenu/page-preview.html: on tache de respecter le contexte
+	  d'affichage dans la preview (evidement ce n'est pas parfait :
+	  surtout si l'id est présent sur la page de preview)
+	* [r545] ckeditor4spip.js.html: fix:ie n'affiche pas correctement
+	  les 2 boutons elargissement et adaptation à la colonne
+	* [r544] ChangeLog.txt, ckeditor-plugin/zpippreview/plugin.js,
+	  ckeditor_fonctions.php: fix:preview ne fonctionne pas sous ie (et
+	  simplification du code)
+
+2011-03-06  fredlefred
+
+	* [r543] ChangeLog.txt, ckeditor-plugin/zpippreview[ADD],
+	  ckeditor-plugin/zpippreview/plugin.js[ADD],
+	  ckeditor-plugin/zpippreview/preview.png[ADD],
+	  ckeditor_fonctions.php, contenu[ADD],
+	  contenu/page-preview.html[ADD], formulaires/ckf.html,
+	  inc/toolbars.php, lang/ckeditor_fr.php: aperçu dans une page zpip
+	  (contenu/page-preview.html) existante ou à surcharger, ou dans un
+	  squelette spip (preview.html) à définir
+	* [r542] ckeditor_fonctions.php: fix bug:plantage ckeditor si un
+	  plugin à disparu
+	* [r541] ckeditor4spip.js.html: deux boutons permettant d'agrandir
+	  la fenêtre d'édition et de revenir à la taille par défaut
+	* [r540] ckeditor_fonctions.php: les plugins ckeditor empêchait
+	  l'affichage normal des barres dans lesquels ils s'insèrent
+
+2011-03-05  fredlefred
+
+	* [r539] ckeditor4spip.js.html: maintenant, un élargissement de
+	  l'éditeur est possible : il sort de la colonne et reste au dessus
+
+2011-03-04  fredlefred
+
+	* [r538] ckeditor_fonctions.php: on autorise le redimensionnement
+	* [r537] ckeditor4spip.js.html: cosmetique
+	* [r536] ckeditor4spip.js.html: finalement, il suffit d'insérer les
+	  boutons juste avant le textarea
+	* [r535] ckeditor4spip.js.html: geston correcte des contextes même
+	  s'il y a plusieurs iframe, ou s'il y a plusieurs éditeurs
+	* [r534] ckeditor4spip.js.html: gestion correcte du contexte
+	  (utilisation de removeClass, plutôt qu'une affectation qui
+	  supprime les class existantes, et affectation du contexte en cas
+	  de changement de mode d'édition)
+	* [r533] ckeditor_fonctions.php: pourquoi empecher l'utilisation du
+	  bouton image si on ne peut pas parcourir les répertoires ? on
+	  doit pouvoir insérer une image par son url
+	* [r532] ckeditor_fonctions.php, formulaires/ckf.html: on sépare la
+	  préparation du script js d'appel de ckeditor du pipeline
+	  editer_contenu_objet (pour pouvoir l'appeler d'ailleurs)
+	* [r531] formulaires/ckb.html, formulaires/ckb.php,
+	  formulaires/ckg.html: suite de la suppression de
+	  ckeditor_smileys_actifs
+	* [r530] ckeditor_fonctions.php, formulaires/ckb.html,
+	  formulaires/ckb.php, formulaires/ckg.html, inc/toolbars.php,
+	  lang.inc.php: suppression des "global $toolbars"
+	* [r529] ckeditor_fonctions.php: nettoyage, ter
+	* [r528] inc/ckeditor_constantes.php: oubli
+	* [r527] ckeditor_fonctions.php: nettoyage (suite)
+	* [r526] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: copyright
+	* [r525] ckeditor_fonctions.php: nettoyage de code, utilisation de
+	  json_encode, suppression de la fonction batarde : ckeditor_jsT
+
+2011-03-03  fredlefred
+
+	* [r524] ckeditor_fonctions.php: commentaires, +fix à propos des
+	  formats
+	* [r523] ckeditor_fonctions.php, inc/ckeditor_constantes.php,
+	  inc/ckeditor_tools.php: nettoyage du code d'insersion des smileys
+	* [r522] ckeditor_fonctions.php, inc/ckeditor_tools.php: gestion
+	  correct des mots et des groupes de mots, le plugin spipdoc n'est
+	  plus activé que s'il est autorisé
+	* [r521] ckeditor_fonctions.php: oups, revert
+	* [r520] ckeditor_fonctions.php: nettoyage de code
+	* [r519] ckeditor_fonctions.php, inc/ckeditor_constantes.php,
+	  inc/toolbars.php: révision de l'heuristique de calcul des tailles
+	  de barre d'outils
+
+2011-03-02  fredlefred
+
+	* [r518] ckeditor4spip.js.html, formulaires/ckf.php,
+	  inc/ckeditor_tools.php: gestion correcte de l'insertion de
+	  l'éditeur (en particulier du bouton permettant de changer de mode
+	  d'édition) -- pour l'instant c'est inutile, mais j'espère pouvoir
+	  utiliser ckeditor avec d'autres champs (champs extra, crayons
+	  ...)
+	* [r517] ckeditor_fonctions.php, filebrowser.html,
+	  formulaires/ckb.html, formulaires/ckg.html,
+	  inc/ckeditor_constantes.php, inc/ckeditor_lire_config.php[ADD],
+	  inc/ckeditor_tools.php, spip-styles.html: on met lire_config dans
+	  un fichier à part, pour permettre à ckeditor_constantes de
+	  l'utiliser sans problème d'inclusion récursive (tools inclu
+	  constante qui inclu tools ...)
+
+2011-03-01  fredlefred
+
+	* [r516] ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js,
+	  ckeditor-plugin/spipmodeles/plugin.js,
+	  inc/ckeditor_constantes.php: modification du plugin spipmodeles
+	  pour tenir compte de l'absence de 'xx' et 'XX' dans les noms de
+	  modeles
+	* [r515] formulaires/ckc.php, formulaires/ckh.php,
+	  inc/ckeditor_constantes.php, inc/ckeditor_tools.php: valeur par
+	  défaut des protectedtags restauré (la valeur, pas la constante)
+	* [r514] formulaires/ckc.html, formulaires/ckc.php,
+	  formulaires/ckh.html, formulaires/ckh.php,
+	  inc/ckeditor_tools.php: la valeur "ckeditor/protectedtags" est
+	  maintenant une valeur calculée d'apres "ckeditor/tags" (sa
+	  modification met toutefois ckeditor/tags à jour.
+
+2011-02-28  fredlefred
+
+	* [r513] ckeditor_fonctions.php, formulaires/ckc.html,
+	  formulaires/ckc.php, inc/ckeditor_tools.php: fix: bug
+	  réinitialisation perpétuelle, valeur par défaut non gérées par
+	  CFG
+	* [r512] ckeditor_fonctions.php: gestion de la valeur par défaut
+	  protectedtags (permet au plugin spipmodeles de fonctionner sans
+	  configuration particulière)
+	* [r511] ckeditor_fonctions.php, formulaires/cke.html,
+	  formulaires/cke.php, inc/ckeditor_constantes.php,
+	  lang/ckeditor_fr.php: on peut maintenant choisir la class css des
+	  éléments insérés via le menu déroulant formats
+	* [r510] formulaires/ckh.html: meilleure gestion des colonnes de
+	  "div" (il manquait des clear:left)
+	* [r509] ChangeLog.txt, ckeditor-plugin/spipmodeles/plugin.js,
+	  ckeditor-plugin/spipsave/plugin.js, ckeditor_fonctions.php,
+	  inc/toolbars.php, lang/ckeditor_fr.php: les plugins ckeditor ne
+	  sont plus chargé que s'ils sont utilisé, renommage cohérents des
+	  sus-dits plugins
+
+2011-02-27  fredlefred
+
+	* [r508] lang/ckeditor_fr.php: meilleure intitulé pour "combo"
+
+2011-02-26  fredlefred
+
+	* [r507] formulaires/ckh.html: fix: problème lié à certaines
+	  versions de IE (pas vérifié)
+	* [r506] ckeditor_fonctions.php: fix: bug liés aux modèles de
+	  documents et à la nouvelle façon de préciser les paramètres à
+	  ckeditor (possibilité de surcharger la configuration)
+	* [r505] formulaires/ckh.html: fix: problème des accents dans les
+	  dialogues javascript (alert, confirm et prompt)
+
+2011-02-25  fredlefred
+
+	* [r504] ChangeLog.txt, formulaires/ckh.html, lang/ckeditor_fr.php:
+	  affichage qu'il n'y aucun parametre (reste un bug d'affichage des
+	  accents, dans les dialogues js)
+	* [r503] formulaires/ckh.html, formulaires/ckh.php,
+	  lang/ckeditor_fr.php: mauvais nom de champs (fix: impossibilité
+	  de créer un nouveau modèle)
+	* [r502] formulaires/ckh.html, lang/ckeditor_fr.php: meilleure
+	  description
+	* [r501] ChangeLog.txt, lang/ckeditor_fr.php: confusion entre les
+	  deux type de modèles : 'modèle spip' et 'modèle de documents
+	  ckeditor'
+	* [r500] fonds/cfg_ckeditor.html: oubli d'un lien
+	* [r499] ckeditor-plugin/spipmodeles[ADD],
+	  ckeditor-plugin/spipmodeles/dialogs[ADD],
+	  ckeditor-plugin/spipmodeles/dialogs/spipmodeles.js[ADD],
+	  ckeditor-plugin/spipmodeles/lang[ADD],
+	  ckeditor-plugin/spipmodeles/lang/fr.js[ADD],
+	  ckeditor-plugin/spipmodeles/plugin.js[ADD],
+	  ckeditor_fonctions.php, fonds/cfg_ckeditor_b.html,
+	  fonds/cfg_ckeditor_c.html, fonds/cfg_ckeditor_d.html,
+	  fonds/cfg_ckeditor_e.html, fonds/cfg_ckeditor_f.html,
+	  fonds/cfg_ckeditor_g.html, fonds/cfg_ckeditor_h.html[ADD],
+	  formulaires/ckc.html, formulaires/ckh.html[ADD],
+	  formulaires/ckh.php[ADD], inc/toolbars.php, lang/ckeditor_fr.php,
+	  spiplistes-json.html[ADD]: gestion des modèles spip (préview : à
+	  tester)
+
+2011-02-22  fredlefred
+
+	* [r498] ckeditor_fonctions.php: nettoyage du fix (étape 2 :
+	  réorganisation des initialisations)
+	* [r497] ckeditor_fonctions.php: nettoyage du fix (étape 1)
+	* [r496] ckeditor4spip.js.html, ckeditor_fonctions.php: fix:
+	  problème de détection du plugin itérateur via le squelette, c'est
+	  php qui le fait maintenant
+
+2011-02-21  fredlefred
+
+	* [r495] formulaires/ckc.html: fix:la réinitialisation du plugin
+	  affichait la page avec les valeurs précédemment entrée (problème
+	  en cache du navigateur/ajax)
+	* [r494] ckeditor_fonctions.php: mise en place d'une fonction
+	  surchargeable pour modifier la configuration du plugin
+	* [r493] lang/ckeditor_fr.php: typo
+
+2011-02-20  fredlefred
+
+	* [r492] ckeditor_fonctions.php: préparation d'un pipeline
+	  permettant de modifier la configuration de ckeditor
+
+2011-02-17  fredlefred
+
+	* [r491] ChangeLog.txt: mise à jour du changelog
+	* [r490] plugin.xml: c'est une version majeure
+
+2011-02-17  manu@netbsd.org
+
+	* [r489] inc/ckeditor_constantes.php, lang/ckeditor_fr.php,
+	  plugin.xml: HTML2SPIP 0.3 apporte - correction d'un bug dans la
+	  reconversion des tableaux avec description, ou un espace malvenu
+	  etait insere en fin de ligne - gestion des puces simples
+
+2011-02-16  fredlefred
+
+	* [r488] inc/ckeditor_tools.php: on n'active les outils de découpe
+	  en onglet que s'il sont actifs dans le couteau suisse
+	* [r487] inc/ckeditor_tools.php: gestion des sauts de page
+	* [r486] lang/ckeditor_fr.php: meilleur description d'une fonction
+
+2011-02-14  fredlefred
+
+	* [r485] inc/ckeditor_tools.php: revert en partie r478 (il faut
+	  quand même faire les traiements, même si on laisse la partie
+	  "liste" à html2spip)
+	* [r484] inc/ckeditor_tools.php: fix: mailcrypt cassait les liens,
+	  c'est réparé
+
+2011-02-14  manu@netbsd.org
+
+	* [r483] formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, inc/ckeditor_tools.php,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php,
+	  plugin.xml: - html2spip-0.2 + supporte les <del> et <strike> +
+	  gere <code>, <cadre>, <quote>, et <poesie> + correction d'un bug
+	  sur les fins de listes a puces + les tags inchanges sont
+	  configurables
+	  
+	  - Formulaire CFG pour configurer les tags intouches par HTML2SPIP
+
+2011-02-14  fredlefred
+
+	* [r482] lang/ckeditor_fr.php: accents oubliés
+	* [r481] formulaires/ckc.html: typo
+	* [r480] ChangeLog.txt, lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: mise à jour des traductions manquantes
+	* [r479] formulaires/ckb.html, inc/toolbars.php,
+	  lang/ckeditor_fr.php: matérialisation des fonctionnalités zappé
+	  par html2spip_limite (le bouton) : dans le formulaire de
+	  configuration des boutons, les boutons désactivés sont affichés
+	  'disabled' en gris avec une infobulle
+
+2011-02-13  fredlefred
+
+	* [r478] ckeditor_fonctions.php, formulaires/ckb.html,
+	  formulaires/ckb.php, formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, inc/toolbars.php,
+	  lang/ckeditor_fr.php: une options pour ne pas utiliser les
+	  boutons de ckeditor dont l'effet est zappé par html2spip
+
+2011-02-13  manu@netbsd.org
+
+	* [r477] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: Precision sur les balises epargnees par la
+	  librairie html2spip: embed, param, script, object
+	* [r476] inc/ckeditor_tools.php: Suppression des traitements de
+	  reconversion HTML vers typo SPIP qui font double emploi avec la
+	  librairie HTML2SPIP. Modification approuvee par Fred.
+	  
+	  NB: il y a une regression sur <del> et <strike>, que la librairie
+	  HTML2SPIP-0.1 supprime purement et simplement. Une version 0.2 va
+	  venir rapidement pour corriger ce probleme.
+
+2011-02-13  fredlefred
+
+	* [r475] ChangeLog.txt, lang/ckeditor_fr.php: meilleur description
+	* [r474] formulaires/ckc.html, inc/ckeditor_constantes.php,
+	  inc/ckeditor_tools.php, lang/ckeditor_fr.php, plugin.xml:
+	  vérification de la présence d'html2spip pour proposer les options
+	  et affichage d'un message d'avertissement si la librairie n'est
+	  pas trouvée
+	* [r473] ckeditor4spip.js.html, ckeditor_options.php,
+	  lang/ckeditor_fr.php: possibilité de décrire les contextes
+	* [r472] ckeditor4spip.js.html, ckeditor_options.php,
+	  formulaires/ckc.html, formulaires/ckc.php, lang/ckeditor_fr.php:
+	  possibilité d'avoir une liste déroulante de contexte
+	  (identifiants CSS ou classes CSS) appliqués au <body> de
+	  l'éditeur pour voir des changements de contexte.
+	* [r471] inc/ckeditor_tools.php: fix: bug avec les tag fermants
+	  (par exemple pour échapper <multi> et </multi>)
+	* [r470] inc/ckeditor_tools.php: gestion correcte de la valeur par
+	  défaut (au cas ou on souhaite que la valeur par défaut devienne
+	  true)
+
+2011-02-13  manu@netbsd.org
+
+	* [r469] inc/ckeditor_tools.php: Prerserver l'alignement des
+	  modeles: <img1> reste <img1> (au lieu de devenit <img1|center>)
+	* [r468] inc/ckeditor_tools.php: Preserver les liens avec titre,
+	  ex: [texte|titre->http://www.example.net] NB: il ne semble pas
+	  possible d'editer le titre depuis ckeditor, mais si le titre
+	  existe, ou si il a ete introduit pas copier/coller, il sera
+	  preserve.
+	* [r467] inc/ckeditor_tools.php: Traiter correctement les modeles
+	  sans options, tel que <img1>
+	* [r466] inc/ckeditor_tools.php: Protection des modeles SPIP
+	  pendant le traitement de HTML2SPIP
+
+2011-02-12  fredlefred
+
+	* [r465] ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor_fonctions.php: url plus générique (pour les plugins)
+
+2011-02-12  manu@netbsd.org
+
+	* [r464] formulaires/ckc.html, formulaires/ckc.php,
+	  inc/ckeditor_constantes.php, inc/ckeditor_tools.php,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php,
+	  plugin.xml: Formulaire d'activation de html2spip, et branchement
+	  conditionnel de la librairie. NB: il reste pas mal de garde fous
+	  a installer pour que cela soit fiable
+	* [r463] inc/ckeditor_tools.php: Fonctions de surcharge pre et post
+	  conversions html2spip et spip2html ckeditor_html2spip_pre
+	  ckeditor_html2spip_post ckeditor_spip2html_pre
+	  ckeditor_spip2html_post
+
+2011-02-10  fredlefred
+
+	* [r462] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: suppression de
+	  tag inutile
+
+2011-02-08  fredlefred
+
+	* [r461] ckeditor_fonctions.php: et puis le bouton de parcourt de
+	  fichier : tout simplement oublié ... mea culpa
+	* [r460] ckeditor_fonctions.php: bouton upload pour les liens
+
+2011-02-07  fredlefred
+
+	* [r459] ChangeLog.txt, ckeditor_fonctions.php: fix: css du site
+	  non prise en compte (problème de priorité entre '=' et '? :' :
+	  utilisons des parenthèses !)
+	* [r458] ckeditor_fonctions.php, formulaires/cke.html,
+	  formulaires/cke.php, inc/ckeditor_tools.php,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php:
+	  gestion des couleurs proposées par les listes déroulante 'Couleur
+	  du texte' et 'Couleur de l'arrière plan'
+
+2011-02-06  fredlefred
+
+	* [r457] inc/ckeditor_tools.php: suppression de code déjà fait par
+	  'propre()'
+
+2011-02-05  fredlefred
+
+	* [r456] ChangeLog.txt, inc/ckeditor_tools.php: protection des
+	  notes de bas de page (avant elles étaient tout simplement
+	  remplacées par [<a href="#link">n</a>] ce qui est totalement
+	  stupide
+	* [r455] ckeditor-plugin/spip/dialogs/spip.js: simplification du js
+
+2011-02-04  fredlefred
+
+	* [r454] ChangeLog.txt, ckeditor_fonctions.php,
+	  formulaires/ckg.html, lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: si le bouton du plugin ne porte pas le même
+	  nom que le plugin, on peut maintenant préciser celui-ci
+	* [r453] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php, plugin.xml: mis à jour de traductions
+	  manquantes, affichage correct du numéro de version de spip
+	  requis, montée de version (beaucoup de nouveauté : gestions des
+	  modèles et des plugins pour ckeditor, compatibilité spip 2.1, 2,0
+	  et en prévision 2.2)
+	* [r452] plugin.xml: on repasse en version 2.0.9+ (testé)
+
+2011-02-03  fredlefred
+
+	* [r451] ckeditor_fonctions.php: on n'insere les boutons des
+	  plugins ckeditor que s'il y en a ... ça évitera des plantages
+	  d'IE
+	* [r450] ckeditor4spip.js.html, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_g.html, lang/ckeditor_fr.php, plugin.xml: ne
+	  nécessite => utilise pour le plugin itérateur (reste peut-etre un
+	  problème de cache à la désactivation du plugin iterateurs mais en
+	  vidant le cache ça marche)
+	* [r449] plugin.xml: correction de lien
+	* [r448] plugin.xml: ckeditor 3.5.1
+	* [r447] lang/ckeditor_fr.php: orthographe
+	* [r446] ckeditor4spip.js.html[CPY], ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor.html, fonds/cfg_ckeditor_b.html,
+	  fonds/cfg_ckeditor_c.html, fonds/cfg_ckeditor_d.html,
+	  fonds/cfg_ckeditor_e.html, fonds/cfg_ckeditor_f.html,
+	  fonds/cfg_ckeditor_g.html[ADD], formulaires/ckg.html[ADD],
+	  formulaires/ckg.php[ADD], inc/ckeditor_constantes.php,
+	  js/ckeditor4spip.js[DEL], lang/ckeditor_fr.php: gestion des
+	  plugins pour CKEditor (créer un dossier plugins/ckeditor et y
+	  décompresser les plugins), configuration via CFG
+
+2011-02-02  mehdi.cherifi@gmail.com
+
+	* [r445] plugin.xml: de retour sur ce plugin...que j'aime (comme
+	  SPIP et CKEditor)
+	  
+	  IMPORTANT : le plugin depuis la r378 n'est plus compatible avec
+	  les versions en dessous de 2.1.0 car le plugin iterateur
+	  nécessite obligatoirement SPIP 2.1.0
+	  
+	  aussi utilisation de la dernière version stable de CKEditor la
+	  3.5.1
+	  
+	  je propose Fred de créer 2 branches : - une branche pour SPIP
+	  2.0.9+ c'est le commit r377 et essayer de corrigé les bugs et
+	  autres défauts à partir de là comme on peut...selon les volontés
+	  de chacun... - une branche pour SPIP 2.1.0 (en fait la version
+	  actuelle) qui nécessite le plugin itérateur et de continuer à
+	  l'améliorer ainsi.
+	  
+	  - mettre à jour les fichiers de langues (à venir sur les 2
+	  branches).
+	  
+	  @+ Mehdi
+
+2011-02-01  fredlefred
+
+	* [r444] formulaires/ckf.html: simplification de la boucle 'ls' de
+	  parcourt des images de modeles
+
+2011-01-31  fredlefred
+
+	* [r443] formulaires/cke.php: bug: les styles n'étaient pas
+	  enregistrés
+	* [r442] inc/ckeditor_tools.php: gestion des liens à options
+	  (target, style et autres)
+	* [r441] ChangeLog.txt, js/ckeditor4spip.js: meilleur code
+	  (chainage jquery au lieu d'appels multiples)
+
+2011-01-30  fredlefred
+
+	* [r440] inc/ckeditor_tools.php: fix: si plusieurs paramètre de
+	  documents spip étaient passés le | était urlencodé
+	* [r439] js/ckeditor4spip.js: nommage plus cohérent
+	* [r438] ChangeLog.txt, inc/ckeditor_tools.php: suppression de la
+	  fonction ckeditor_canonize_path qui est devenu inutile (on
+	  utilise url_absolue)
+	* [r437] ckeditor_fonctions.php, inc/ckeditor_tools.php: on passe
+	  en url absolue (pour éviter les éventuels problmes de répertoires
+	  parents, d'url relatives etc ...), spipfication de <hr/>
+	* [r436] inc/ckeditor_tools.php: patch de
+	  http://www.spip-contrib.net/cy_altern pour éviter d'utiliser le
+	  couteau suisse quand il n'est pas présent
+	* [r435] ChangeLog.txt, inc/ckeditor_tools.php: gestion du style
+	  barré spip
+	* [r434] ChangeLog.txt, js/ckeditor4spip.js: fix: editeur
+	  disparaissant si le changement de mode est trop rapide (double
+	  click en particulier)
+	* [r433] ChangeLog.txt, inc/ckeditor_tools.php: on prévoit d'autre
+	  doctype que ceux actuellement gérés
+	* [r432] inc/ckeditor_tools.php: les paragraphes sont maintenant
+	  sauvegardé au format spip
+	* [r431] ChangeLog.txt, spiplinks-json.html: les liens vers les
+	  groupes de mots clés ne semble pas exister : on les supprime
+	* [r430] inc/ckeditor_tools.php, rubriques-links-json.html: les
+	  liens spip ne fonctionnaient plus tous
+
+2011-01-29  fredlefred
+
+	* [r429] ckeditor-plugin/spip/dialogs/spip.js: oubli
+	  d'initialisation de tableau
+	* [r428] articles-links-json.html, auteurs-links-json.html,
+	  breves-links-json.html, ckeditor-plugin/spip/dialogs/spip.js,
+	  groupemots-links-json.html, mots-links-json.html,
+	  rubriques-links-json.html: nouveau layout pour l'insertion de
+	  lien (plus hiérarchique je pense)
+	* [r427] ckeditor-plugin/spip/dialogs/spip.js: cosmétique: les
+	  sous-rubriques sont mieux affichées
+	* [r426] ChangeLog.txt, ckeditor-plugin/spip/dialogs/spip.js,
+	  spiplinks-json.html: nom plus parlant pour les différents select
+	* [r425] ckeditor-plugin/spip/dialogs/spip.js: pourquoi réinventer
+	  la roue ?
+	* [r424] ChangeLog.txt, ckeditor-plugin/spip/dialogs/spip.js:
+	  solution plus "légère"
+	* [r423] ChangeLog.txt, ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor_fonctions.php: fix: problème d'entités html à la place
+	  d'utf-8 dans le code js
+	* [r422] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: valeur par
+	  défaut 'centré' pour les documents (et pas 'non défini' : pour
+	  spip c'est centré par défaut)
+	* [r421] ChangeLog.txt, ckeditor_fonctions.php,
+	  inc/ckeditor_tools.php: fix: on met des url absolues pour les
+	  vignettes (pour éviter les problèmes)
+
+2011-01-28  fredlefred
+
+	* [r420] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: fix: problème
+	  de synchronisation des paramètres du dialog avec l'url
+
+2011-01-27  fredlefred
+
+	* [r419] ckeditor_options.php: oups
+	* [r418] ckeditor_options.php: éviter d'afficher des informations à
+	  propos de svn si on ne connait pas le numéro de révision
+	* [r417] lang/ckeditor_fr.php,
+	  modeles/inc-aucun-document.html[CPY],
+	  modeles/inc-aucune-image.html[DEL],
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-rubriques.html,
+	  modeles/inc-documents-tous.html: suppression de code inutile
+	* [r416] modeles/inc-aucun-flash.html[DEL]: suppression fichier
+	  inutile
+
+2011-01-26  fredlefred
+
+	* [r415] formulaires/ckc.html, formulaires/ckf.html, lang.inc.php,
+	  lang/ckeditor_fr.php: fix: les chaines de langues accentuées sont
+	  automatiquement traduites en entités html, feature: on demande
+	  avant de supprimer/réinitialiser
+	* [r414] ChangeLog.txt, formulaires/ckf.html, lang/ckeditor_fr.php:
+	  aide à la configuration du plugin
+	* [r413] ckeditor_fonctions.php, filebrowser.html,
+	  formulaires/ckb.html, inc/ckeditor_constantes.php,
+	  inc/ckeditor_tools.php, js/ckeditor4spip.js, spip-styles.html:
+	  fix: bug ie - et surement d'autres - ( ',' en trop en élément
+	  final d'un tableau), fix: valeur par défaut pas correctement
+	  utilisées
+
+2011-01-25  fredlefred
+
+	* [r412] formulaires/ckf.html: fix: si le modèle n'existe pas on ne
+	  peut pas l'éditer. fix: on n'insère l'éditeur que s'il y a
+	  quelque chose à éditer.
+	* [r411] formulaires/ckf.html: meilleur affichage des images de
+	  templates si elles plus petites que la taille prévue
+	* [r410] ChangeLog.txt, fonds/cfg_ckeditor_f.html: fix: comparaison
+	  large à la place d'une stricte
+	* [r409] fonds/cfg_ckeditor_f.html: on teste la présence du plugin
+	  itérareurs ou la version 2.2 de spip qui les contiendra aussi
+	* [r408] lang/ckeditor_ar.php, lang/ckeditor_en.php: mise à jour
+	  des traductions manquantes
+
+2011-01-24  fredlefred
+
+	* [r407] fonds/cfg_ckeditor_f.html, lang/ckeditor_fr.php,
+	  plugin.xml: les itérateurs ne sont plus une nécessité mais un
+	  plus : s'ils sont présents on peut utiliser les modèles
+	* [r406] ChangeLog.txt, ckeditor_fonctions.php,
+	  lang/ckeditor_fr.php, modeles/inc-documents-articles.html,
+	  modeles/inc-documents-rubriques.html,
+	  modeles/inc-documents-tous.html, select_documents.html: fix:bug
+	  la sélection d'un document provenant de tous les
+	  articles/rubriques ne fonctionnait plus, fix: depuis l'édition de
+	  modèle, on propose par défaut si c'est autorisé l'insertion
+	  provenant de tous les articles et rubriques
+	* [r405] ChangeLog.txt, ckeditor_fonctions.php: fix: bug prévisible
+	* [r404] ChangeLog.txt, ckeditor_fonctions.php,
+	  formulaires/ckf.html, js/ckeditor4spip.js: utilisation de
+	  ckeditor pour éditer les modèles
+	* [r403] formulaires/cka.html, formulaires/ckb.html,
+	  formulaires/ckc.html, formulaires/ckd.html, formulaires/cke.html,
+	  lang/ckeditor_fr.php: correction d'un typo qui cachait
+	  l'affichage de certaines traductions
+
+2011-01-23  fredlefred
+
+	* [r402] plugin.xml: montée de version
+	* [r401] modeles/inc-documents-rubriques.html[ADD],
+	  select_documents.html: application (et adapation:class CSS) du
+	  patch de manu0111 [manu chez espci fr] pour la sélection de
+	  documents dans une rubrique
+	* [r400] ChangeLog.txt, images/templates[ADD],
+	  images/templates/template1.gif[ADD],
+	  images/templates/template2.gif[ADD],
+	  images/templates/template3.gif[ADD],
+	  images/templates/template4.gif[ADD],
+	  images/templates/template5.gif[ADD],
+	  images/templates/template6.gif[ADD],
+	  images/templates/template7.gif[ADD]: images des templates
+	  oubliées
+	* [r399] ckeditor-plugin/spip/dialogs/spip.js: suppression d'un
+	  test inutile (car redondant)
+
+2011-01-22  fredlefred
+
+	* [r398] ChangeLog.txt, ckeditor-plugin/spip/dialogs/spip.js:
+	  nettoyage
+	* [r397] ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/fr.js, lang/ckeditor_fr.php,
+	  spiplinks-json.html[ADD]: simplification de l'ajout de type de
+	  liens spip
+	* [r396] auteurs-links-json.html[ADD],
+	  ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/fr.js: lien spip : auteurs
+	* [r395] ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/fr.js, groupemots-links-json.html[ADD],
+	  mots-links-json.html[ADD]: lien spip : groupe de mots et mot
+	* [r394] ckeditor-plugin/spip/dialogs/spip.js: oubli
+	* [r393] ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/fr.js: on factorise le code pour qu'il
+	  soit plus facile d'ajouter d'autre type de lien spip (objectif :
+	  mot, groupe de mot, auteur)
+
+2011-01-21  fredlefred
+
+	* [r392] ckeditor-plugin/spip/dialogs/spip.js: un appel de fonction
+	  en moins
+	* [r391] lang/ckeditor_fr.php: typo
+	* [r390] ckeditor-plugin/spip/dialogs/spip.js,
+	  rubriques-links-json.html: on laisse javascript gérer
+	  l'arboressence
+
+2011-01-20  fredlefred
+
+	* [r389] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor-plugin/spipdoc/lang/fr.js: chaines de langue oubliées
+	* [r388] ChangeLog.txt, filebrowser.html: champs alt='' vide
+	* [r387] filebrowser.html, js/selectdoc.js[DEL],
+	  select_documents.html: simplification du code js (en utilisant un
+	  peu de php)
+	* [r386] inc/ckeditor_constantes.php: constante inutilisée
+	* [r385] inc/ckeditor_constantes.php: meilleurs largeur par défaut
+	* [r384] inc/ckeditor_tools.php: on évite les requètes sql
+	  répétitives
+
+2011-01-19  fredlefred
+
+	* [r383] articles-links-json.html, breves-links-json.html,
+	  rubriques-links-json.html: fix : strip_tags oublié ou mal placé,
+	  et espace insécable
+	* [r382] ChangeLog.txt, filebrowser.html: oubli du charset
+	* [r381] ChangeLog.txt, templates.js.html: oubli du charset dans le
+	  header http
+	* [r380] rubriques-links-json.html: suppression du php dans le
+	  squelettes
+	* [r379] articles-links-json.html, breves-links-json.html,
+	  inc/toolbars.php, modeles/inc-aucune-image.html,
+	  templates.js.html: correction petits bugs divers
+	* [r378] plugin.xml: iterateurs est maintenant requis
+
+2011-01-17  fredlefred
+
+	* [r377] ChangeLog.txt, lang/ckeditor_ar.php, lang/ckeditor_en.php:
+	  mise à jour des traductions manquantes
+	* [r376] ckeditor_options.php: modification inutile oubliée
+	* [r375] fonds/cfg_ckeditor_f.html[ADD], formulaires/ckf.html[ADD],
+	  formulaires/ckf.php[ADD]: fichiers oubliés
+	* [r374] ChangeLog.txt, ckeditor_fonctions.php,
+	  ckeditor_options.php, fonds/cfg_ckeditor.html,
+	  fonds/cfg_ckeditor_b.html, fonds/cfg_ckeditor_c.html,
+	  fonds/cfg_ckeditor_d.html, fonds/cfg_ckeditor_e.html,
+	  lang/ckeditor_fr.php, templates.js.html[ADD]: gestion des
+	  modèles. configuration via CFG
+	* [r373] find-missing-trad.sh, lang.inc.php: correction du script
+	  find-missing-trad.sh (case insensitive, cas des clés présentes
+	  deux fois sur une ligne)
+
+2011-01-16  fredlefred
+
+	* [r372] ckeditor_fonctions.php: fix: ckeditor ne se charge plus
+	  car il ne trouve plus les plugins spip (lire_config(..., defaut)
+	  ne fonctionne pas comme je pense)
+
+2011-01-15  fredlefred
+
+	* [r371] ckeditor_options.php, fonds/cfg_ckeditor.html,
+	  fonds/cfg_ckeditor_b.html, fonds/cfg_ckeditor_c.html,
+	  fonds/cfg_ckeditor_d.html, fonds/cfg_ckeditor_e.html, plugin.xml:
+	  affichage correct du numéro de version svn dans les pages de
+	  configuration
+	* [r370] ChangeLog.txt, inc/json_encode.php: attribution de code
+	* [r369] ChangeLog.txt, setrev.sh[DEL], update-cl.sh[CPY]: meilleur
+	  nom pour setrev.sh qui ne sert qu'à mettre à jour le changelog
+	* [r368] formulaires/cka.php, formulaires/ckb.php,
+	  formulaires/ckc.php, formulaires/ckd.php, formulaires/cke.php:
+	  fix: les valeurs par défaut était les valeurs affichées
+	  systématiquement dans la configuration
+	* [r367] ckeditor_options.php, inc/json_encode.php[ADD]: fix :
+	  json_encode manquant pour les versions de php inférieures à 5.1.6
+
+2011-01-12  fredlefred
+
+	* [r366] spip-styles.html: oubli de la valeur par défaut pour les
+	  styles
+	* [r365] inc/ckeditor_constantes.php: on repasse ckeditor (packed
+	  version) : c'est plus rapide, la version _source c'est pour le
+	  débuggage
+	* [r364] ChangeLog.txt, formulaires/ckc.html, formulaires/ckc.php,
+	  lang/ckeditor_fr.php: bouton {réinitialiser le plugin} permettant
+	  de revenir aux valeurs par défaut (a priori pas stupides)
+	* [r363] ckeditor_fonctions.php, filebrowser.html,
+	  formulaires/cka.php, formulaires/ckb.html, formulaires/ckc.php,
+	  formulaires/ckd.php, formulaires/cke.php,
+	  inc/ckeditor_constantes.php[ADD], inc/ckeditor_tools.php,
+	  lang/ckeditor_fr.php, modeles/inc-documents-articles.html: mise à
+	  part des valeurs par défaut, respect des valeurs par défaut
+	* [r362] ckeditor_fonctions.php: début de la gestion des templates,
+	  et fix: bug modification de la date antérieure (merci:
+	  Pierre-Yves Cavellat)
+
+2011-01-10  fredlefred
+
+	* [r361] find-missing-trad.sh[ADD], lang.inc.php[ADD]: ajout d'un
+	  micro script pour chercher les traduction manquantes ou les
+	  messages oubliés
+	* [r360] plugin.xml: revision
+	* [r359] fonds/cfg_ckeditor_b.html, fonds/cfg_ckeditor_c.html,
+	  fonds/cfg_ckeditor_d.html, fonds/cfg_ckeditor_e.html: revision
+	* [r358] fonds/cfg_ckeditor.html: revision
+	* [r357] ChangeLog.txt, ckspip_convert.html, lang/ckeditor_fr.php:
+	  affichage d'un message d'erreur si la conversion est impossible
+	* [r356] ckeditor-plugin/spipsave[ADD],
+	  ckeditor-plugin/spipsave/plugin.js[ADD], ckeditor_fonctions.php,
+	  inc/toolbars.php, js/ckeditor4spip.js, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php: modification du
+	  plugin (ckeditor) permettant de sauver via le bouton ckeditor
+	  l'article.
+	* [r355] formulaires/ckd.html, formulaires/cke.html: mise en page
+	* [r354] js/ckeditor4spip.js: tentative de respecter un maximum les
+	  recommandations de JSLint
+
+2011-01-08  fredlefred
+
+	* [r353] formulaires/cka.php, formulaires/ckc.php,
+	  formulaires/ckd.php, formulaires/cke.php: fix php 5.3 requis =>
+	  php 5.1 requis
+
+2011-01-07  fredlefred
+
+	* [r352] formulaires/cka.php, formulaires/ckb.html,
+	  formulaires/ckc.php, formulaires/ckd.php, formulaires/cke.php,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php:
+	  fin de la CVT-ification / passage à la moulinette des fichiers de
+	  traduction à la recherche des chaines non traduites
+
+2011-01-04  fredlefred
+
+	* [r351] formulaires/cka.php, formulaires/ckb.php,
+	  formulaires/ckc.php, formulaires/ckd.php, formulaires/cke.php,
+	  lang/ckeditor_fr.php: initialisation des chaines d'informations
+	* [r350] ckeditor_fonctions.php, fonds/cfg_ckeditor.html[ADD],
+	  fonds/cfg_ckeditor_b.html[ADD], fonds/cfg_ckeditor_c.html[ADD],
+	  fonds/cfg_ckeditor_d.html[ADD], fonds/cfg_ckeditor_e.html[ADD],
+	  formulaires/cka.html, formulaires/cka.php[ADD],
+	  formulaires/ckb.php[ADD], formulaires/ckc.html,
+	  formulaires/ckc.php[ADD], formulaires/ckd.html,
+	  formulaires/ckd.php[ADD], formulaires/cke.html,
+	  formulaires/cke.php[ADD], inc/toolbars.php, lang/ckeditor_fr.php:
+	  suite de la CVT-ification des formulaires (avec les valeurs par
+	  défauts en particulier)
+
+2011-01-02  fredlefred
+
+	* [r349] ckeditor_fonctions.php: limitation des constantes magiques
+	* [r348] filebrowser.html: nettoyage
+	* [r347] ChangeLog.txt, formulaires/cke.html: cosmetique
+	* [r346] formulaires/ckc.html: cosmetique
+	* [r345] formulaires/cka.html: cosmetique
+	* [r344] formulaires/ckb.html: simplification du javascript
+	  (utilisation de jquery)
+
+2010-12-31  fredlefred
+
+	* [r343] inc/ckeditor_cfgtools.php: nettoyage
+	* [r342] ChangeLog.txt, ckeditor_fonctions.php: nettoyage
+
+2010-12-30  fredlefred
+
+	* [r341] formulaires/ckc.html: suppression de php inutile
+	* [r340] ckeditor_options.php, formulaires/ckc.html: suppression du
+	  php dans le formulaire 'onglet c'
+	* [r339] formulaires/cka.html, formulaires/cke.html,
+	  js/default-styles.js[DEL]: suppression d'un fichier inutile,
+	  utilisation correcte des styles prédéfinis
+	* [r338] formulaires/cka.html, formulaires/ckb.html,
+	  formulaires/ckc.html, formulaires/ckd.html, formulaires/cke.html:
+	  affichage des résultats de traitement, suppression du php inutile
+	  dans un des formulaires
+	* [r337] fonds/cfg_ckeditor_ongletA.html[DEL],
+	  fonds/cfg_ckeditor_ongletB.html[DEL],
+	  fonds/cfg_ckeditor_ongletC.html[DEL],
+	  fonds/cfg_ckeditor_ongletD.html[DEL],
+	  fonds/cfg_ckeditor_ongletE.html[DEL], formulaires[ADD],
+	  formulaires/cka.html[ADD], formulaires/ckb.html[ADD],
+	  formulaires/ckc.html[ADD], formulaires/ckd.html[ADD],
+	  formulaires/cke.html[ADD], lang/ckeditor_fr.php: CVT-ification
+	  des formulaires CFG (travail préliminaire)
+	* [r336] ChangeLog.txt, ckspip_convert.html,
+	  inc/ckeditor_tools.php, js/ckeditor4spip.js: simplification de
+	  code (dans la gestion des images) : en espérant qu'il n'y a pas
+	  de régression
+	* [r335] ChangeLog.txt, fonds/cfg_ckeditor_ongletC.html,
+	  lang/ckeditor_fr.php: correction autodétection de l'url du site.
+	  correction du texte d'aide à propos des polices
+
+2010-12-29  fredlefred
+
+	* [r334] fonds/cfg_ckeditor_ongletA.html, inc/ckeditor_tools.php,
+	  lang/ckeditor_fr.php: possibilité de choisir la taille des
+	  vignettes utilisées par CKEditor
+
+2010-12-28  fredlefred
+
+	* [r333] lang/ckeditor_fr.php: tracuction oubliée
+	* [r332] inc/ckeditor_tools.php: on stocke les listes au formats
+	  SPIP
+
+2010-12-27  fredlefred
+
+	* [r331] filebrowser.html: nettoyage et factorisation de code
+
+2010-12-26  fredlefred
+
+	* [r330] ckeditor_fonctions.php, filebrowser.html: utilisation de
+	  _request à la place $_GET
+
+2010-12-22  fredlefred
+
+	* [r329] css/filebrowser.css, css/selectdoc.css[DEL],
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, select_documents.html: affichage
+	  consistant entres les différents navigateurs de fichiers
+	* [r328] lang/ckeditor_fr.php: entitées oubliées
+	* [r327] fonds/cfg_ckeditor_ongletD.html, lang/ckeditor_fr.php:
+	  traduction oubliée, erreur de typographie.
+	* [r326] lang/ckeditor_fr.php: entités manquantes
+	* [r325] ChangeLog.txt, fonds/cfg_ckeditor_ongletB.html,
+	  lang/ckeditor_fr.php: traduction des noms de boutons des barres
+	  des taches (fr)
+	* [r324] ChangeLog.txt, ckeditor_cfgtools.php[DEL],
+	  ckeditor_fonctions.php, ckeditor_tools.php[DEL],
+	  ckspip_convert.html, fonds/cfg_ckeditor_ongletB.html,
+	  fonds/cfg_ckeditor_ongletE.html, inc[ADD],
+	  inc/ckeditor_cfgtools.php[ADD], inc/ckeditor_tools.php[ADD],
+	  inc/toolbars.php[ADD], spip-styles.html, toolbars.php[DEL]:
+	  réorganisation : déplacement des includes dans un sous répertoire
+	* [r323] css[ADD], css/filebrowser.css[ADD],
+	  css/selectdoc.css[ADD], filebrowser.css[DEL], filebrowser.html,
+	  select_documents.html, selectdoc.css[DEL]: réorganisation :
+	  déplacement des fichiers css dans un sous répertoire
+	* [r322] ckeditor4spip.js[DEL], ckeditor_fonctions.php,
+	  default-styles.js[DEL], fonds/cfg_ckeditor_ongletE.html, js[ADD],
+	  js/ckeditor4spip.js[ADD], js/default-styles.js[ADD],
+	  js/selectdoc.js[ADD], select_documents.html, selectdoc.js[DEL]:
+	  réorganisation : déplacement des fichiers js dans un sous
+	  répertoire
+	* [r321] ckspip-icone.png[DEL], ckspip-logo.png[DEL],
+	  document-new.png[DEL], filebrowser.html, folder-new.png[DEL],
+	  folder.png[DEL], fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html, images[ADD],
+	  images/ckspip-icone.png[ADD], images/ckspip-logo.png[ADD],
+	  images/document-new.png[ADD], images/folder-new.png[ADD],
+	  images/folder.png[ADD], plugin.xml: réorganisation : déplacement
+	  des images dans un sous répertoire
+
+2010-12-21  fredlefred
+
+	* [r320] ChangeLog.txt, filebrowser.css: minification du css
+	* [r319] ChangeLog.txt, ckeditor_fonctions.php, filebrowser.css,
+	  filebrowser.html: cosmetique
+
+2010-12-20  fredlefred
+
+	* [r318] filebrowser.css, filebrowser.html: cosmetique
+	* [r317] document-new.png[ADD], filebrowser.css, filebrowser.html,
+	  folder-new.png[ADD], lang/ckeditor_fr.php: utilisation d'icones
+	  intégrée à la navigation pour l'upload de document et la création
+	  de répertoire
+	* [r316] filebrowser.css, filebrowser.html, folder.png[ADD]: icone
+	  répertoir + fix : un / oublié
+	* [r315] filebrowser.css, filebrowser.html: cosmetique
+	* [r314] filebrowser.html: création de répertoire inutile (on
+	  utilise les vignettes normales de spip)
+	* [r313] filebrowser.css, filebrowser.html: aperçu des images dans
+	  le filebrowser intégré
+
+2010-12-19  fredlefred
+
+	* [r312] ChangeLog.txt, ckeditor_fonctions.php: nettoyage,
+	  factorisation
+	* [r311] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletE.html, lang/ckeditor_fr.php:
+	  possibilité de choisir si les css sont insérées dans la partie
+	  publique et/ou la partie privée
+	* [r310] fonds/cfg_ckeditor_ongletB.html,
+	  fonds/cfg_ckeditor_ongletC.html, fonds/cfg_ckeditor_ongletD.html,
+	  fonds/cfg_ckeditor_ongletE.html: seuls les webmestres sont
+	  autorisés à modifier les paramètres avancés
+	* [r309] ChangeLog.txt, fonds/cfg_ckeditor_ongletE.html,
+	  lang/ckeditor_fr.php: cosmetique dans la configuration onglet E
+
+2010-12-18  fredlefred
+
+	* [r308] ChangeLog.txt, lang/ckeditor_fr.php: avertissement à
+	  propos de l'insertion de css.
+	* [r307] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletE.html, lang/ckeditor_fr.php, setrev.sh:
+	  l'utlisation des fontkits devient optinnelle
+	* [r306] ckeditor_fonctions.php: on evite l'affichage inutile d'un
+	  warning
+	* [r305] ckeditor_fonctions.php: simplification
+	* [r304] ckeditor_fonctions.php, plugin.xml: on insere les css qui
+	  permettent de voir les polices utilisé par ckeditor dans les
+	  articles (partie privé et publique)
+	* [r303] ChangeLog.txt, ckeditor_fonctions.php: homonymie malvenue
+	* [r302] ckeditor_fonctions.php: travail préliminaire pour
+	  l'utilisation des web-polices de squirrel font (il suffit de
+	  décompresser les polices-kits dans IMG/FontKits/<nom du kit>
+
+2010-12-17  fredlefred
+
+	* [r301] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml,
+	  toolbars.php: maj ckeditor 3.5
+
+2010-12-16  fredlefred
+
+	* [r300] ChangeLog.txt, ckeditor_fonctions.php: nettoyage
+	* [r299] ckeditor_fonctions.php: nettoyage
+	* [r298] ckeditor_fonctions.php: initialisation de $_SESSION
+	  uniquement si kcfinder est utilisé (+légère compression du js)
+
+2010-12-15  fredlefred
+
+	* [r297] ckeditor4spip.js, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletE.html, lang/ckeditor_fr.php: nettoyage
+	  du js de ckeditor4spip.js, utilisation des polices webfonts
+	* [r296] ckeditor_fonctions.php: retour au javascript externe même
+	  pour ie
+	* [r295] plugin.xml: kcfinder n'est pas obligatoire
+
+2010-12-14  fredlefred
+
+	* [r294] fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html,
+	  fonds/cfg_ckeditor_ongletE.html[ADD], lang/ckeditor_fr.php:
+	  réorganisation de la configuration
+
+2010-12-13  fredlefred
+
+	* [r293] ChangeLog.txt: maj changelog
+	* [r292] plugin.xml, setrev.sh: révision automatique (bis repetita)
+	* [r291] ckeditor_options.php: ne démarre une session que si
+	  kcfinder est utilisé
+	* [r290] ckeditor_fonctions.php, ckeditor_tools.php: nettoyage,
+	  simplification du js
+	* [r289] ckeditor_fonctions.php: cosmetique
+	* [r288] lang/ckeditor_fr.php: erreur dans les entitées html
+	* [r287] articles-links.html[DEL], breves-links.html[DEL],
+	  ckeditor_tools.php, rubriques-links.html[DEL]: suppression de
+	  fichiers devenus inutiles
+
+2010-12-11  fredlefred
+
+	* [r286] ckeditor_fonctions.php: fix le bug sur ie (et probablement
+	  certaine version d'opera) dont un workaround avait été
+	  précédemment trouvé ('class' à la place de class)
+	* [r285] ChangeLog.txt, articles-links-json.html[ADD],
+	  breves-links-json.html[ADD],
+	  ckeditor-plugin/spip/dialogs/spip.js, ckeditor4spip.js,
+	  ckeditor_fonctions.php, plugin.xml,
+	  rubriques-links-json.html[ADD], setrev.sh: workaround ie bug (les
+	  formats ne fonctionnent pas avec ie), + utilisation de json
+
+2010-12-08  jpyrat
+
+	* [r284] ckeditor_options.php: Ne pas démarrer de session si elle
+	  est déjà démarrée.
+
+2010-12-08  fredlefred
+
+	* [r283] ckeditor_fonctions.php, filebrowser.html: possibilité
+	  d'uploader directement des images/flash avec le browser instégré
+
+2010-12-07  fredlefred
+
+	* [r282] filebrowser.html, lang/ckeditor_fr.php: oubli d'une autre
+	  chaîne d'internationnalisation.
+	* [r281] ckeditor4spip.js, filebrowser.html, lang/ckeditor_fr.php:
+	  oubli d'une chaine d'internationnalisation
+
+2010-12-06  fredlefred
+
+	* [r280] ckeditor_options.php: nettoyage
+	* [r279] ckeditor_fonctions.php: factorisation de code
+	* [r278] ckeditor_fonctions.php: simplification
+	* [r277] ckeditor_fonctions.php: suppression d'une regex totalement
+	  inutile
+	* [r276] ckeditor_fonctions.php: initialisation
+	* [r275] filebrowser.html: le filebrowser intégré permet tout ce
+	  que permet kcfinder au niveau configuration
+	* [r274] ckeditor4spip.js: nettoyage
+	* [r273] ckeditor4spip.js, ckeditor_fonctions.php,
+	  ckeditor_tools.php: divers fix, et nettoyage (dont un bug qui
+	  empechait le passage ckeditor => spipeditor)
+	* [r272] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletC.html,
+	  lang/ckeditor_fr.php: autorise l'upload direct via kcfinder si
+	  c'est le choix de configuration
+	* [r271] ckeditor_fonctions.php, ckeditor_tools.php: nettoyage de
+	  code
+	* [r270] ckeditor4spip.js, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php: lien vers
+	  'UserFiles/Files' depuis le dialogue 'Image/Lien', choix par
+	  défaut plus éclairé dans le dialogue 'configuration avancé'
+	* [r269] ckeditor4spip.js: pretty print
+	* [r268] ckeditor-plugin/spip/dialogs/spip.js, ckeditor4spip.js,
+	  ckeditor_fonctions.php: jQuerysation presque complète + multiples
+	  fix pour IE (qui j'espère fonctionnent)
+
+2010-12-05  fredlefred
+
+	* [r267] ckeditor4spip.js, ckeditor_fonctions.php: divers nettoyage
+	  (qui j'espère fixe un bug sur ie7, mais je n'ai pas ie7)
+
+2010-12-02  fredlefred
+
+	* [r266] ckeditor_options.php[ADD], plugin.xml: oubli d'un fichier
+	* [r265] ckeditor_fonctions.php, ckeditor_tools.php,
+	  filebrowser.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html, lang/ckeditor_fr.php,
+	  plugin.xml: utilisation de kcfinder (s'il est présent) pour
+	  parcourir des dossiers et y uploder des images/flash
+
+2010-11-25  fredlefred
+
+	* [r264] ckeditor4spip.js: empeche la saisie durant les phases de
+	  traduction html<=>spip
+	* [r263] ckeditor_tools.php, plugin.xml: oubli de l'alignement à
+	  droite des images
+	* [r262] ckeditor4spip.js, ckeditor_fonctions.php,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php:
+	  nettoyage
+
+2010-11-24  fredlefred
+
+	* [r261] filebrowser.html, plugin.xml: utilisation de #CHEMIN
+	* [r260] install_ckplug.html[DEL]: fichier devenu inutile : on
+	  n'installe plus les plugins spip pour ckeditor
+	* [r259] breves-links.html: oubli
+	* [r258] ChangeLog.txt, plugin.xml, select_documents.html:
+	  nettoyage
+	* [r257] ckeditor-plugin/spip/plugin.js, ckeditor4spip.js: déport
+	  du chargement d'ajax en dehors du plugin spip pour ckeditor (au
+	  cas où une nouvelle version intègrerait enfin core/ajax, comme le
+	  laisse entendre la doc)
+	* [r256] ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/plugin.js: simplification de code
+	  (utilisation du code inclu dans ckeditor)
+	* [r255] ckeditor4spip.js, ckeditor_fonctions.php,
+	  ckeditor_tools.php, filebrowser.html,
+	  fonds/cfg_ckeditor_ongletA.html: suppression de la nécessité de
+	  droits en écriture dans lib/ckeditor/plugins : les plugins ne
+	  sont plus installé dans l'arbre de ckeditor mais de maniere
+	  distante depuis le plugin spip
+
+2010-11-21  fredlefred
+
+	* [r254] ckeditor4spip.js: meilleur compatibilité avec le
+	  porteplume
+
+2010-11-17  fredlefred
+
+	* [r253] ckeditor_fonctions.php: correction (j'espère) d'un bug lié
+	  à la 'mauvaise' configuration du serveur
+
+2010-11-15  fredlefred
+
+	* [r252] ckeditor_tools.php: fix : bug ';' finaux dans la liste des
+	  tags spip autorisés
+
+2010-11-13  fredlefred
+
+	* [r251] ckeditor-plugin/spip/lang/ar.js,
+	  ckeditor-plugin/spip/lang/en.js,
+	  ckeditor-plugin/spipdoc/lang/ar.js,
+	  ckeditor-plugin/spipdoc/lang/en.js, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php: assignation des copyrights des traductions
+	* [r250] gpl-2.0.txt[ADD]: téléchargement de la license
+	* [r249] articles-links.html, breves-links.html,
+	  ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/ar.js, ckeditor-plugin/spip/lang/en.js,
+	  ckeditor-plugin/spip/lang/fr.js, ckeditor-plugin/spip/plugin.js,
+	  ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor-plugin/spipdoc/lang/ar.js,
+	  ckeditor-plugin/spipdoc/lang/en.js,
+	  ckeditor-plugin/spipdoc/lang/fr.js,
+	  ckeditor-plugin/spipdoc/plugin.js, ckeditor4spip.js,
+	  ckeditor_cfgtools.php, ckeditor_fonctions.php,
+	  ckeditor_tools.php, ckspip_convert.html, default-styles.js,
+	  filebrowser.html, fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html, install_ckplug.html,
+	  modeles/inc-aucun-flash.html, modeles/inc-aucune-image.html,
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, rubriques-links.html,
+	  select_documents.html, selectdoc.js, spip-styles.html,
+	  toolbars.php: assignation de license
+	* [r248] articles-links.html, breves-links.html,
+	  ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/plugin.js,
+	  ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor-plugin/spipdoc/plugin.js, ckeditor4spip.js,
+	  ckeditor_cfgtools.php, ckeditor_fonctions.php,
+	  ckeditor_tools.php, ckspip_convert.html, default-styles.js,
+	  filebrowser.html, fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html, install_ckplug.html,
+	  modeles/inc-aucun-flash.html, modeles/inc-aucune-image.html,
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, rubriques-links.html,
+	  select_documents.html, selectdoc.js, spip-styles.html,
+	  toolbars.php: assignation de copyright
+	* [r247] fonds/cfg_ckeditor_ongletA.html: oubli du numéro de
+	  révision
+	* [r246] ckeditor_fonctions.php: typo
+	* [r245] ckeditor_fonctions.php, plugin.xml: mise à jour numéro de
+	  version et révision automatique
+	* [r244] ckeditor_fonctions.php, plugin.xml: révision automatique
+	* [r243] ckeditor_fonctions.php,
+	  modeles/inc-documents-articles.html, plugin.xml,
+	  select_documents.html: fix bug empèchant d'afficher tous les
+	  documents spip
+	* [r242] ChangeLog.txt, ckeditor4spip.js, ckeditor_fonctions.php,
+	  plugin.xml: nettoyage
+
+2010-11-12  fredlefred
+
+	* [r241] ckeditor_fonctions.php: on poursuit le nettoyage
+	* [r240] ckeditor_fonctions.php: nettoyage
+	* [r239] ckeditor4spip.js[ADD], ckeditor_fonctions.php: utilisation
+	  d'un fichier contenant le javascript plutot que d'écrire le
+	  javascript dans le pipeline (permet la mise en cache pas le
+	  navigateur et d'autres optimisations par spip)
+
+2010-11-11  fredlefred
+
+	* [r238] ckeditor_fonctions.php: affichage plus 'doux' de l'éditeur
+	  (problème de synchronisation avec l'apparition du porte plume)
+	* [r237] ckeditor_fonctions.php, plugin.xml: nettoyage (suite)
+	* [r236] ckeditor_fonctions.php: suppression d'une regex inutile
+	* [r235] ckeditor_fonctions.php: erreur stupide
+
+2010-11-10  fredlefred
+
+	* [r234] ckeditor_fonctions.php: modification trop rapide
+	* [r233] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletA.html:
+	  l'installation (et le test de cette installation) n'est plus
+	  effectuée que dans la page de configuration du plugin
+	* [r232] ckeditor_fonctions.php: nettoyage
+	* [r231] ckeditor_fonctions.php: nettoyage
+	* [r230] ckeditor_fonctions.php, plugin.xml: suppression d'un
+	  pipeline inutile
+	* [r229] ChangeLog.txt, articles-links.html, breves-links.html,
+	  ckeditor_fonctions.php, plugin.xml, rubriques-links.html,
+	  spip-styles.html: headers oubliés
+
+2010-11-07  fredlefred
+
+	* [r228] ckeditor_fonctions.php, ckeditor_tools.php,
+	  filebrowser.html, plugin.xml: * ckeditor 3.4.2 * fix : warnings
+	  inutile * contantes plus cohérentes
+
+2010-11-02  fredlefred
+
+	* [r227] fonds/cfg_ckeditor_ongletD.html: fix : simplification trop
+	  rapide
+
+2010-11-01  fredlefred
+
+	* [r226] spip-styles.html[ADD]: fichier oublié
+	* [r225] spip-styles.js[DEL]: fichiers devenu inutile
+	* [r224] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletD.html:
+	  suppression de la nécessité d'écriture dans lib/ckeditor (ne
+	  reste plus que la nécessité de pouvoir écrire dans
+	  lib/ckeditor/plugins pour copier les plugin spip pour ckeditor)
+	* [r223] ckeditor_fonctions.php, filebrowser.css[ADD],
+	  filebrowser.html[ADD], spipfilebrowser[DEL]: suppression de la
+	  nécessité des droits en écriture dans le répertoire du plugin,
+	  reste la nécessité de droits en écriture dans le répertoire
+	  lib/ckeditor/
+	* [r222] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletD.html:
+	  on limite la nécessité d'accès en écriture au répertoire du
+	  plugins
+
+2010-10-29  fredlefred
+
+	* [r221] ckeditor_tools.php: fix issue 25
+	* [r220] fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php,
+	  spipfilebrowser/index.php: gestion des droits de création de
+	  répertoire
+	* [r219] ckeditor_fonctions.php, spipfilebrowser/index.php,
+	  spipfilebrowser/style.css: cosmetique (lien => bouton) creation
+	  de répertoire (à régler : autorisation)
+	* [r218] spipfilebrowser/index.php: propose d'utiliser le fichier
+	  récemment uploader comme image.
+
+2010-10-28  fredlefred
+
+	* [r217] ckeditor_fonctions.php, lang/ckeditor_fr.php, plugin.xml,
+	  spipfilebrowser/index.php: préparation au travail
+	  d'internationnalisation
+	* [r216] fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php:
+	  preparation du travail d'internationnalisation
+	* [r215] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml: maj
+	  version
+	* [r214] spipfilebrowser/index.php: fix: oubli d'un '/'
+
+2010-10-27  fredlefred
+
+	* [r213] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletC.html,
+	  lang/ckeditor_fr.php, spipfilebrowser/config.php,
+	  spipfilebrowser/index.php: vérification des droits d'upload,
+	  configuration de ceux-ci
+	* [r212] ckeditor_fonctions.php, plugin.xml,
+	  spipfilebrowser/config.php, spipfilebrowser/index.php:
+	  vérification que c'est bien un utilisateur de l'espace privé
+	  authentifié qui essai de parcourir ou télécharger
+
+2010-10-26  fredlefred
+
+	* [r211] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  fonds/cfg_ckeditor_ongletA.html, install_ckplug.html,
+	  lang/ckeditor_fr.php, plugin.xml, spipfilebrowser[ADD],
+	  spipfilebrowser/config.php[ADD], spipfilebrowser/index.php[ADD],
+	  spipfilebrowser/style.css[ADD]: ajout d'un filebrowser/uploader
+	  simpliste pour l'insertion d'image
+
+2010-10-20  fredlefred
+
+	* [r210] ckeditor_fonctions.php, ckeditor_tools.php,
+	  install_ckplug.html, lang/ckeditor_fr.php, plugin.xml: affichage
+	  de message d'erreurs si l'installation des plugins pour ckeditor
+	  ne fonctionne pas
+
+2010-10-19  fredlefred
+
+	* [r209] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml,
+	  setrev.sh: mise en page du Changelog, maj version
+	* [r208] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml: mise à
+	  jour du changelog
+	* [r207] ckeditor_fonctions.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php, plugin.xml: typo, traduction
+	  (approximative) en anglais
+	* [r206] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletA.html,
+	  install_ckplug.html[ADD], lang/ckeditor_fr.php: permettre de
+	  forcer l'installation des plugins ckeditor
+
+2010-10-18  fredlefred
+
+	* [r205] ckeditor_fonctions.php: nettoyage
+	* [r204] ckeditor_fonctions.php: fix: erreur js dans la partie
+	  privée lorsqu'on est pas en train d'utiliser ckeditor
+	* [r203] ckeditor_fonctions.php: les smileys fonctionnes à nouveau
+	  (modification du fonctionnement de cette lame du couteau suisse)
+
+2010-10-11  jpyrat
+
+	* [r202] plugin.xml: Utilisation de CKEditor 3.4.1
+
+2010-10-11  fredlefred
+
+	* [r201] articles-links.html, ckeditor-plugin/spip/dialogs/spip.js,
+	  ckeditor-plugin/spip/lang/ar.js, ckeditor-plugin/spip/lang/en.js,
+	  ckeditor-plugin/spip/lang/fr.js: * fix : exception levée non
+	  interceptée et donc non gérée * maj : si une sélection est faite
+	  lors de l'insertion d'un lien spip, le texte du lien est la
+	  sélection
+
+2010-10-10  fredlefred
+
+	* [r200] ckeditor_fonctions.php, ckeditor_tools.php, plugin.xml: *
+	  fix: typo «,» surnuméraire * début de prise en compte de
+	  racourcis typo de spip titre, gras, italique (dans les deux
+	  sens), tous les racourcis spip passe en html, le passage inverse
+	  pas encore * maj version
+	* [r199] ckeditor_fonctions.php: fix: problème avec la
+	  prévisualisation du porteplume
+
+2010-10-09  fredlefred
+
+	* [r198] ckeditor_fonctions.php, plugin.xml: version à jour
+	* [r197] ckeditor_fonctions.php, ckeditor_tools.php, plugin.xml:
+	  fix: problème avec les apostrophes dans les liens
+
+2010-10-08  fredlefred
+
+	* [r196] ckeditor_fonctions.php, plugin.xml: version à jour
+	* [r195] ckeditor_fonctions.php: fix bug: choix de la langue du
+	  dictionnaire
+
+2010-09-25  fredlefred
+
+	* [r194] ckeditor_fonctions.php, ckeditor_tools.php: * fix: la
+	  conversion spip <=> html n'était pas assuré dans le cas des
+	  rubriques et des brèves
+
+2010-08-22  fredlefred
+
+	* [r193] ckeditor_fonctions.php, plugin.xml: * version à jour
+	* [r192] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor_fonctions.php, plugin.xml: * reclame ckeditor 3.4 * fix
+	  bug boite de dialogue spipdoc pour ckeditor trop large * fix bug
+	  combo styles vide testé sur une installation vierge de spip
+
+2010-06-13  mehdi.cherifi
+
+	* [r191] plugin.xml: utilise dernière version ckeditor 3.3.1 qui
+	  corrige pas mal de bugs et améliore même l'intégration de
+	  l'éditeur à SPIP
+
+2010-04-16  fredlefred
+
+	* [r190] ckeditor_fonctions.php, plugin.xml: fix version/revision
+	* [r189] ckeditor_fonctions.php, plugin.xml: fix spip 2.1.0 /
+	  jQuery 1.4.2 / firefox 3.6 (au moins). Utilise window.onload à la
+	  place de $(document).ready(...) ; donc des problèmes à prévoir
+
+2010-04-13  mehdi.cherifi
+
+	* [r188] plugin.xml: mise à jour de CKEditor v3.2.1 qui corrige de
+	  nombreux bugs et apporte quelques nouveautés intressantes.
+
+2010-04-11  fredlefred
+
+	* [r187] ckeditor_fonctions.php: fix le delay d'apparition du
+	  porteplume et donc celui de sa disparition
+
+2010-04-10  fredlefred
+
+	* [r186] fonds/cfg_ckeditor_ongletA.html: Erreur de filtre
+	* [r185] ckeditor_fonctions.php: mise à jour spip 2.1 / jQuery
+	  1.4.2
+
+2010-03-01  mehdi.cherifi
+
+	* [r184] plugin.xml: mise à jour de la version de CKeditor
+	  utilisée, passage à la 3.2 qu icorrige pas mal de bugs et aussi
+	  respecte l'accessibilité.
+
+2010-01-12  mehdi.cherifi
+
+	* [r183] plugin.xml: on passe à la dernière release de CKEditor
+	  3.1, apporte son lot de corrections et de nouveautés...
+
+2009-12-19  mehdi.cherifi
+
+	* [r171] plugin.xml: Utilisation du dernier CKEditor stable 3.0.2.
+
+2009-11-11  mehdi.cherifi
+
+	* [r170] lang/ckeditor_ar.php, lang/ckeditor_en.php: mise à jour
+	  arabe+anglais
+
+2009-11-11  fredlefred
+
+	* [r169] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php,
+	  plugin.xml: deux largeurs de barre d'outils (écran :
+	  large/etroit)
+	* [r168] ChangeLog.txt, ckeditor_fonctions.php,
+	  ckspip_convert.html, plugin.xml: correction issue 22
+
+2009-11-07  mehdi.cherifi
+
+	* [r167] ckeditor-plugin/spip/lang/ar.js,
+	  ckeditor-plugin/spipdoc/lang/ar.js: les entités HTML (du style
+	  &#XXXX;) sont affichées telles quelles par CKEditor, donc il
+	  fallait écrire les caractères en arabe directement et convertir
+	  le document en UTF-8. c'est fait !
+
+2009-11-06  mehdi.cherifi
+
+	* [r166] ckspip_convert.html, rubriques-links.html: le bug était dû
+	  à la non prise en compte des fonctions d'appel de la valeur du
+	  champs texte, car celle-ci était écrite avec des short tags <?,
+	  faut utiliser <?php, c'est mieux !
+	* [r165] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: - petite correction - finalisation fichiers
+	  de langue (arabe+anglais) pour les styles - <code> fonctionne
+	  mieux que <pre> dans la langue arabe (bizarre ??)
+	* [r164] lang/ckeditor_ar.php, lang/ckeditor_en.php: mise à jour
+	  des fichiers de langue
+
+2009-11-04  fredlefred
+
+	* [r163] ckeditor_fonctions.php: deplacement du bouton de
+	  changement de mode d'édition (à coté de l'aide du #text_area)
+	* [r162] ckeditor_fonctions.php: meilleur calcul des largeurs de
+	  barres d'outils
+	* [r161] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml:
+	  nettoyage
+
+2009-11-02  fredlefred
+
+	* [r160] lang/ckeditor_fr.php: cosmétique
+	* [r159] lang/ckeditor_fr.php: afficher correctement le lien vers
+	  le site de ckeditor-spip-plugin dans le dialog à propos
+	* [r158] ckeditor_fonctions.php: gestion automatique de la largeur
+	  de spip (si la largeur n'est pas imposé par la configuration du
+	  plugin)
+	* [r157] ckeditor_fonctions.php, ckeditor_tools.php: deplacement
+	  d'une fonction dans le fichier 'ckeditor_tools', taille de barre
+	  d'outils par défaut conforme à la petite taille d'espace privé
+	* [r156] ChangeLog.txt, ckeditor_fonctions.php,
+	  ckspip_convert.html, plugin.xml: utilisation d'un tag 'ckdata' à
+	  la place de 'data' (moins de risque de problème)
+
+2009-10-31  fredlefred
+
+	* [r155] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php:
+	  possibilité d'utiliser les CSS du site depuis CKEditor
+
+2009-10-29  fredlefred
+
+	* [r154] ckeditor_fonctions.php, plugin.xml: on indique qu'on peut
+	  utiliser le couteau suisse
+	* [r153] ckeditor_fonctions.php, ckeditor_tools.php, plugin.xml:
+	  test supplémentaire au cas ou CS n'est carrément pas installé
+	* [r152] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletB.html,
+	  plugin.xml: smileys: la configuration du plugin tient compte de
+	  l'obligation d'activer CS/Smileys avant de pouvoir activer les
+	  smileys dans ckeditor
+	* [r151] ckeditor_fonctions.php, ckeditor_tools.php, plugin.xml:
+	  les smileys doivent être activés dans le CS pour pouvoir être
+	  effectivement activé dans CKEditor (indépendemment de
+	  l'activation du bouton smileys des barres d'outils)
+	* [r150] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: utilisation direct de la fonction du couteau suisse
+
+2009-10-28  fredlefred
+
+	* [r149] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php:
+	  nettoyage de code, verification de la présence du Couteau Suisse
+	  pour les Smileys
+	* [r148] ckspip-logo.png: l'écureuil spip regarde le texte
+	* [r147] ckeditor_fonctions.php, ckeditor_tools.php, plugin.xml:
+	  traitement des smileys (à tester plus intensivement)
+	* [r146] ckeditor_fonctions.php, ckeditor_tools.php: utilisation
+	  des smileys du couteau suisse (et seulement ceux-là)
+	* [r145] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletA.html, fonds/cfg_ckeditor_ongletB.html,
+	  fonds/cfg_ckeditor_ongletC.html, fonds/cfg_ckeditor_ongletD.html,
+	  lang/ckeditor_fr.php, plugin.xml: simplification du permier
+	  onglet de configuration
+	* [r144] ckeditor-24.png[DEL], ckspip-icone.png[ADD],
+	  ckspip-logo.png[ADD], fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html, logo-ckeditor.png[DEL],
+	  plugin.xml: nouvelle icone (simple copie des logos spip et
+	  ckeditor)
+	* [r143] ckeditor_fonctions.php, fonds/cfg_ckeditor_ongletC.html,
+	  lang/ckeditor_fr.php, toolbars.php: meilleur gestion des barres
+	  d'outils (en pixel plutôt qu'en outils)
+	* [r142] ChangeLog.txt, ckeditor_fonctions.php,
+	  lang/ckeditor_fr.php, plugin.xml: message d'erreur de mauvaise
+	  version de ckeditor utilisant la CSS spip
+
+2009-10-28  mehdi.cherifi
+
+	* [r141] lang/ckeditor_en.php, lang/ckeditor_fr.php: mise à jour
+	  fichier langue "anglais" + petite corrections
+	  
+	  PS: l'arabe est à venir.
+
+2009-10-28  fredlefred
+
+	* [r140] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletD.html, lang/ckeditor_fr.php:
+	  configuration du 'combo format'.
+
+2009-10-27  fredlefred
+
+	* [r139] fonds/cfg_ckeditor_ongletD.html, lang/ckeditor_fr.php:
+	  orthographe / précisions
+	* [r138] ChangeLog.txt, articles-links.html, breves-links.html,
+	  ckeditor_fonctions.php, plugin.xml, rubriques-links.html:
+	  nettoyage du code
+	* [r137] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: fix: ancres incorrectement reconnue (logique
+	  d'insertion de l'éditeur) légèrement revue
+	* [r136] lang/ckeditor_fr.php: quelques présisions
+	* [r135] ckeditor_cfgtools.php[ADD], ckeditor_fonctions.php,
+	  default-styles.js[ADD], fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  fonds/cfg_ckeditor_ongletD.html[ADD], lang/ckeditor_fr.php,
+	  plugin.xml, spip-styles.js: configuration des styles affichées
+	  dans le combo 'styles' de CKEditor
+	* [r134] ckeditor-plugin/spipdoc/dialogs/spipdoc.js: bug: parametre
+	  'player' non proposé pour les '.flv'
+	* [r133] ckeditor-plugin/spip/dialogs/spip.js: bug: entitée
+	  affichées : "&#233;" au lieu de "é"
+	* [r132] ckeditor_fonctions.php, plugin.xml, setrev.sh: maj version
+	  (ck + plugin)
+
+2009-10-24  fredlefred
+
+	* [r131] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: nettoyage, maj diverses
+	* [r130] ckeditor_tools.php: lien vers une ancre (de type spip)
+	* [r129] ckeditor_tools.php: nettoyage
+	* [r128] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: fix: Issue 15 (ancre spip)
+
+2009-10-23  fredlefred
+
+	* [r127] ckeditor_tools.php, ckspip_convert.html: cette fois le bug
+	  est vraiment fixé (enfin j'espère)
+	* [r126] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: fix bug non protection des balises spip à protéger
+	  lors du changement de mode d'édition
+	* [r125] ckspip_convert.html: fix le bug de changement d'éditeur si
+	  l'éditeur est vide.
+	* [r124] ckeditor_fonctions.php: erreur dans un test
+
+2009-10-22  fredlefred
+
+	* [r123] modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html: cosmetique
+
+2009-10-22  mehdi.cherifi
+
+	* [r122] lang/ckeditor_ar.php, lang/ckeditor_en.php: ajout des
+	  derniers fragments de traduction (anglais + arabe)
+
+2009-10-22  fredlefred
+
+	* [r121] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml:
+	  l'expression régulière chargée de détecter une édition 'standard'
+	  SPIP est simplifier pour détecter tous types d'object
+	* [r120] lang/ckeditor_fr.php, modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, select_documents.html,
+	  selectdoc.css: cosmétique + aide pour l'insertion de document
+	  spip
+	* [r119] ckeditor-plugin/spip/dialogs/spip.js: plugin lien spip
+	  pour ckeditor : pas de texte par défaut si le lien est un lien
+	  sur une image
+
+2009-10-21  fredlefred
+
+	* [r118] ckeditor_fonctions.php, plugin.xml: maj
+
+2009-10-21  mehdi.cherifi
+
+	* [r117] lang/ckeditor_ar.php, lang/ckeditor_en.php: des oublis et
+	  quelques corrections (arabe +anglais)
+
+2009-10-21  fredlefred
+
+	* [r116] ChangeLog.txt, ckeditor_fonctions.php: pour le changement
+	  de mode : un bouton plutôt qu'un lien
+
+2009-10-21  mehdi.cherifi
+
+	* [r115] fonds/cfg_ckeditor_ongletA.html,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  lang/ckeditor_ar.php, lang/ckeditor_en.php, lang/ckeditor_fr.php:
+	  - traductions arabe et anglais (mise à jour) - quelques
+	  corrections - ajout de l'affichage du logo dans la partie de
+	  configuration CFG du plugin.
+
+2009-10-21  fredlefred
+
+	* [r114] ckeditor-plugin/spipdoc/dialogs/spipdoc.js, selectdoc.js:
+	  fix
+	  http://code.google.com/p/ckeditor-spip-plugin/issues/detail?id=17
+	  (revert mauvais javascript)
+	* [r113] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor_fonctions.php, lang/ckeditor_fr.php, plugin.xml:
+	  contrôle de version et affichage d'un message d'avertissement si
+	  la version est trop ancienne
+	* [r112] ChangeLog.txt, selectdoc.js: oubli du code
+	* [r111] selectdoc.js: nettoyage de code, meilleur utilisation de
+	  jQuery
+	* [r110] ckeditor_tools.php: nettoyage de code, correction maj/min
+	  de PROTECTED_SPIP_TAGS
+	* [r109] ckeditor_tools.php: mise en forme du code
+	* [r108] ckeditor_fonctions.php: nettoyage de code, prévention de
+	  bugs
+	* [r107] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletC.html, lang/ckeditor_fr.php,
+	  plugin.xml: plus d'aide, divers modifications cosmétiques
+	* [r106] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  ckspip_convert.html, plugin.xml: fix problème lié au changement
+	  de mode pour les vignettes des documents autres que les images
+	* [r105] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: cas des liens sur des images
+	* [r104] ckeditor_tools.php: nettoyage utilisation de valeur
+	  arrondie plutot qu'à 12 chiffres pour les largeurs et hauteurs
+	  d'images (dans le cas de dimensions calculées)
+	* [r103] plugin.xml: erreur de lien suite à la séparation de la
+	  configuration en 3 pages
+	* [r102] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml: annule
+	  une erreur de commit
+
+2009-10-21  mehdi.cherifi
+
+	* [r101] plugin.xml:
+
+2009-10-20  fredlefred
+
+	* [r100] ChangeLog.txt, ckeditor_fonctions.php: suppression des
+	  onglets inutilisables avec spip
+	* [r99] ChangeLog.txt, ckeditor_fonctions.php, ckeditor_tools.php,
+	  plugin.xml: cas de liens contenant (entre autre, une target,
+	  ignorée par spip)
+
+2009-10-20  mehdi.cherifi
+
+	* [r98] lang/ckeditor_ar.php, lang/ckeditor_en.php: traduction
+	  (arabe + anglais) des derniers fragments ajouter au fichier
+	  français
+
+2009-10-20  fredlefred
+
+	* [r97] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml:
+	  nettoyage de fonctions et pipelines devenus inutiles
+	* [r96] ckeditor_fonctions.php: inversion du test 'editexclu'
+	* [r95] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml: maj
+	  version
+	* [r94] ckeditor_fonctions.php, ckeditor_tools.php,
+	  ckspip_convert.html, lang/ckeditor_fr.php, plugin.xml: * choix de
+	  l'éditeur à la volé (plus de problème avec la sauvegarde des
+	  données de l'éditeur au changement de mode) * nettoyage de
+	  pipeline devenus inutiles
+
+2009-10-20  mehdi.cherifi
+
+	* [r93] lang/ckeditor_en.php: oh my god...petites inversions et
+	  erreurs dans le fichier anglais ;)
+	* [r92] lang/ckeditor_ar.php, lang/ckeditor_en.php: des oublis dans
+	  les langues anglais et arabe (c'est bon tout est bien traduit !)
+	* [r91] lang/ckeditor_ar.php: encore des corrections pour la langue
+	  arabe...
+	* [r90] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: - bien écrire SPIP et CKEditor (utilisation
+	  officielle) - diverses corrections en langue arabe
+	* [r89] lang/ckeditor_ar.php, plugin.xml: corrections pour mieux
+	  afficher dans la langue arabe.
+	* [r88] ckeditor_tools.php: il faut éviter les short marks " <? "
+	  vaut mieux " <?php " pour ne pas avoir des soucis d'affichage sur
+	  certaines configurations.
+	* [r87] ckeditor-plugin/spipdoc/lang/ar.js,
+	  ckeditor-plugin/spipdoc/lang/en.js, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php: ajout des traductions
+
+2009-10-19  fredlefred
+
+	* [r86] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml:
+	  nettoyage (fonction inutile oubliée)
+	* [r85] ckeditor_fonctions.php, ckeditor_tools.php[ADD],
+	  ckspip_convert.html[ADD]: changement d'éditeur à la volée (pour
+	  l'instant en parallèle avec le mode standard(bouton : Swap
+	  Editor)
+	* [r84] ckeditor_fonctions.php: préparation du changement d'editeur
+	  à la volée (plus de problème de sauvegarde), pour l'instant le
+	  code est commenté)
+	* [r83] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor_ongletB.html, fonds/cfg_ckeditor_ongletC.html,
+	  plugin.xml: fix mauvais nom de plugin
+	* [r82] fonds/cfg_ckeditor.html[DEL],
+	  fonds/cfg_ckeditor_ongletA.html[ADD],
+	  fonds/cfg_ckeditor_ongletB.html[ADD],
+	  fonds/cfg_ckeditor_ongletC.html[ADD], lang/ckeditor_fr.php:
+	  séparation de l'interface de configuration en 3 volets (onglets
+	  ?)
+	* [r81] toolbars.php: meilleurs approximation des tailles
+	* [r80] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor.html, toolbars.php: meilleur gestion de
+	  l'espace occupé par les barres d'outils de ckeditor (prend en
+	  compte la taille des boutons)
+	* [r79] ckeditor_fonctions.php, plugin.xml: la langue de ckeditor,
+	  lorsqu'on choisit 'auto-détection' est celle de l'auteur
+	* [r78] ChangeLog.txt, ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor-plugin/spipdoc/lang/fr.js, ckeditor_fonctions.php,
+	  plugin.xml: propose automatiquement le paramètre 'player' pour
+	  les documents mp3 et flv
+	* [r77] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, selectdoc.js: simplification de
+	  l'interface (un seul endroit où choisir le type de
+	  document/d'insertion)
+	* [r76] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml:
+	  nettoyage code inutile (oubli)
+	* [r75] ckeditor_fonctions.php, plugin.xml: affichage correcte des
+	  entitées html avec la fonction alert('...'); (convertion &#233;->
+	  \u00ea)
+
+2009-10-18  fredlefred
+
+	* [r74] ChangeLog.txt, ckeditor_fonctions.php,
+	  fonds/cfg_ckeditor.html, lang/ckeditor_fr.php, plugin.xml:
+	  configuration des modes 'ENTER' et 'SHIFT ENTER'
+	* [r73] ckeditor_fonctions.php, fonds/cfg_ckeditor.html,
+	  lang/ckeditor_fr.php, plugin.xml: possibilité de choisir la skin
+	  de ckeditor
+	* [r72] ChangeLog.txt, ckeditor_fonctions.php, plugin.xml: maj
+	  version
+	* [r71] ChangeLog.txt, ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor_fonctions.php, plugin.xml: insertion de document à la
+	  mode spip (par exemple on peut insérer : <doc12|player|center>
+	  qui s'affiche alors dans ckeditor par l'icone du document)
+
+2009-10-17  mehdi.cherifi
+
+	* [r70] ckeditor-plugin/spip/lang/ar.js[ADD],
+	  ckeditor-plugin/spip/lang/en.js, ckeditor-plugin/spip/lang/fr.js,
+	  ckeditor-plugin/spip/plugin.js: traduis depuis pas mal de temps
+	  mais j'ai omis de commiter ! lol
+
+2009-10-16  mehdi.cherifi
+
+	* [r69] lang/ckeditor_ar.php, lang/ckeditor_en.php: correctifs de
+	  langues, oubli de l'exemple sur les balises <multi> </multi>
+	* [r68] plugin.xml: mise à jour du fichier source de ckeditor,
+	  sortie de la dernière version stable 3.0.1
+
+2009-10-16  fredlefred
+
+	* [r67] ckeditor_fonctions.php, lang/ckeditor_ar.php,
+	  lang/ckeditor_en.php, lang/ckeditor_fr.php, plugin.xml: problème
+	  avec le javascript : pas de saut de ligne en dur dans les chaines
+	  devant être interprété par du javascript
+	* [r66] ChangeLog.txt, ckeditor_fonctions.php,
+	  lang/ckeditor_fr.php, plugin.xml: modification de la boite de
+	  dialogue à propos...
+
+2009-10-15  mehdi.cherifi
+
+	* [r65] lang/ckeditor_ar.php, lang/ckeditor_en.php: mises à jour
+	  des fichiers de langues pour l'ajout des nouvelles balises :
+	  audio, video et texte.
+
+2009-10-15  fredlefred
+
+	* [r64] ckeditor_fonctions.php, lang/ckeditor_fr.php,
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, plugin.xml: insertion de
+	  documents de type 'audio', 'video' et 'text'
+	* [r63] ChangeLog.txt, ckeditor_fonctions.php: prise en compte des
+	  liens <audioXX> <videoXX> et <textXX>
+	* [r62] lang/ckeditor_fr.php: aide pour l'édition de texte
+	  multi-langues
+	* [r61] ChangeLog.txt: maj changelog.txt
+	* [r60] ChangeLog.txt[ADD], ckeditor_fonctions.php, plugin.xml:
+	  création d'un change log (presque auto : utilise le svn pour le
+	  générer - à mettre à jour à la mano)
+	* [r59] ckeditor_fonctions.php, setrev.sh: mise à jour des numéros
+	  de version (pb avec la copie des plugins spip pour ckeditor)
+
+2009-10-15  mehdi.cherifi
+
+	* [r58] ckeditor-plugin/spipdoc/plugin.js: oups..j'ajoutes la
+	  langue arabe...
+	* [r57] ckeditor-plugin/spipdoc/lang/ar.js[ADD],
+	  ckeditor-plugin/spipdoc/lang/en.js[ADD],
+	  ckeditor-plugin/spipdoc/lang/fr.js: traduction des fichiers de
+	  langues de spipdoc pour CKEditor
+
+2009-10-14  fredlefred
+
+	* [r56] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor-plugin/spipdoc/lang[ADD],
+	  ckeditor-plugin/spipdoc/lang/fr.js[ADD],
+	  ckeditor-plugin/spipdoc/plugin.js, plugin.xml: *
+	  internationnalisation (fr.js) * simplification (spip-fication) de
+	  la boite de dialogue
+
+2009-10-14  mehdi.cherifi
+
+	* [r55] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: petites corrections et ajouts...pour mieux
+	  afficher...
+	* [r54] fonds/cfg_ckeditor.html: affichage des fragments de langues
+	  se fait bien, fallait utiliser les bonnes écritures pour CFG.
+
+2009-10-14  fredlefred
+
+	* [r53] plugin.xml: maj rev
+	* [r52] ckeditor_fonctions.php, plugin.xml: recherche de ckeditor
+	  dans tous les /lib de l'installation spip (find_in_path)
+	* [r51] plugin.xml, setrev.sh[ADD]: numéro de version fixé par
+	  script (via svnversion)
+	* [r50] select_flash.html[DEL], select_images.html[DEL]: fichiers
+	  devenus inutiles
+
+2009-10-13  fredlefred
+
+	* [r49] ckeditor_fonctions.php: mise à jour des commentaires
+	* [r48] ckeditor_fonctions.php: oubli
+	* [r47] ckeditor_fonctions.php: explication du phénomène
+	* [r46] ckeditor_fonctions.php: compatible porte plume
+	* [r45] ckeditor-plugin/spipdoc/dialogs/spipdoc.js,
+	  ckeditor_fonctions.php: nettoyage de la boîte de dialogue
+	  d'insersion de document + gestion correct de la preview du mode
+	  'center'
+
+2009-10-12  mehdi.cherifi
+
+	* [r44] lang/ckeditor_ar.php, lang/ckeditor_en.php: finalisation
+	  des fichiers de langue, tous identiques maintenant !
+	* [r43] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php: petites modifications des langues...
+
+2009-10-12  fredlefred
+
+	* [r42] modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, select_documents.html,
+	  selectdoc.css[ADD], selectdoc.js[ADD]: on sort le javascript et
+	  le css des document spip
+	* [r41] lang/ckeditor_fr.php: work in progress : oubli du fichier
+	  de traductions françaises
+	* [r40] ckeditor_fonctions.php,
+	  modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html, select_documents.html: work in
+	  progress : insertion de documents en mode 'img/doc/emb'
+	* [r39] plugin.xml: version 0.5
+	* [r38] ckeditor_fonctions.php, fonds/cfg_ckeditor.html,
+	  lang/ckeditor_fr.php: permettre de configurer le fix pour google
+	  chrome
+	* [r37] toolbars.php: les plugins 'images' et 'flash' sont à
+	  nouveau autorisés
+	* [r36] ckeditor_fonctions.php, fonds/cfg_ckeditor.html: nettoyage
+	  du html quand le choix d'éditeur n'est pas permis
+	* [r35] modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html: cosmétique
+	* [r34] ckeditor_fonctions.php: fix google chrome (les barres
+	  d'outils s'affichent sur plugieurs lignes)
+	* [r33] ckeditor_fonctions.php, lang/ckeditor_fr.php,
+	  select_documents.html: internationnalisation du changement de
+	  mode (sûrement pas compatible avec l'arabe)
+	* [r32] modeles/inc-documents-articles.html,
+	  modeles/inc-documents-tous.html: mise en forme du html
+
+2009-10-11  fredlefred
+
+	* [r31] modeles/inc-documents-articles.html[ADD],
+	  modeles/inc-documents-tous.html[ADD], select_documents.html:
+	  utilisation d'ajax pour le parcours des pages d'images
+
+2009-10-11  mehdi.cherifi
+
+	* [r30] lang/ckeditor_ar.php, plugin.xml: un peu de nettoyage dans
+	  la langue arabe (en effet la conversion en entités décimales n'a
+	  pas eu que du bon...lol)
+
+2009-10-10  fredlefred
+
+	* [r29] ckeditor_fonctions.php: droits corrects pour la copie des
+	  plugins ckeditor + cosmétique
+	* [r28] select_documents.html: cosmétique
+	* [r27] ckeditor_fonctions.php, toolbars.php: oublis
+	* [r26] plugin.xml: version 0.4
+	* [r25] ckeditor-plugin/spipdoc[ADD],
+	  ckeditor-plugin/spipdoc/dialogs[ADD],
+	  ckeditor-plugin/spipdoc/dialogs/spipdoc.js[ADD],
+	  ckeditor-plugin/spipdoc/plugin.js[ADD],
+	  ckeditor-plugin/spipdoc/spipdoc.gif[ADD],
+	  ckeditor-plugin/spipdoc/spipdoc.png[ADD], ckeditor_fonctions.php,
+	  select_documents.html[ADD]: Préversion, de l'insertion de tous
+	  type de documents au format spip. Contient des régressions, entre
+	  autre : plus possible de choisir la taille des images (gestion
+	  laissée à spip)
+
+2009-10-09  mehdi.cherifi
+
+	* [r24] plugin.xml: un petit oubli...
+	* [r23] lang/ckeditor_ar.php, plugin.xml: probleme d'affiche de
+	  l'arabe réglé, tous les caracteres en utf-8 ont été réintrodui en
+	  entités numériques décimales.
+	  
+	  @+
+	* [r22] plugin.xml: une coquille pour l'utf-8
+	* [r21] lang/ckeditor_ar.php, lang/ckeditor_en.php,
+	  lang/ckeditor_fr.php, select_flash.html, select_images.html: des
+	  fragments de langues oubliés dans la traduction
+	* [r20] plugin.xml: nettoyage en langue arabe
+
+2009-10-08  fredlefred
+
+	* [r19] plugin.xml: nettoyage
+	* [r18] plugin.xml: svn propset svn:keywords "Rev" plugins.xml
+	* [r17] plugin.xml: ajout de la révision svn dans plugins.xml +
+	  correction : ce n'est pas la version svn de ckeditor qui est
+	  utilisées mais la 3.0 stable (pas dans le texte arabe... ça
+	  plante mon éditeur)
+
+2009-10-07  mehdi.cherifi
+
+	* [r16] plugin.xml: d'autres correctifs
+
+2009-10-07  fredlefred
+
+	* [r15] plugin.xml: typo : Keditor au lieu de CKeditor
+
+2009-10-07  mehdi.cherifi
+
+	* [r14] fonds/cfg_ckeditor.html, lang/ckeditor_ar.php[ADD],
+	  lang/ckeditor_en.php, plugin.xml: pour bien afficher les morceaux
+	  de texte des langues, le fond qu'utilise CFG doit respecter
+	  <:prefixe_plugin:texte:> (au lieu de simplement <:texte:>), de
+	  plsu quelques petites erreurs ont été corrigées.
+
+2009-10-07  fredlefred
+
+	* [r13] ckeditor_fonctions.php: les images sont alignées
+	  left/right/center suivant leur attribut align='...'
+	* [r12] ckeditor_fonctions.php: utilisation de lien de type
+	  <imgXX|center> à la place des <img src=''/> (pour l'instant
+	  forcément avec l'attribut center)
+	* [r11] plugin.xml: version 0.3
+
+2009-10-07  mehdi.cherifi
+
+	* [r10] plugin.xml: toujours pour le multilinguisme, de légères
+	  modifcations
+	* [r9] fonds/cfg_ckeditor.html, lang[ADD],
+	  lang/ckeditor_en.php[ADD], lang/ckeditor_fr.php[ADD],
+	  modeles/inc-aucun-flash.html, modeles/inc-aucune-image.html:
+	  ajout du multilinguisme pour le plugin ckeditor-spip, pour le
+	  moment le français et l'angalais, bientôt l'arabe, ce qui a
+	  induit un nettoyage te réaménagement de ceratins fichiers.
+
+2009-10-06  fredlefred
+
+	* [r8] ckeditor_fonctions.php, select_images.html: les <img src=''>
+	  issue de la boîte de dialogue de sélection d'image, sont
+	  transformer en <imgXX|center> (work in progress)
+	* [r7] ckeditor-plugin/spip/dialogs/spip.js: amélioration de la
+	  logique d'insertion de lien spip
+	* [r6] ckeditor_fonctions.php: * correction bug mise à jour du
+	  plugin spip pour ckediror * stockage des url à la spip [...->...]
+	  à la place de <a href="...">...</a>
+
+2009-10-05  fredlefred
+
+	* [r5] ckeditor-spip-plugin[DEL]: répertoire inutile
+	* [r4] ckeditor_fonctions.php: nettoyage
+	* [r3] ckeditor_fonctions.php: réactivation (via jQuery) du choix
+	  de l'éditeur.
+	* [r2] articles-links.html, breves-links.html,
+	  rubriques-links.html: liens: spip.php?page=$type&id_$type=num
+	* [r1] .[ADD], articles-links.html[ADD], breves-links.html[ADD],
+	  ckeditor-24.png[ADD], ckeditor-plugin[ADD],
+	  ckeditor-plugin/spip[ADD], ckeditor-plugin/spip/dialogs[ADD],
+	  ckeditor-plugin/spip/dialogs/spip.js[ADD],
+	  ckeditor-plugin/spip/lang[ADD],
+	  ckeditor-plugin/spip/lang/en.js[ADD],
+	  ckeditor-plugin/spip/lang/fr.js[ADD],
+	  ckeditor-plugin/spip/plugin.js[ADD],
+	  ckeditor-plugin/spip/spip.gif[ADD], ckeditor-spip-plugin[ADD],
+	  ckeditor_fonctions.php[ADD], fonds[ADD],
+	  fonds/cfg_ckeditor.html[ADD], logo-ckeditor.png[ADD],
+	  modeles[ADD], modeles/inc-aucun-flash.html[ADD],
+	  modeles/inc-aucune-image.html[ADD], plugin.xml[ADD],
+	  rubriques-links.html[ADD], select_flash.html[ADD],
+	  select_images.html[ADD], spip-styles.js[ADD], toolbars.php[ADD]:
+	  initial import
+

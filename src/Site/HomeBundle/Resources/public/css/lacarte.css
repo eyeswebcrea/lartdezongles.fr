@@ -1,0 +1,42 @@
+div.list div.block.item {
+	position: relative;
+	padding: 5px;
+}
+
+div.list div.item div.block-content ul {
+	display: block;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	overflow: hidden;
+}
+
+div.list div.item.impaire {
+	background-color: white;
+}
+
+div.list div.item.paire {
+	background-color: gray;
+}
+
+div.list div.item.paire h2.block-title {
+	color: white;
+}
+
+
+div.list div.item div.block-content ul li {
+	list-style: none;
+	float: left;
+}
+
+div.list div.item div.block-content ul li strong {
+	display: block;
+	padding: 5px;
+	background: black;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-size: 15px;
+}

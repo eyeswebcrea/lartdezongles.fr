@@ -1,0 +1,11 @@
+SiteHomeBundle_homepage:
+    pattern:  /
+    defaults: { _controller:SiteHomeBundle:Default:index }
+
+SiteHomeBundle_contact:
+    pattern: /contact 
+    defaults: { _controller:SiteHomeBundle:Default:viewPageContact }
+    
+SiteHomeBundle_lacarte:
+    pattern: /la-carte
+    defaults: { _controller:SiteHomeBundle:Default:viewPageLaCarte }

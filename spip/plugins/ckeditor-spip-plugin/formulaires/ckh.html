@@ -1,0 +1,205 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:configuration_des_modeles_spip:></legend>
+	<div class='cke-div'>
+		<label for="modeles"><strong><:ckeditor:modeles_spip_autorisees:></strong></label>
+		<select name="modeles" />
+[(#REM) Ceci est nécessaire car non géré par CFG // peut-être qu'un autre formulaire serait préférable ? ]
+#SET{nom_modele, #ENV{nouveau_modele}|?{#ENV{nouveau_modele},#ENV{modeles}}}
+#SET{modele, #GET{nom_modele}}
+#SET{item, ckeditor/tags/#GET{modele}}
+#SET{item, #CONFIG{#GET{item}}}
+#SET{type_modele, #GET{item}|table_valeur{type}}
+#SET{type_num, #GET{item}|table_valeur{nombre}}
+#SET{intitule, #GET{item}|table_valeur{intitule}}
+#SET{info, #GET{item}|table_valeur{info}}
+#SET{param_noms, #GET{item}|table_valeur{noms}}
+#SET{param_valeurs, #GET{item}|table_valeur{valeurs}}
+#SET{param_ids, #GET{item}|table_valeur{ids}}
+#SET{fermante, #GET{item}|table_valeur{fermante}}
+#SET{syntaxe, #GET{item}|table_valeur{syntaxe}}
+#SET{syntaxe, #GET{syntaxe}|?{#GET{syntaxe},'spip'}}
+#SET{echappe_car, #GET{item}|table_valeur{echappe_car}}
+
+<BOUCLE_modeles(POUR){tableau #CONFIG{'ckeditor/tags'}}>
+#SET{selected, #GET{modele}|=={#CLE}|?{' selected',''}}
+[			<option value="#CLE"#GET{selected}>(#CLE)</option>]</BOUCLE_modeles>
+		</select>
+		<input type="submit" name="_cke_edite_modele" value="<:ckeditor:edite_modele:>" />
+		<input type="submit" name="_cke_supprime_modele" onclick="javascript:return confirm('<:ckeditor:supprimer_ce_modele:>');" value="<:ckeditor:supprime_modele:>"/>
+		<input type="hidden" name="nouveau_modele"/><input type="submit" name="_cke_nouveau_modele" onclick="javascript:var modele=prompt('<:ckeditor:nom_du_nouveau_modele:>');if (modele){$('input[name=nouveau_modele]').val(modele);return true;}else{return false;}" value="<:ckeditor:nouveau_modele:>" />
+	</div>
+</fieldset>
+<BOUCLE_edition(CONDITION){si #ENV{_cke_nouveau_modele}|et{#ENV{message_erreur}|non}|et{#ENV{nouveau_modele}}|ou{#ENV{_cke_edite_modele}}}>
+<script type="text/javascript">
+function _t(data) { // traduction &#XXXX en : \uXXXX 
+	return data.replace(/&#(\d+);/g, function() { return String.fromCharCode(arguments[1]); });
+}
+function del_parametre(cpt) {
+	if (confirm(_t('<:ckeditor:supprimer_ce_parametre:>' + $('#param_nom'+cpt).val()))) {
+		$('#param'+cpt).remove() ; 
+	}
+	if ($('#params div').length == 1) { // plus qu'un div => c'est celui qui contient le bouton, donc, plus de paramètre
+		$('#params').prepend('<div id="aucun_parametre" class="cke-param"><:ckeditor:aucun_parametre:></div>') ;
+	}
+	return false ;
+}
+function add_valeur(cpt) {
+	var param = prompt(_t('<:ckeditor:nouvelle_valeur_de_modele:>')) ;
+	if (param) {
+		if ($('#select'+cpt+' option[value='+param+']').val() == param) {
+			alert(_t($('#select'+cpt+' option[value='+param+']').val() +"\n"+'<:ckeditor:valeur_existe:>')) ;
+			return false ;
+		}
+		var label = prompt(_t('<:ckeditor:nouveau_label_de_valeur:>')) ;
+		if (label) {
+			var valeurs = $('#paramvals'+cpt).val() ;
+			$('#select'+cpt).append('<option value="'+param+'">'+param+'|'+label+'</option>') ;
+			$('#paramvals'+cpt).val((valeurs?valeurs+';':'')+param+'|'+label);
+		}
+	}
+	return false ;
+}
+function del_valeur(cpt) {
+	var valeur = $('#select'+cpt).val() ;
+	if (valeur && confirm(_t('<:ckeditor:supprimer_cette_valeur:>' + valeur))) {
+		var param = $('#select'+cpt).val() ;
+		if (param) {
+			var re = new RegExp('^((.*);|)'+param+'\\|.*?(;(.*)|)$')
+			var params  = $('#paramvals'+cpt).val() ;
+			var m = re.exec(params) ;
+			if((m != null)) {
+				$('#select'+cpt+' option[value=\''+param+'\']').remove() ;
+				$('#paramvals'+cpt).val((m[2]?m[2]:'')+(m[2] && m[4]?';':'')+(m[4]?m[4]:'')) ;
+			}
+		}
+	}
+	return false ;
+}
+function add_champs_parametre(param) {
+	/* on regarde si ce param n'existe pas déjà */
+	var param_exists = false ;
+	$('input[name^=param_noms]').each(function(index, item) {
+		if($(this).val() == param) {
+			alert(_t('<:ckeditor:parametre_existe:>')) ; // il existe, on le signale
+			param_exists = true ;
+		}
+	}) ;
+	if (param_exists) return false ; // il existe, on ne fait rien
+	/* insertion de code dynamique */
+	var idparam = param.replace(/^\s*/, '').replace(/\s*$/,'').replace(/\s/g, '_') ;
+	$('#aucun_parametre').remove() ;
+	$('#params').prepend('<div id="param'+cpt_param+'" class="cke-param">') ;
+	$('#param'+cpt_param).append(
+		'<button class="cke-param-del" onclick="javacript:return del_parametre('+cpt_param+');" title="<:ckeditor:supprime_ce_parametre:>">&#x2716;</button>' +
+		'<label for="param_noms['+cpt_param+']" class="cke-param-col1"><:ckeditor:label_du_parametre:></label>' +
+		'<input type="text" name="param_noms['+cpt_param+']" id="param_nom'+cpt_param+'" class="cke-param-col2" value="'+param+'" title="<:ckeditor:aide_nom_parametre:>"/><br/>' +
+		'<label for="param_ids['+cpt_param+']" class="cke-param-col1"><:ckeditor:identifiant_du_parametre:> <span class=\'cke-aide\'><span><:ckeditor:aide_identifiant_parametre_1:></span></span></label>' +
+		'<input type="text" name="param_ids['+cpt_param+']" class="cke-param-col2" value="'+idparam+'" title="<:ckeditor:aide_identifiant_parametre_2:>"/><br/>' +
+		'<label for="select'+cpt_param+'" class="cke-param-col1"><:ckeditor:valeurs_du_parametre:></label>' +
+		'<select name="select'+cpt_param+'" id="select'+cpt_param+'" class="cke-param-col2"></select> ' + 
+		'<button onclick="javascript:return del_valeur('+cpt_param+');" title="<:ckeditor:supprimer_cette_valeur:>" class="cke-param-button">&#x2716</button> ' +
+		'<button onclick="javascript:return add_valeur('+cpt_param+');" title="<:ckeditor:ajoute_une_valeur:>" class="cke-param-button">&#x271A;</button>' + 
+		'<input type="hidden" name="param_valeurs['+cpt_param+']" id="paramvals'+cpt_param+'"/>'
+	);
+	cpt_param ++ ;
+	return false ;
+}
+</script>
+<fieldset>
+	<legend><:ckeditor:edition_du_modele:> [ <strong>#GET{modele}</strong> ]</legend>
+	<div class='cke-div'>
+		<input type="hidden" name="nom_modele" value="#GET{nom_modele}" />
+
+		<label for="intitule" class="cke-param-col1"><:ckeditor:intitule_du_modele:></label>
+		<input type="text" name="intitule" class="cke-param-col2"[ value="(#GET{intitule})"]/>
+
+		<label for="info" class="cke-param-col1"><:ckeditor:info_bulle:></label>
+		<input type="text" name="info" class="cke-param-col2"[ value="(#GET{info})"]/>
+
+		<label for="type_modele" class="cke-param-col1"><:ckeditor:type_de_modele:></label>
+		<select name="type_modele" class="cke-param-col2" onchange="javascript:$('select[name=type_num]').attr('disabled',this.value=='num-aucun'?1:0);">
+			<option value="num-aucun"[(#GET{type_modele}|=={'num-aucun'}|oui)selected]><:ckeditor:pas_numerique:></option>
+			<option value="num-obligatoire"[(#GET{type_modele}|=={'num-obligatoire'}|oui)selected]><:ckeditor:numerique_obligatoire:></option>
+			<option value="num-facultatif"[(#GET{type_modele}|=={'num-facultatif'}|oui)selected]><:ckeditor:numerique_facultatif:></option>
+		</select><br/>
+
+		<label for="type_num" class="cke-param-col1"><:ckeditor:type_nombre:></label>
+		<select name="type_num" class="cke-param-col2"[(#GET{type_modele}|match{num-obligatoire|num-facultatif}|non)disabled]>
+			<option value=""><:ckeditor:num_indefini:></option>
+			<option value="articles"[(#GET{type_num}|=={articles}|oui)selected]><:ckeditor:num_article:></option>
+			<option value="rubriques"[(#GET{type_num}|=={rubriques}|oui)selected]><:ckeditor:num_rubrique:></option>
+			<option value="breves"[(#GET{type_num}|=={breves}|oui)selected]><:ckeditor:num_breve:></option>
+			<option value="auteurs"[(#GET{type_num}|=={auteurs}|oui)selected]><:ckeditor:num_auteur:></option>
+			<option value="mots"[(#GET{type_num}|=={mots}|oui)selected]><:ckeditor:num_mot:></option>
+			<option value="groupes_mots"[(#GET{type_num}|=={groupes_mots}|oui)selected]><:ckeditor:num_groupe_mots:></option>
+			<option value="sites"[(#GET{type_num}|=={sites}|oui)selected]><:ckeditor:num_site:></option>
+			<option value="documents"[(#GET{type_num}|=={documents}|oui)selected]><:ckeditor:num_document:></option>
+			<option value="thisobject"[(#GET{type_num}|=={thisobject}|oui)selected]><:ckeditor:objet_en_edition:></option>
+		</select><br/>
+
+		<div class="cke-param-col1">&nbsp;</div>
+		<input name="balise_fermante" type="checkbox"[(#GET{fermante}|oui)checked] onchange="if(this.checked)$('#echappe_car').show();else $('#echappe_car').hide();"><:ckeditor:balise_fermante:> &lt;/#GET{modele}&gt;</input>
+		<br/>
+		<div id="echappe_car" style="display:[(#GET{fermante}|?{block,none})];">
+				<div class="cke-param-col1"><:ckeditor:echappe_caracteres:>
+				<span class='cke-aide'><span><:ckeditor:aide_echappe_car:></span></span>
+				</div>
+				<input name="echappe_car" type="text" value="[(#GET{echappe_car})]"/>
+		</div>
+		<div class="cke-param-col1"><:ckeditor:syntaxe:>
+				<span class='cke-aide'><span><:ckeditor:aide_syntaxe_modele:></span></span>
+		</div>
+		<input name="syntaxe_balise" type="radio" value="spip"[(#GET{syntaxe}|=={spip}|oui)checked]>spip</input>
+		<input name="syntaxe_balise" type="radio" value="html"[(#GET{syntaxe}|=={html}|oui)checked]>html</input>
+		<br/>
+
+		<fieldset id='params'>
+			<legend><strong><:ckeditor:liste_des_parametres:></strong></legend>
+<BOUCLE_parametres(POUR){tableau #GET{param_noms}}>
+	<div id="param[(#CLE)]" class="cke-param">
+
+		<button class="cke-param-del" onclick="javacript:return del_parametre([(#CLE)]);" title="<:ckeditor:supprime_ce_parametre:>">&#x2716;</button>
+
+        <label for="param_noms[[(#CLE)]]" class="cke-param-col1"><:ckeditor:label_du_parametre:></label>
+		<input type="text" name="param_noms[[(#CLE)]]" id="param_nom[(#CLE)]" class="cke-param-col2" value="#VALEUR" title="<:ckeditor:aide_nom_parametre:>"/>
+
+		<label for="param_ids[[(#CLE)]]" class="cke-param-col1"><:ckeditor:identifiant_du_parametre:> <span class='cke-aide'><span><:ckeditor:aide_identifiant_parametre_1:></span></span></label>
+		<input type="text" name="param_ids[[(#CLE)]]" class="cke-param-col2" value="[(#GET{param_ids}|table_valeur{#CLE})]" title="<:ckeditor:aide_identifiant_parametre_2:>"/>
+
+		<label for="select[(#CLE)]" class="cke-param-col1"><:ckeditor:valeurs_du_parametre:></label>
+		<select name="select[(#CLE)]" id="select[(#CLE)]" class="cke-param-col2">
+			<BOUCLE_valeurs(POUR){tableau #VAL{'~;~'}|preg_split{#GET{param_valeurs}|table_valeur{#CLE}}}>
+			[<option value="(#VALEUR|replace{'\|.*$',''})">#VALEUR</option>]
+			</BOUCLE_valeurs>
+		</select>
+		<button onclick="javascript:return del_valeur([(#CLE)]);" title="<:ckeditor:supprimer_cette_valeur:>" class="cke-param-button">&#x2716;</button>
+		<button onclick="javascript:return add_valeur([(#CLE)]);" title="<:ckeditor:ajoute_une_valeur:>" class="cke-param-button">&#x271A;</button>
+		<input type="hidden" name="param_valeurs[[(#CLE)]]" id="paramvals[(#CLE)]" value="[(#GET{param_valeurs}|table_valeur{#CLE})]"/>
+	</div>
+</BOUCLE_parametres>
+<script type="text/javascript">
+var cpt_param = #TOTAL_BOUCLE ;
+</script>
+</B_parametres>
+<div id="aucun_parametre" class="cke-param">
+	<:ckeditor:aucun_parametre:>
+</div>
+<script type="text/javascript">
+var cpt_param = 0 ;
+</script>
+<//B_parametres>
+			<div class="cke-param-add"><button onclick="javascript:param=prompt(_t('<:ckeditor:nom_du_parametre:>'));if(param)add_champs_parametre(param);return false;"><:ckeditor:ajoute_un_parametre:></button></div>
+		</fieldset>
+		<input type="submit" name="_cke_valide_modele" value="<:ckeditor:ok:>" />
+	</div>
+</fieldset>
+</BOUCLE_edition>
+</div></form>

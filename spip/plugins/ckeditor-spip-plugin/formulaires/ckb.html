@@ -1,0 +1,69 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:config_barres_outils:></legend>
+	<div class='cke-div'>
+	<center>
+	<a href="#" onclick="javascript:return selectAllTools(true);"><:ckeditor:selection_tout:></a> |
+	<a href="#" onclick="javascript:return selectAllTools(false);"><:ckeditor:selection_aucun:></a> |
+	<a href="#" onclick="javascript:return selectAllTools('inverse');"><:ckeditor:selection_inverse:></a>
+	</center>
+	<?php
+	include_spip('inc/ckeditor_lire_config') ;
+	include_spip('inc/ckeditor_tools') ;
+	include_spip("inc/toolbars") ;
+	$html2spip = ckeditor_lire_config('html2spip_limite', _CKE_HTML2SPIP_LIMITE_DEF) ;
+	foreach($GLOBALS['toolbars'] as $toolbar) {
+		echo "<div style=\"float:left;border:1px solid #bbb; padding:3px; margin:3px;\">" ;
+		$cp=0;
+		foreach($toolbar as $tool => $item) {
+			if ($html2spip && !$item[2]) { 
+				$disabled = ' disabled="disabled"' ; 
+				$style = ' style="color:gray;" title="'._T('ckeditor:desactive_car_zappe_par_html2spip').'"' ; 
+			} else { 
+				$disabled = '' ; 
+				$style = ' style="color:black;"' ;
+			}
+			if (!ckeditor_tweaks_actifs('smileys') && ($tool == 'Smiley')) continue ;
+			echo "<input type=\"checkbox\" name=\"tool_$tool\"" ;
+			if (ckeditor_lire_config("tool_$tool", $item[1])) {
+				echo " checked" ;
+			}
+			echo " class=\"toolbar_tool\"$disabled><a onclick=\"javascript:clickontool();\" title=\""._T('ckeditor:tool_'.$tool)."\"$style>" ;
+			if (isset($item[3]) && ($icon = find_in_path(sprintf("images/icons/icon-%02d.png",$item[3])))) {
+				echo "<img src='$icon' alt='"._T('ckeditor:tool_'.$tool)."'/>" ;
+			} else {
+				echo _T('ckeditor:tool_'.$tool) ;
+			}
+			echo "</a></input>\n" ;
+		}
+		echo "</div>\n" ;
+	}
+?>
+	</div>
+<script type='text/javascript'>
+function selectAllTools(select) {
+	$('.toolbar_tool').each( function() {
+		$(this).attr('checked', (select == 'inverse' ? ! $(this).attr('checked') : select) ) ; 
+	} );
+	return false;
+}
+function clickontool() {
+	alert(this);
+}
+</script>
+</fieldset>
+	<div class='cke-div'>
+		<input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+		<input type="submit" name="_cfg_delete" value="<:ckeditor:supprimer:>" />
+		<input type="submit" name="_cfg_reset_toolbars" value="<:ckeditor:reset_toolbars:>" />
+	</div>
+
+
+</div></form>

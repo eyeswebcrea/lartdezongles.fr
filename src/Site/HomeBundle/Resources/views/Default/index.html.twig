@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+
+{% block stylesheets %}
+	    {% 
+        		stylesheets output='css/mercerie.css' 
+        		'@SiteHomeBundle/Resources/public/css/index.css'
+        %}        		
+        	<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+
+	Contenu de la home
+
+{% endblock %}

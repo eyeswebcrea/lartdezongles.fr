@@ -1,0 +1,18 @@
+<plugin>
+	<nom><multi>[fr]KCFinder pour CKEditor[en]KCFinder for CKEditor</multi></nom>
+	<auteur>Auteur : [Fr&#233;d&#233;ric Bonnaud->mailto:fred@lea-linux.org]</auteur>
+	<version>0.1</version>
+	<etat>test</etat>
+	<description>
+		<multi>[fr]Utilisation du navigateur de fichier KCFinder avec CKEditor</multi>
+
+{{Licence :}} [GPLv2->http://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
+	</description>
+	<options>kcfinder_options.php</options>
+
+	<prefix>kcfinder</prefix>
+
+	<icon>images/ckspip-logo.png</icon>
+	<necessite id='ckeditor' version='[0.15;]' />
+	<necessite id='lib:kcfinder-2.21' src='http://netcologne.dl.sourceforge.net/project/kcfinder/KCFinder/2.21/kcfinder-2.21.zip'/>
+</plugin>

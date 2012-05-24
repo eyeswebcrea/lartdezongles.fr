@@ -1,0 +1,21 @@
+<plugin>
+	<nom><multi>[fr]PGRFileManager pour CKEditor[en]PGRFileManager for CKEditor</multi></nom>
+	<auteur>Auteur : [Fr&#233;d&#233;ric Bonnaud->mailto:fred@lea-linux.org]</auteur>
+	<version>0.1</version>
+	<etat>test</etat>
+	<description>
+			<multi>[fr]Utilisation du navigateur de fichier PGRFileManager avec CKEditor.<br/>
+			</multi>
+
+			{{Licence :}} [GPLv2->http://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
+
+			[Configuration POST installation (obligatoire)->?exec=pgrconfig]
+	</description>
+	<options>pgrfilemanager_options.php</options>
+
+	<prefix>pgrfilemanager</prefix>
+
+	<icon>images/ckspip-logo.png</icon>
+	<necessite id='ckeditor' version='[0.15;]' />
+	<necessite id='lib:pgrfilemanager' src='http://downloads.sourceforge.net/project/pgrfilemanager/pgrfilemanagerv2.1.0.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fpgrfilemanager%2Ffiles%2F&ts=1309865495&use_mirror=netcologne'/>
+</plugin>

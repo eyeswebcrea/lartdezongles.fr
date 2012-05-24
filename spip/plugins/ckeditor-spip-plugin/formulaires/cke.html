@@ -1,0 +1,70 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<div class='avertissement'><:ckeditor:avertissement_css:></div>
+<fieldset>
+	<legend><:ckeditor:configuration_styles:></legend>
+	<div class='cke-div'>
+		<label for="formats"><strong><:ckeditor:formats:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_formats:></span></span>
+		<br/>
+		<input type="text" name="formats"[ value="(#ENV{formats})"] style="width:100%;"/>
+		<label for="formatsclass"><strong><:ckeditor:class_des_formats:></strong></label>
+		<input type="text" name="formatsclass"[ value="(#ENV{formatsclass})"] style="width:100%;"/>
+	</div>
+	<div class='cke-div'>
+		<label for="styles"><strong><:ckeditor:styles:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_styles:></span></span>
+		<br/>
+		<blockquote><textarea name="styles" rows="10" cols="50">[(#ENV{styles})]</textarea></blockquote>
+	 </div>
+</fieldset>
+<fieldset>
+	<legend><:ckeditor:configuration_des_couleurs:></legend>
+	<div class='cke-div'>
+		<label for="liste_couleurs"><strong><:ckeditor:listes_des_couleurs_presentees:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_couleurs:></span></span>
+		<br/>
+		<blockquote><textarea name="liste_couleurs" rows="4" cols="50">[(#ENV{liste_couleurs})]</textarea></blockquote>
+		<input name="autres_couleurs" type="checkbox"[ (#ENV{autres_couleurs}|oui)checked]/>
+		<label for="autres_couleurs"><strong><:ckeditor:autoriser_autres_couleurs:></strong></label>
+	</div>
+</fieldset>
+<fieldset>
+	<legend><:ckeditor:configuration_des_polices:></legend>
+	 <div class='cke-div'>
+		 <label for="fontsizes"><strong><:ckeditor:tailles_de_police:></strong></label>
+		 <span class='cke-aide'><span><:ckeditor:aide_fontsizes:></span></span>
+		 <br/>
+		 <blockquote><textarea name="fontsizes" rows="4" cols="50">[(#ENV{fontsizes})]</textarea></blockquote>
+	</div>
+	<div class='cke-div'>
+		<label for="webfonts"><strong><:ckeditor:liste_google_webfonts:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_webfonts:></span></span>
+		<br/>
+		<input type="text" name="webfonts"[ value="(#ENV{webfonts})"] style="width:100%;"/>
+		<input type="checkbox" name="fontkit"[ (#ENV{fontkit}|?{'checked',''})] />
+		<label for="fontkit"><strong><:ckeditor:utilise_fontkit:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_fontkit:></span></span>
+		<br/>
+		<input type="checkbox" name="insertcsspublic"[ (#ENV{insertcsspublic}|?{'checked',''})] />
+		<label for="insertcsspublic"><strong><:ckeditor:inserer_la_css_public:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_inserer_la_css:></span></span>
+		<br/>
+		<input type="checkbox" name="insertcssprive"[ (#ENV{insertcssprive}|?{'checked',''})] />
+		<label for="insertcssprive"><strong><:ckeditor:inserer_la_css_prive:></strong></label>
+		<span class='cke-aide'><span><:ckeditor:aide_inserer_la_css:></span></span>
+	</div>
+</fieldset>
+	<div class='cke-div'>
+		<input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+		<input type="submit" name="_cfg_delete" value="<:ckeditor:supprimer:>" />
+	</div>
+
+
+</div></form>

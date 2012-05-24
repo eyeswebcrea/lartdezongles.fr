@@ -1,0 +1,95 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+
+<fieldset style="padding:4px;">
+	<legend><:ckeditor:gestion_plugins_ckeditor:></legend>
+	<BOUCLE_plugins(CONDITION){si #CHEMIN{plugins/ckeditor}|oui}>
+	<B_ls>
+	<div>
+	<script type="text/javascript">
+function set_ordre(plugin, ordre) {
+	var taken = $('#ordre_'+plugin).val() ;
+	var valeurs = [] ;
+	var select = null ;
+	$('select[id^=ordre_]').each(function() {
+		if (($(this).attr('id') != 'ordre_'+plugin) && ($(this).val() == taken)) {
+			select = $(this).attr('id') ; 
+		}
+		valeurs[$(this).val()] = 1 ;
+	}) ;
+	var newval = 1 ;
+	while(valeurs[newval] == 1) { newval++ ; }
+	$('#'+select).val(newval);
+}
+	</script>
+			<div>
+			<BOUCLE_ls(DATA){source ls, #CHEMIN{plugins/ckeditor}/*/plugin.js}{par basename}>
+				<fieldset style="width:auto;margin:4px;float:left;">
+				#SET{plugin, #VALEUR{dirname}|basename}
+					<legend><:ckeditor:plugin:> #GET{plugin}</legend>
+						<input name="plugins[[(#GET{plugin})]][path]" type="hidden" value="[(#VALEUR{dirname}|replace{^#EVAL{_DIR_RACINE}})]" />
+						<input name="plugins[[(#GET{plugin})]][actif]" value="1" type="checkbox"[(#ENV{plugins}|table_valeur{#GET{plugin}}|table_valeur{'actif'}|oui)checked] onchange="if($('#name_#GET{plugin}').val().length==0){$('#name_[(#GET{plugin})]').val('#GET{plugin}');}else if(!this.checked){$('#name_[(#GET{plugin})]').val('');}"/>
+							<:ckeditor:plugin_active:>
+						<br/>
+						<input name="plugins[[(#GET{plugin})]][bouton]" value="1" type="checkbox" [(#ENV{plugins}|table_valeur{#GET{plugin}}|table_valeur{'bouton'}|oui)checked]/>
+							<:ckeditor:bouton:>
+						<br/>
+							<label for="plugins[[(#GET{plugin})]][nom_bouton]"><:ckeditor:nom_du_bouton:></label>
+						<br/>
+						<input id="name_[(#GET{plugin})]" name="plugins[[(#GET{plugin})]][nom_bouton]" value="[(#ENV{plugins}|table_valeur{#GET{plugin}}|table_valeur{'nom_bouton'})]" type="text" />
+						<br/>
+							<label for="plugins[[(#GET{plugin})]][ordre_bouton]"><:ckeditor:ordre_du_bouton:></label>
+						<select name="plugins[[(#GET{plugin})]][ordre_bouton]" id="ordre_[(#GET{plugin})]" onchange="set_ordre('[(#GET{plugin})]');">
+							#SET{start,1}
+							#SET{tableau, #GET{start}|range{#TOTAL_BOUCLE}}
+							<BOUCLE_selectordre(DATA){source table, #GET{tableau}}>
+							<option[(#ENV{plugins}|table_valeur{#GET{plugin}}|table_valeur{'ordre_bouton'}|=={#VALEUR}|oui)selected]>#VALEUR</option>
+							</BOUCLE_selectordre>
+						</select>
+				</fieldset>
+			</BOUCLE_ls>
+		</div>
+	<br style="clear:both;"/>
+	<:ckeditor:plugins_barre_position:><br/>
+	<input name="pluginbarreposition" type="radio"[(#ENV{pluginbarreposition}|=={'avant'}|oui)checked] value="avant" /><:ckeditor:avant:>
+	 <input name="pluginbarreposition" type="radio"[(#ENV{pluginbarreposition}|=={'apres'}|oui)checked] value="apres" /><:ckeditor:apres:>
+	<select name="plugin_position_reference">
+	<?php
+	include_spip('inc/ckeditor_lire_config') ;
+	include_spip('inc/ckeditor_tools') ;
+	include_spip("inc/toolbars") ;
+	foreach($GLOBALS['toolbars'] as $toolbar) {
+		$cp=0;
+		foreach($toolbar as $tool => $size) {
+			if (!ckeditor_tweaks_actifs('smileys') && ($tool == 'Smiley')) continue ;
+			$cp++;
+			echo "<option value=\"$tool\"" ;
+			if (ckeditor_lire_config("plugin_position_reference")==$tool) {
+				echo " selected" ;
+			}
+			echo ">"._T('ckeditor:tool_'.$tool)."</option>\n" ;
+		}
+	}
+	?>
+	</select>
+		</div>
+		</B_ls>
+	<div class='cke-info'>
+		<:ckeditor:aucun_plugin:>
+	</div>
+		<//B_ls>
+		</BOUCLE_plugins>
+		</B_plugins>
+	<div class='cke-info'>
+		<:ckeditor:aide_plugin:>
+	</div>
+		<//B_plugins>
+	    <input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+</fieldset>
+</div></form>

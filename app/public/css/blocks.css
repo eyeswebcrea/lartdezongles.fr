@@ -1,0 +1,12 @@
+@heightBase: 50px;
+
+div.block.block-1-line { height: @heightBase; }
+div.block.block-2-line { height: @heightBase*2; }
+div.block.block-3-line { height: @heightBase*3; }
+div.block.block-4-line { height: @heightBase*4; }
+div.block.block-5-line { height: @heightBase*5; }
+div.block.block-6-line { height: @heightBase*6; }
+div.block.block-7-line { height: @heightBase*7; }
+div.block.block-8-line { height: @heightBase*8; }
+div.block.block-9-line { height: @heightBase*9; }
+div.block.block-10-line { height: @heightBase*10; }

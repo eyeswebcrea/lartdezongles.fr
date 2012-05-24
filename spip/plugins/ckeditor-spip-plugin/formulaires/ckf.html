@@ -1,0 +1,62 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:configuration_modeles:></legend>
+	<div class='cke-div'>
+		<label for="nom_nouveau_modele"><strong><:ckeditor:nom_nouveau_modele:></strong></label>
+		<input type="text" name="nom_nouveau_modele" />
+		<input type="submit" name="nouveau_modele" value="<:ckeditor:nouveau_modele:>" />
+	</div>
+	<div class='cke-div'>
+		<select name="modele_a_editer">
+		<BOUCLE_modeles(POUR){tableau #ENV{liste_modeles}}>
+			<option value="#CLE"[ (#ENV{modele_a_editer}|=={#CLE}|?{'selected',''})]>#CLE</option>
+		</BOUCLE_modeles>
+		</select>
+		<input type="submit" name="editer_modele" value="<:ckeditor:editer_modele:>" />
+		<input type="submit" name="supprimer_modele" value="<:ckeditor:supprimer_modele:>" onclick="javascript:return confirm('<:ckeditor:confirmer_supprimer_modele:>');"/>
+	</div>
+</fieldset>
+
+<BOUCLE_editer_modele(CONDITION){si #ENV{editer_modele}|et{#ENV{modele_a_editer}}}>
+<fieldset>
+	<legend><:ckeditor:edition_du_modele:> : #ENV{modele_a_editer}</legend>
+	<div class='cke-div'>
+		<div style="float:right;padding:0 5px 15px 5px;">
+			<B_ls>
+			<label><strong><:ckeditor:changer_d_image:></strong></label>
+			<input type="hidden" id="modele_image" name="modele_image" value="#CONFIG{ckeditor/modeles/#ENV{modele_a_editer}/image}" />
+			<div style="height:145px;width:120px;overflow:auto;padding:0;";>
+				<div style="width:103px;margin:0;padding:0;">
+				<BOUCLE_ls(DATA){source ls, #CHEMIN{images/templates}/*}>
+					<img onclick="$('#img_modele_image').attr('src',$(this).attr('src')); $('#modele_image').val($(this).attr('src'));" class="cke-tmpl-img" src="#CHEMIN{images/templates}/#VALEUR{basename}" />
+				</BOUCLE_ls>
+				</div>
+			</div>
+			</B_ls>
+		</div>
+
+		<input type="hidden" name="modele_edite" value="#ENV{modele_a_editer}" />
+		<label for="modele_description"><strong><:ckeditor:description:></strong></label>
+		<input name="modele_description"[ value="(#CONFIG{ckeditor/modeles/#ENV{modele_a_editer}/desc})"] />
+		<br style="margin-bottom:15px;" />
+		<label><:ckeditor:image_du_modele:></label>
+		<img id="img_modele_image" style="display:block;max-width:106px;min-height:76px;max-height:76px;overflow:hidden;padding:2px;border:2px solid #844;margin-left:auto;margin-right:auto;"[ src="(#CONFIG{ckeditor/modeles/#ENV{modele_a_editer}/image})"] />
+		<br/>
+		<p><:ckeditor:aide_images_modele:></p>
+	
+		<br style="clear:right;" />
+		<label for="modele"><strong><:ckeditor:contenu_du_modele:></strong></label>
+		<textarea name="modele" style="width:99%;" rows="15">#CONFIG{ckeditor/modeles/#ENV{modele_a_editer}/modele}</textarea>
+	</div>
+	<input type="submit" name="enregistrer_modele" value="<:ckeditor:enregistrer_modele:>" />
+</fieldset>
+</BOUCLE_editer_modele>
+
+</div></form>

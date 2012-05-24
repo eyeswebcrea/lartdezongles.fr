@@ -1,0 +1,281 @@
+body {
+	background: #1C1919;
+}
+
+/* Reset style */
+
+h2.block-title {
+	margin: 0px;
+}
+
+div#header {
+	z-index: 2000;
+	position: relative;
+}
+
+
+p {
+	margin: 0px;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+div#footer, div#footer-content {
+	overflow: hidden;
+}
+
+ul.referencement li a { color: transparent !important; }
+
+/* Slider */
+
+div.slides_container, div.slides {
+	height: 250px;
+	width: 950px;
+}
+
+/* #email-link */
+div#footer-real {
+	position: relative;
+}
+
+div#footer-real p {
+	margin: 0px;
+}
+
+p#email-link {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+p#email-link a {
+	color: transparent;
+	font-size: 15px;
+}
+
+
+p#email-link a:hover {
+	color: white;
+}
+
+div#page {
+	background: white;
+}
+
+/* Menu compatible sub-menu */
+	div.menu li {
+		list-style: none;
+	}
+
+	div.menu > ul > li {
+		float: left;
+		position: relative;
+	}
+	
+	div.menu > ul > li ul {
+		position: absolute;
+		top: 28px;
+		left: 0px;
+		width: 150px;
+		padding: 0px;
+		display: none;
+	}
+	
+	div#body-content {
+		min-height: 600px;
+	}
+	
+	div.menu > ul > li:hover ul {
+		display: block;
+	}
+	
+	div.menu a {
+		padding: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		display: block;
+		text-decoration: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		background: black;
+		color: white;
+	}
+	
+	div.menu a:hover{
+		background: white;
+		color: black;
+	}
+
+/*
+ *  Les formulaire
+ */
+
+fieldset {
+	padding: 0px;
+	border: none;
+	border-top: solid black 2px;
+}
+
+fieldset legend {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+form div div, form p {
+	overflow: hidden;
+	text-align: left;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+form div div label, form p label {
+	text-align: right;
+	padding-right: 10px;
+	display: block;
+	width: 100px;
+	float: left;
+}
+
+form div div:hover label::before, form p:hover label::before {
+	content: ">> ";
+}
+
+
+form div div:hover , form p:hover {
+	background: black;
+	color: white;
+}
+
+input, textarea {
+	margin: 0px !important;
+	padding: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+textarea {
+	height: 100px;
+}
+
+form div div:hover input, form div div:hover textarea, form p:hover input, form p:hover textarea {
+	border-color: white;
+}
+
+input[type=submit]
+{
+	float: right;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: black;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: solid gray 2px;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	border: solid black 2px;
+	background: gray;
+	color: white;
+}
+
+
+
+input[type=text],
+input[type=password]{
+	background: rgba(255, 255, 255, 0.9);
+	background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	padding:5px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+	border-color:#093c75;
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sÃ©lectionne un input dans Chrome */
+}
+
+input[type=submit],
+.submit{
+	background:orange;
+	background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+	border:1px solid #093c75;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	margin-left:120px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;
+}
+
+input[type=submit]:hover,
+a.submit:hover{
+	background:#eee;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+	text-decoration:none;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:#ccc;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+	outline:none;
+}
+
+
+
+/* Les tableau */
+
+table {
+	border: solid black 2px;
+	margin: auto;
+}
+
+table tr td, table tr th {
+	padding: 5px;
+	text-align: center;
+}
+
+table tr, table tr a {
+	background: gray;
+	color: lightgray;
+}
+
+table tr:nth-child(odd), table tr:nth-child(odd) a {
+	background: lightgray;
+	color: gray;
+}
+
+table tr:hover, table tr:hover a {
+	cursor: pointer;
+	background: white; 
+	color: gray;
+}

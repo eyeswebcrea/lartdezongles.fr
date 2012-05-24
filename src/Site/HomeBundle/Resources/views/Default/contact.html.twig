@@ -1,0 +1,43 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+	    {% 
+        		stylesheets output='css/contact.css' 
+        		'@SiteHomeBundle/Resources/public/css/contact.css'
+        %}        		
+        	<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+{% endblock %}
+
+
+{% block bandeau %} {% endblock %}
+
+{% block body %}
+
+	<div id="formulaire-contact" class="span-10 prepend-2 prepend-top">
+		<fieldset class="formulaire">
+			<legend> Nous contacter </legend>
+			
+			<form action="#" method="post">
+				{% render "IHQSContactBundle:Contact:form" %}
+			</form>
+		</fieldset>
+	</div>
+	<div>
+		<div id="plan-acces" class="span-8 prepend-1 prepend-top">
+			<img id="google-map" class="prepend-top" src="http://maps.googleapis.com/maps/api/staticmap?center=77340+34+Avenue+du+Général+de+Gaulle&zoom=15&size=356x246&maptype=roadmap
+	&markers=color:blue%7Clabel:S%7C48.8042,2.6169&sensor=false">
+		</div>
+	
+	
+		<div class="span-8 prepend-1 prepend-top last append-bottom" id="contact">
+			{% for article in boucleArticles({ "idArticle" : 3 }) %}
+				<h2 class="block-title">{{ article.titre }}</h2>
+				<div class="block-content">
+					{{ article.texte | raw }}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,8 @@
+#CACHE{0}
+[(#HTTP_HEADER{Content-type: text/plain[; charset=(#CHARSET)]})]
+<BOUCLE_si(CONDITION){si #SESSION{statut}|<{2}}>
+<BOUCLE_ckdoc(DOCUMENTS){id_document=#ENV{id}}{tous}>
+[(#MIME_TYPE|match{^image/}|oui)[(#URL_DOCUMENT|url_absolue)]]
+[(#MIME_TYPE|match{^image/}|non)[(#LOGO_DOCUMENT|replace{^.*src='}|replace{\'.*$}|url_absolue)]]
+</BOUCLE_ckdoc>
+</BOUCLE_si>

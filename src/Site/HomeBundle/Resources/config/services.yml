@@ -1,0 +1,12 @@
+parameters:
+#    sittler_home.example.class: Sittler\HomeBundle\Example
+
+services:
+#    sittler_home.example:
+#        class: %sittler_home.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+     eyeswebcrea_sittlerbundle_referencement.sitemap.provider:
+         class:  Site\HomeBundle\Sitemap\ReferenceSitemapProvider
+         tags:
+           -  { name: sitemap.provider }
+         arguments: [@router, @service_container]

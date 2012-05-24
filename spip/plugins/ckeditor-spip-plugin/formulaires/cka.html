@@ -1,0 +1,67 @@
+<!-- titre=Configuration de CKEDITOR  -->
+<!-- nom=ckeditor -->
+<!-- depot=metapack -->
+#CACHE{0}
+[<p class="formulaire_erreur">(#ENV*{message_erreur})</p>]
+[<p class="formulaire_message">(#ENV*{message_ok})</p>]
+<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+<fieldset>
+	<legend><:ckeditor:config_base:></legend>
+	<div class='cke-div'>
+		<label for="editmode"><:ckeditor:mode_edition_defaut:></label>
+		<select name="editmode">
+			<option value="spip"[ (#ENV{editmode}|=={'spip'}|?{'selected'})]><:ckeditor:spip_defaut:></option>
+			<option value="ckeditor"[ (#ENV{editmode}|=={'ckeditor'}|?{'selected'})]><:ckeditor:ckeditor_defaut:></option>
+			<option value="ckeditor-exclu"[ (#ENV{editmode}|=={'ckeditor-exclu'}|?{'selected'})]><:ckeditor:ckeditor_exclu:></option>
+		</select>
+	</div>
+	<div class='cke-div'>
+		<label for="skin"><:ckeditor:choisir_skin:></label>
+		<select name="skin">
+			<option value="kama"[ (#ENV{skin}|=={'kama'}|?{'selected'})]>Kama</option>
+			<option value="office2003"[ (#ENV{skin}|=={'office2003'}|?{'selected'})]>Office 2003</option>
+			<option value="v2"[ (#ENV{skin}|=={'v2'}|?{'selected'})]>FCK editor v2</option>
+		</select>
+	</div>
+	<div class='cke-div'>
+		<label for="taille"><:ckeditor:hauteur_editeur:></label>
+		<input type="text" name="taille"[ value="(#ENV{taille})"] size='5'/>&nbsp;<:ckeditor:pixels:>
+	</div>
+	<div class='cke-div'>
+		<label for="apercu"><:ckeditor:utiliser_une_vignette_pour_les_images:></label>
+		<input type="text" name="vignette"[ value="(#ENV{vignette})"] size='5'/>&nbsp;<:ckeditor:pixels:>
+		<span class='cke-aide'><span><:ckeditor:aide_vignette:></span></span>
+	</div>
+	<div class='cke-div'>
+		<input type="checkbox" name="startspellcheck"[ (#ENV{startspellcheck}|?{'checked'})]><:ckeditor:demarrer_correction_ortho:></input>
+		<select name="spellchecklang">
+			<option value="en_US"[ (#ENV{spellchecklang}|=={'en_US'}|?{'selected',''})]>English</option>
+			<option value="en_GB"[ (#ENV{spellchecklang}|=={'en_GB'}|?{'selected',''})]>British English</option>
+			<option value="en_CA"[ (#ENV{spellchecklang}|=={'en_CA'}|?{'selected',''})]>English Canadian</option>
+			<option value="da_DK"[ (#ENV{spellchecklang}|=={'da_DK'}|?{'selected',''})]>Dansk</option>
+			<option value="nl_NL"[ (#ENV{spellchecklang}|=={'nl_NL'}|?{'selected',''})]>Nederlandse</option>
+			<option value="fi_FI"[ (#ENV{spellchecklang}|=={'fi_FI'}|?{'selected',''})]>Suomen</option>
+			<option value="fr_FR"[ (#ENV{spellchecklang}|=={'fr_FR'}|?{'selected',''})]>Français</option>
+			<option value="fr_CA"[ (#ENV{spellchecklang}|=={'fr_CA'}|?{'selected',''})]>Français Canadien</option>
+			<option value="de_DE"[ (#ENV{spellchecklang}|=={'de_DE'}|?{'selected',''})]>Deutsch</option>
+			<option value="el_GR"[ (#ENV{spellchecklang}|=={'el_GR'}|?{'selected',''})]>Ελληνικά</option>
+			<option value="it_IT"[ (#ENV{spellchecklang}|=={'it_IT'}|?{'selected',''})]>Italiano</option>
+			<option value="nb_NO"[ (#ENV{spellchecklang}|=={'nb_NO'}|?{'selected',''})]>Norsk</option>
+			<option value="pt_PT"[ (#ENV{spellchecklang}|=={'pt_PT'}|?{'selected',''})]>Português</option>
+			<option value="pt_BR"[ (#ENV{spellchecklang}|=={'pt_BR'}|?{'selected',''})]>Português do Brasil</option>
+			<option value="es_ES"[ (#ENV{spellchecklang}|=={'es_ES'}|?{'selected',''})]>Español</option>
+			<option value="sv_SE"[ (#ENV{spellchecklang}|=={'sv_SE'}|?{'selected',''})]>Svenska</option>
+		</select>
+	</div>
+	<div class="cke-div">
+		<input type="checkbox" name="ignoreversion"[ (#ENV{ignoreversion}|?{'checked'})]><:ckeditor:ignore_mauvaise_version:></input><br/>
+		<input type="checkbox" name="devtools"[ (#ENV{devtools}|?{'checked'})]><:ckeditor:affiche_les_informations_de_developpement:></input>
+	</div>
+</fieldset>
+	<div class='cke-div'>
+		<input type="submit" name="_cfg_ok" value="<:ckeditor:ok:>" />
+		<input type="submit" name="_cfg_delete" value="<:ckeditor:supprimer:>" />
+	</div>
+
+</div></form>

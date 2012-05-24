@@ -9,3 +9,7 @@ SiteHomeBundle_contact:
 SiteHomeBundle_lacarte:
     pattern: /la-carte
     defaults: { _controller:SiteHomeBundle:Default:viewPageLaCarte }
+    
+SiteHomeBundle_ongledetails:
+    pattern: /details-ongles
+    defaults: { _controller:SiteHomeBundle:Default:viewPageLesOnglesDetails }

@@ -1,6 +1,15 @@
+@orange: #F5954B; // Couleur primaire F2B441
+@noir: black; 
+@rouge: red;
+@rose: #F4C3BC;
+
 div.list div.block.item {
 	position: relative;
 	padding: 5px;
+}
+
+div.list h2.title {
+	font-family: 'Aladin', sans-serif;
 }
 
 div.list div.item div.block-content ul {
@@ -12,15 +21,25 @@ div.list div.item div.block-content ul {
 }
 
 div.list div.item.impaire {
-	background-color: white;
+	background-color: tranparent; 
 }
 
 div.list div.item.paire {
-	background-color: gray;
+	background-color: darken(@orange, 10%);
+}
+
+div.list h2.title {
+	border-bottom: solid 2px black;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+div.list div.item.impaire h2.block-title {
+	color: darken(@orange, 35%);
 }
 
 div.list div.item.paire h2.block-title {
-	color: white;
+	color: lighten(@orange, 25%);
 }
 
 

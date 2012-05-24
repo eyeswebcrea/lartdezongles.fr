@@ -12,6 +12,14 @@
 
 {% block body %}
 
-	Contenu de la home
+{% import "SiteHomeBundle:Default:functions.html.twig" as tools %}
+
+	<div class="block last produits-list prepend-top append-bottom">
+			{{ tools.homeRubrique(6,196, 1) }}
+			{{ tools.homeRubrique(7, 146, 2) }}
+			{{ tools.homeRubrique(8, 146, 3) }}
+			{{ tools.homeRubrique(11, 96, 4) }}
+			{{ tools.homeRubrique(10, 96, 5) }}
+	</div>
 
 {% endblock %}

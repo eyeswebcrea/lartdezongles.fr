@@ -1,0 +1,63 @@
+@vertFonce: #6D8E47;
+
+.boxShadow(@shadow: 1px 1px 1px black)
+{
+	box-shadow: @shadow;
+}
+
+.borderRadiusAll(@border: 5px)
+{
+	.borderRadius(@border, @border, @border, @border);
+}
+
+.borderRadiusTOP(@border: 5px)
+{
+	.borderRadiusTL(@border);
+	.borderRadiusTR(@border);	
+}
+
+.borderRadiusLEFT(@border: 5px)
+{
+	.borderRadiusTL(@border);
+	.borderRadiusBL(@border);	
+}
+
+.borderRadiusRIGHT(@border: 5px)
+{
+	.borderRadiusTR(@border);
+	.borderRadiusBR(@border);	
+}
+
+.borderRadiusBOTTOM(@border: 5px)
+{
+	.borderRadiusBL(@border);
+	.borderRadiusBR(@border);	
+}
+
+.borderRadiusTL(@border: 5px)
+{
+	border-top-left-radius: @border;
+}
+
+.borderRadiusTR(@border: 5px)
+{
+	border-top-right-radius: @border;
+}
+
+.borderRadiusBL(@border: 5px)
+{
+	border-bottom-left-radius: @border;
+}
+
+.borderRadiusBR(@border: 5px)
+{
+	border-bottom-right-radius: @border;
+}
+
+.borderRadius(@borderTL: 5px, @borderTR: 5px, @borderBL: 5px, @borderBR: 5px)
+{
+	.borderRadiusTL(@borderTL);
+	.borderRadiusTR(@borderTR);
+	.borderRadiusBL(@borderBL);
+	.borderRadiusBR(@borderBR);
+}

@@ -9,7 +9,8 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">
-		<link href='http://fonts.googleapis.com/css?family=Prosto+One' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Aladin&subset=latin" rel="stylesheet" type="text/css">
+
 		<!–[if IE]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]–>
         {% 
         		stylesheets output='css/compressed.css' 
@@ -17,6 +18,7 @@
         		'../app/public/css/blocks.css'
         		'../app/public/css/effect.css'
         		'@EyeswebcreaReferencementBundle/Resources/public/css/global.css'
+        		'@EyeswebcreaSliderBundle/Resources/public/css/StandartVignette.css'
         		'@EyeswebcreaSliderBundle/Resources/public/css/Slider.css'
         %}        		
         	<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
@@ -46,7 +48,7 @@
 								</ul>
 							</div>
 						{% endif %}
-    <div id="page" class="container">
+    <div id="page" class="container prepend-top">
     	<div id="header" class="span-24 last">
     		<div id="header-content" class="span-24 last">
 				{% block header %}{% include "::header.html.twig" %}{% endblock %}
@@ -56,7 +58,7 @@
     		<div id="body-content" class="span-24 last">
     			<div class="span-24 last" id="conteneur-bandeau">
     				{% block bandeau %} 
-						{% include "::bandeau.html.twig" with {"idRubriqueBandeau" : 4, "hauteurBandeau" : 200} %}
+						{% include "::bandeau.html.twig" with {"idRubriqueBandeau" : 4, "hauteurBandeau" : 250} %}
 	    			{% endblock %}
     			</div>
     			<div>

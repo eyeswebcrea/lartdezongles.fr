@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{% 
+		stylesheets output='css/lacarte.css' 
+		'@SiteHomeBundle/Resources/public/css/lacarte.css'
+	%}
+		<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" title="no title" charset="utf-8"/>
+	{% endstylesheets %}
+	
+{% endblock %}
+
+{% block body %}
+	<div class="span-24 last prepend-top append-bottom categorie-list">
+		{% for rubrique in boucleRubriques({ "idRubrique" : 6 }) %}
+			<div class="block span-22 prepend-1 append-1 list categorie-produit-list categorie-item append-bottom" id="categorie-{{ rubrique.getTitre() | idliteral }}">
+						<h2 class="title">{{ rubrique.getTitre() }}</h2>
+					{% for sousrubrique in boucleRubriques({ "idParent" : rubrique.getIdRubrique() }) %}
+						{% if sousrubrique.isContainIdMot(2) %}
+							{% for articles in boucleRubriques({ "idParent" : sousrubrique.getIdRubrique() }) %}
+								{% for article in boucleArticles({"idRubrique" : articles.getIdRubrique() }) %}
+									<div class="block {{ loop.index % 2 == 0 ? 'paire' : 'impaire' }} item coiffure-item" id="coiffure-item-{{ loop.index }}">
+										<h2 class="block-title">{{ article.getTitre() }}</h2>
+										<div class="block-content">{{ article.getTexte() | raw }}</div>
+									</div>
+								{% endfor %}
+							{% endfor %}
+						{% endif %}
+					{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

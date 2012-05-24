@@ -1,3 +1,10 @@
+@import "../app/public/css/fonctions.less";
+
+@orange: #F5954B; // Couleur primaire F2B441
+@noir: black; 
+@rouge: red;
+@rose: #F4C3BC;
+
 span.item-titre {
 	font-family: 'Prosto One', cursive; 
 	font-weight: bold;
@@ -31,4 +38,133 @@ div.item a {
 	display: block;
 }
 
+div.produits-list {
+	div.produits-item.paire {
+		background: darken(@orange, 10%);
+	}
+	
+	div.produits-item {
+		
+		background: darken(@orange, 5%);
+		
+		margin-bottom: 10px;
+		
+		position: relative;
+		
+		div.produits-item-partie-gauche {
+			position: relative;
+			
+			.block-scrshot {
+				padding-left: 10px;
+			}	
+			img {
+				border-style: solid;
+				border-width: 2px;
+				border-color: darken(@rouge, 20%);
+			}
+			
+		}
+		
+		div.produits-item-partie-millieu
+		{
+			padding-top: 40px;
+			overflow: hidde;
+			
+			a {
+				position: absolute;
+				right: 230px;
+				bottom: 0px;
+				background: darken(@orange, 20%);
+				color: white;
+				padding: 5px;
+				padding-left: 10px;
+				padding-right: 10px;
+				font-weight: bold;
+				font-size: 15px;
+				text-transform: uppercase;
+				.borderRadiusTL();
+			}
+		}
+		
+		h2.block-title {
+			position: absolute;
+			z-index: 10;
+			background-color: darken(@rouge, 20%);
+			padding: 2px;
+			color: white;
+			top: 0px;
+			left: 230px;
+			text-align: center;
+			font-weight: bold;
+			height: auto;
+			font-size: 15px;
+			width: 50%;
+			padding-left: 10px;
+			padding-right: 10px;
+			.borderRadiusRIGHT();
 
+		}
+		
+		div.produits-item-partie-droite {
+			img {
+				border-style: solid;
+				border-width: 2px;
+				border-color: darken(@orange, 25%);
+			}
+		}
+		
+		div.slides ul.pagination {
+			
+			margin: 0px;
+			padding: 0px;
+			
+			left: auto;
+			bottom: 2px;
+			right: 2px;
+			
+			background-color: darken(@rouge, 20%);
+			
+			li a {
+				margin: 0px;
+				padding: 0px;
+				padding-left: 5px;
+				padding-right: 5px;
+				
+				&:hover {
+					background-color: darken(@rouge, 10%);
+					.borderRadiusAll(0px);
+				}
+			}
+			
+			border-radius: 0px;
+		}
+	}
+	
+	@heightBaseItem: 25px;
+	
+	div.produits-item#produits-item-1 {
+		height: @heightBaseItem * 8;
+		div.slides, div.slides_container { height: @heightBaseItem * 8; }
+	}
+	
+	div.produits-item#produits-item-2 {
+		height: @heightBaseItem * 6;
+		div.slides, div.slides_container { height: @heightBaseItem * 6; }
+	}
+
+	div.produits-item#produits-item-3 {
+		height: @heightBaseItem * 6;
+		div.slides, div.slides_container { height: @heightBaseItem * 6; }
+	}
+
+	div.produits-item#produits-item-4 {
+		height: @heightBaseItem * 4;
+		div.slides, div.slides_container { height: @heightBaseItem * 4; }
+	}
+	
+	div.produits-item#produits-item-5 {
+		height: @heightBaseItem * 4;
+		div.slides, div.slides_container { height: @heightBaseItem * 4; }
+	}
+
+}

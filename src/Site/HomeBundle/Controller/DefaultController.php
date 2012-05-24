@@ -22,4 +22,9 @@ class DefaultController extends Controller
 	{
 		return $this->render("SiteHomeBundle:Default:lacarte.html.twig");
 	}
+	
+	public function viewPageLesOnglesDetailsAction()
+	{
+		return $this->render("SiteHomeBundle:Default:ongledetails.html.twig");
+	}
 }

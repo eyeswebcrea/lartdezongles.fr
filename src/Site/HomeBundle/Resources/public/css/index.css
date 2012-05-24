@@ -1,4 +1,4 @@
-@import "../app/public/css/fonctions.less";
+@import "fonctions.less";
 
 @orange: #F5954B; // Couleur primaire F2B441
 @noir: black; 

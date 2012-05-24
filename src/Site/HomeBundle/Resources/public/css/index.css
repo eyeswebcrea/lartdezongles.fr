@@ -31,24 +31,4 @@ div.item a {
 	display: block;
 }
 
-:root div.item {
-	-webkit-transition-property: all;
-  	-webkit-transition-duration: 350ms;
-  	-webkit-transition-timing-function: ease-in-out;
-  	-moz-transition-property: all;
-  	-moz-transition-duration: 350ms;
-  	-moz-transition-timing-function: ease-in-out;
-}
 
-:root div.item:hover {
-
-	-webkit-transform:scale(1.1); //Chrome, Safar
-	
-
-	-moz-transform:scale(1.1); //Chrome, Safar
-
-}
-
-:root div.item {
-	-webkit-
-}

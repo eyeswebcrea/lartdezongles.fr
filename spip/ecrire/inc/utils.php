@@ -1141,7 +1141,6 @@ function spip_initialisation($pi=NULL, $pa=NULL, $ti=NULL, $ta=NULL) {
 function spip_initialisation_core($pi=NULL, $pa=NULL, $ti=NULL, $ta=NULL) {
 	static $too_late = 0;
 	if ($too_late++) return;
-
 	// Declaration des repertoires
 
 	// le nom du repertoire plugins/ activables/desactivables

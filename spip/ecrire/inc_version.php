@@ -66,7 +66,14 @@ define('_NOM_TEMPORAIRES_ACCESSIBLES', "local/");
 # le nom du repertoire des fichiers Permanents Inaccessibles par http://
 define('_NOM_PERMANENTS_INACCESSIBLES', "config/");
 # le nom du repertoire des fichiers Permanents Accessibles par http://
-define('_NOM_PERMANENTS_ACCESSIBLES', "IMG/");
+if($_SERVER["REMOTE_ADDR"] == "127.0.0.1")
+{
+	define('_NOM_PERMANENTS_ACCESSIBLES', "IMG_DEV/");
+}
+else {
+	define('_NOM_PERMANENTS_ACCESSIBLES', "IMG_PROD/");
+}
+
 
 /*
  * detecteur de robot d'indexation

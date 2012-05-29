@@ -21,3 +21,8 @@ monolog:
 
 assetic:
     use_controller: true
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        path: %kernel.root_dir%/../spip/config/bases/dev.sqlite

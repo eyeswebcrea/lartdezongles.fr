@@ -26,3 +26,7 @@ assetic:
 doctrine:
     dbal:
         path: %kernel.root_dir%/../spip/config/bases/dev.sqlite
+        
+# Spip acces content bundle configuration
+spip_acces_content:
+    img_dir: IMG_DEV/

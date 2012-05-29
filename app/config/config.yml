@@ -32,6 +32,9 @@ assetic:
             node_paths: [%kernel.root_dir%/../../../node_modules/]
             apply_to: "\.css"
 
+spip_acces_content:
+    img_dir: IMG_PROD/
+
 # Doctrine Configuration
 doctrine:
     dbal:

@@ -15,7 +15,29 @@
 {% import "SiteHomeBundle:Default:functions.html.twig" as tools %}
 
 	<div class="block last produits-list prepend-top append-bottom">
-			{{ tools.homeRubrique(6,196, 1) }}
+		{% for rubrique in boucleRubriques({"idRubrique" : 6 }) %}
+			<div class="block last item  span-24 produits-item" id="produits-item-1">
+					<div class="block span-6 produits-item-partie-gauche">
+						<h2 class="block-title">{{ rubrique.getTitre() }}</h2>
+						<div class="block-scrshot">
+							{% for images in boucleRubriques({ "idParent" : rubrique.getIdRubrique()}) %}
+								{% if images.isContainIdMot(1) %}
+									{{ getSpipJquerySlider(images.getIdRubrique(), { "forceResize" : true, "width" : 216, theme : "Slider", "height" : 196, texte: false }) | raw }}
+								{% endif %clear							{% endfor %} 
+						</div>
+					</div>
+					<div class="block span-12 produits-item-partie-millieu">
+							{{ rubrique.getTexte() | raw }}
+						<a href="{{ path('SiteHomeBundle_ongledetails') }}"> Voir le détail </a>
+					</div>
+					<div class="block span-6 produits-item-partie-droite last">
+						<div class="block-srcshot">
+							<img src="{{ image(rubrique.getPathAbsoluteLocalLogo()).forceResize(220, 196) }}" alt="{{ rubrique.getTitre() }}">
+						</div>
+					</div>
+					
+			</div>
+		{% endfor %}
 			{{ tools.homeRubrique(7, 146, 2) }}
 			{{ tools.homeRubrique(8, 146, 3) }}
 			{{ tools.homeRubrique(11, 96, 4) }}

@@ -23,7 +23,8 @@
 							{% for images in boucleRubriques({ "idParent" : rubrique.getIdRubrique()}) %}
 								{% if images.isContainIdMot(1) %}
 									{{ getSpipJquerySlider(images.getIdRubrique(), { "forceResize" : true, "width" : 216, theme : "Slider", "height" : 196, texte: false }) | raw }}
-								{% endif %clear							{% endfor %} 
+								{% endif %}
+							{% endfor %} 
 						</div>
 					</div>
 					<div class="block span-12 produits-item-partie-millieu">

@@ -6,3 +6,11 @@ div#contact h2 {
 div#conteneur-bandeau {
 	display: none;
 }
+
+
+div#plan-acces p {
+	font-size: 16px;
+	text-align: center;
+	padding: 2px;
+
+}

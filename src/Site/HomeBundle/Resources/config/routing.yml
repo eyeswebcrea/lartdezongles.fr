@@ -13,3 +13,7 @@ SiteHomeBundle_lacarte:
 SiteHomeBundle_ongledetails:
     pattern: /details-ongles
     defaults: { _controller:SiteHomeBundle:Default:viewPageLesOnglesDetails }
+
+SiteHomeBundle_animations:
+    pattern: /animations
+    defaults: { _controller:SiteHomeBundle:Default:viewPageAnimations }

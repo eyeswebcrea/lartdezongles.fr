@@ -27,4 +27,9 @@ class DefaultController extends Controller
 	{
 		return $this->render("SiteHomeBundle:Default:ongledetails.html.twig");
 	}
+	
+	public function viewPageAnimationsAction()
+	{
+		return $this->render("SiteHomeBundle:Default:animations.html.twig");
+	}
 }

@@ -1,0 +1,41 @@
+div.service-list div.service-item div.service-content {
+  border: solid #2E9BDC 1px;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  background: white;
+}
+div.service-list div.service-item div.service-content div.service-photo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+div.service-list div.service-item div.service-content div.service-photo img {
+  border-radius: 5px;
+  border: solid white 2px;
+}
+div.service-list div.service-item div.service-aside {
+  border-top-right-radius: 5px;
+  border: solid #800000 2px;
+  border-left: none;
+  border-bottom-right-radius: 5px;
+  background: white;
+  overflow: hidden;
+}
+.gradient-blue {
+  /* Anciens navigateurs */
+
+  background: #191970 url("/css/images/gradient-bg.png") repeat-x top;
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  /* Navigateurs récents */
+
+  background: -webkit-gradient(linear, left top, left bottom, from(#2e9bdc), to(#191970));
+  background: -webkit-linear-gradient(top, #2e9bdc, #191970);
+  background: -moz-linear-gradient(top, #2e9bdc, #191970);
+  background: -o-linear-gradient(top, #2e9bdc, #191970);
+  background: linear-gradient(top, #2e9bdc, #191970);
+}

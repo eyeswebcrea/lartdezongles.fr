@@ -23,6 +23,12 @@ class MainBuilder extends ContainerAware
         $menu
         	->addChild('Accueil', array('route' => 'SiteHomeBundle_homepage'));
 			
+		foreach($rubriquesRepository->findByIdRubrique(29) as $rubrique)
+		{
+			$menu 
+				->addChild($rubrique->getTitre(), array('route' => 'SiteHomeBundle_animations'));
+		}
+			
 		$menu
 			->addChild('Ongles', array('route' => 'SiteHomeBundle_ongledetails'));
 			

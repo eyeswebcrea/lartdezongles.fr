@@ -4,10 +4,12 @@
 @rose: #F4C3BC;
 
 
-div#contact {
+div#contact, div#moyen-payement {
 	color: white;
-
+	font-family: cursive;
+	font-size: 18px;
 	h2 {
+		font-size: 24px;
 		color: white;
 		font-weight: bold;
 		border-bottom: solid darken(@rouge, 30%) 2px;

@@ -16,7 +16,7 @@
 		{% for rubrique in boucleRubriques({ "idParent" : 5 }) %}
 			{% if rubrique.getIdRubrique() != 6 %}
 				<div class="block span-22 prepend-1 append-1 list categorie-produit-list categorie-item append-bottom" id="categorie-{{ rubrique.getTitre() | idliteral }}">
-							<h2 class="title">{{ rubrique.getTitre() }}</h2>
+							<h2 class="title">{{ rubrique.getDescriptif() }}</h2>
 						{% for sousrubrique in boucleRubriques({ "idParent" : rubrique.getIdRubrique() }) %}
 							{% if sousrubrique.isContainIdMot(2) %}
 								{% for articles in boucleRubriques({ "idParent" : sousrubrique.getIdRubrique() }) %}

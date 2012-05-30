@@ -21,6 +21,20 @@ h2.block-title {
 
 div#bandeau {
 	border-bottom: solid lighten(@noir, 10%) 2px;
+	
+	position: relative;	
+	
+	div.autocolant {
+		position: absolute;
+		right: 0px;
+		bottom: 20px;
+		background: @noir;
+		color: white;
+		font-size: 16px;
+		padding: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 div#header {

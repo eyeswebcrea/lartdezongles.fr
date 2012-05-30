@@ -15,18 +15,34 @@
 	<div class="span-24 last prepend-top append-bottom categorie-list">
 		{% for rubrique in boucleRubriques({ "idRubrique" : 6 }) %}
 			<div class="block span-22 prepend-1 append-1 list categorie-produit-list categorie-item append-bottom" id="categorie-{{ rubrique.getTitre() | idliteral }}">
-						<h2 class="title">{{ rubrique.getTitre() }}</h2>
+						<h2 class="title">{{ rubrique.getDescriptif() }}</h2>
+					{# On recupere les sous rubriqeu de la rubriques Ongles #}
 					{% for sousrubrique in boucleRubriques({ "idParent" : rubrique.getIdRubrique() }) %}
+					
+						{# Seulement celle qui contienne des articles Identifié grace au mot clé n°2 'articles' #}
 						{% if sousrubrique.isContainIdMot(2) %}
-							{% for articles in boucleRubriques({ "idParent" : sousrubrique.getIdRubrique() }) %}
-								{% for article in boucleArticles({"idRubrique" : articles.getIdRubrique() }) %}
-									<div class="block {{ loop.index % 2 == 0 ? 'paire' : 'impaire' }} item coiffure-item" id="coiffure-item-{{ loop.index }}">
-										<h2 class="block-title">{{ article.getTitre() }}</h2>
-										<div class="block-content">{{ article.getTexte() | raw }}</div>
-									</div>
+							{# On récupère les sous catégorie des ongles pour diviser #}
+							{% for subrubrique in boucleRubriques({"idParent" : sousrubrique.getIdRubrique() }) %}
+							
+								<h3 class="title">{{ subrubrique.getDescriptif() }}</h3>
+								
+								{# On recuperes les rubriques des sous catégorie à cause du max 9 article par rubrique #}
+								{% for articles in boucleRubriques({ "idParent" : subrubrique.getIdRubrique() }) %}
+								
+									{# On recupere les articles et on les affiche #}
+									{% for article in boucleArticles({"idRubrique" : articles.getIdRubrique() }) %}
+										<div class="block {{ loop.index % 2 == 0 ? 'paire' : 'impaire' }} item coiffure-item" id="coiffure-item-{{ loop.index }}">
+											<h2 class="block-title">{{ article.getTitre() }}</h2>
+											<div class="block-content">{{ article.getTexte() | raw }}</div>
+										</div>
+									{% endfor %}
+									
 								{% endfor %}
+								
 							{% endfor %}
+							
 						{% endif %}
+						
 					{% endfor %}
 			</div>
 		{% endfor %}

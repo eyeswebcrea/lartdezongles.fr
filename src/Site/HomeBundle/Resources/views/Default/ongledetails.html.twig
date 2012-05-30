@@ -23,7 +23,7 @@
 							{# On récupère les sous catégorie des ongles pour diviser #}
 							{% for subrubrique in boucleRubriques({"idParent" : sousrubrique.getIdRubrique() }) %}
 							
-								<h2 class="title">{{ rubrique.getDescriptif() }}</h2>
+								<h2 class="title prepend-top">{{ subrubrique.getDescriptif() }}</h2>
 								
 								{# On recuperes les rubriques des sous catégorie à cause du max 9 article par rubrique #}
 								{% for articles in boucleRubriques({ "idParent" : subrubrique.getIdRubrique() }) %}

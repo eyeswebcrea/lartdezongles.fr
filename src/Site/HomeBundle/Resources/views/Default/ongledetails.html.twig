@@ -15,7 +15,6 @@
 	<div class="span-24 last prepend-top append-bottom categorie-list">
 		{% for rubrique in boucleRubriques({ "idRubrique" : 6 }) %}
 			<div class="block span-22 prepend-1 append-1 list categorie-produit-list categorie-item append-bottom" id="categorie-{{ rubrique.getTitre() | idliteral }}">
-						<h2 class="title">{{ rubrique.getDescriptif() }}</h2>
 					{# On recupere les sous rubriqeu de la rubriques Ongles #}
 					{% for sousrubrique in boucleRubriques({ "idParent" : rubrique.getIdRubrique() }) %}
 					
@@ -24,7 +23,7 @@
 							{# On récupère les sous catégorie des ongles pour diviser #}
 							{% for subrubrique in boucleRubriques({"idParent" : sousrubrique.getIdRubrique() }) %}
 							
-								<h3 class="title">{{ subrubrique.getDescriptif() }}</h3>
+								<h2 class="title">{{ rubrique.getDescriptif() }}</h2>
 								
 								{# On recuperes les rubriques des sous catégorie à cause du max 9 article par rubrique #}
 								{% for articles in boucleRubriques({ "idParent" : subrubrique.getIdRubrique() }) %}

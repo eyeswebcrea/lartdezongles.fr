@@ -211,12 +211,15 @@ form div div, form p {
 	overflow: hidden;
 	text-align: left;
 	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin: 5px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+}
+
+form > div {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px;
 }
 
 form div div label, form p label {

@@ -14,7 +14,7 @@
 
 {% block body %}
 
-	<div id="formulaire-contact" class="span-10 prepend-2 prepend-top">
+	<div id="formulaire-contact" class="span-10 prepend-2 prepend-top append-bottom">
 		<fieldset class="formulaire">
 			<legend> Nous contacter </legend>
 			
@@ -22,6 +22,7 @@
 				{% render "IHQSContactBundle:Contact:form" %}
 			</form>
 		</fieldset>
+		<img src="{{ asset('/images/salon.jpg') }}">
 	</div>
 	<div>
 		<div id="plan-acces" class="span-8 prepend-1 prepend-top">

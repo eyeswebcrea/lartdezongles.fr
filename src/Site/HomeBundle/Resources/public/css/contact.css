@@ -1,6 +1,18 @@
-div#contact h2 {
+@orange: #F5954B; // Couleur primaire F2B441
+@noir: black; 
+@rouge: red;
+@rose: #F4C3BC;
+
+
+div#contact {
 	color: white;
-	border-bottom: solid #C3C3C3 2px;
+
+	h2 {
+		color: white;
+		font-weight: bold;
+		border-bottom: solid darken(@rouge, 30%) 2px;
+		text-shadow: 1px 1px 1px darken(@rouge, 30%);
+	}
 }
 
 div#conteneur-bandeau {

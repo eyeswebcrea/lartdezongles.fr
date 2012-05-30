@@ -38,7 +38,7 @@ div#bandeau {
 }
 
 div#header {
-	z-index: 2000;
+	z-index: 1000;
 	position: relative;
 	.borderRadiusTOP();
 	

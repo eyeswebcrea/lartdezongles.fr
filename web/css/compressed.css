@@ -11,9 +11,21 @@ h2.block-title {
 }
 div#bandeau {
   border-bottom: solid #1a1a1a 2px;
+  position: relative;
+}
+div#bandeau div.autocolant {
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+  background: #000000;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 div#header {
-  z-index: 2000;
+  z-index: 1000;
   position: relative;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -166,12 +178,14 @@ form p {
   overflow: hidden;
   text-align: left;
   padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 5px;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+}
+form > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
 }
 form div div label,
 form p label {

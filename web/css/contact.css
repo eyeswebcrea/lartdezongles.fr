@@ -1,7 +1,22 @@
-div#contact h2 {
+div#contact,
+div#moyen-payement {
   color: white;
-  border-bottom: solid #C3C3C3 2px;
+  font-family: cursive;
+  font-size: 18px;
+}
+div#contact h2,
+div#moyen-payement h2 {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  border-bottom: solid #660000 2px;
+  text-shadow: 1px 1px 1px #660000;
 }
 div#conteneur-bandeau {
   display: none;
+}
+div#plan-acces p {
+  font-size: 16px;
+  text-align: center;
+  padding: 2px;
 }

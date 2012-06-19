@@ -1,0 +1,9 @@
+# Symfony files to ignore
+app/cache/*
+app/logs/*
+spip/local/*
+spip/tmp/*
+spip/local/cache-vignettes/*
+web/bundles/
+web/cache/*
+.project

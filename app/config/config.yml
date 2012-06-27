@@ -65,7 +65,7 @@ jms_security_extra:
 eyeswebcrea_referencement:
     rubriqueId: 1
     article_manager: spip_acces_content.article_manager
-    routes_sitemap: ["SiteHomeBundle_homepage", "SiteHomeBundle_contact", "SiteHomeBundle_lacarte", "SiteHomeBundle_animations"]
+    routes_sitemap: ["SiteHomeBundle_homepage", "SiteHomeBundle_contact", "SiteHomeBundle_lacarte", "SiteHomeBundle_animations", "SiteHomeBundle_ongledetails"]
     
 eyeswebcrea_alias_content_viewer:
     article_manager: spip_acces_content.article_manager
@@ -88,16 +88,16 @@ ihqs_contact:
         file: ~                             # connecting the file logger listener
     
 avalanche_sitemap:
-    base_url: "http://www.votresite.fr/"
-    database: votre_site
+    base_url: "http://www.lartdezongles.fr/"
+    database: lartdezongles 
 
 google:
     analytics:
         trackers:
             default:
-                name:      MyJavaScriptCompatibleVariableNameWithNoSpaces
-                accountId: UA-xxxx-x
-                domain:    .mydomain.com
+                name:      trackedlartdezongles
+                accountId: UA-32985406-1
+                domain:    .lartdezongles.fr
                 trackPageLoadTime: true
 
 

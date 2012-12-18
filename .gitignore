@@ -4,6 +4,13 @@ app/logs/*
 spip/local/*
 spip/tmp/*
 spip/local/cache-vignettes/*
-web/bundles/
-web/cache/*
-.project
+# On ne gardes que les bootstrap et le fichier robot google dans le dossier web
+web/*
+!web/app.php
+!web/app_dev.php
+!web/config.php
+!web/robots.txt
+!web/tinymce/
+!web/css_static/
+!web/images/
+.project 

@@ -1,0 +1,40 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+{# Ancien systeme avec les articles : un article = une page de ref #}
+
+{% if article is not empty %}
+	<div class="block span-20 prepend-2 append-2 last prepend-top append-bottom">
+		<div class="span-10 prepend-top">
+			<img src="{{ image(article.getPathAbsoluteLocalLogo()).resize(300,300) }}" alt="{{ article.titre }}">
+		</div>
+		<div class="span-10 last">
+			<h2 class="block-title">{{ article.titre }}</h2>
+			<div class="block-content">
+				{{ article.texte | raw }}
+			</div>
+		</div>
+</div>
+{% endif %}
+
+{# Nouveau systeme avec les rubrique : une rubrique = une page de ref, une page pouvant contenir plusieur article #}
+
+{% if rubrique is not empty  %}
+<div class="block span-20 prepend-2 append-2 last prepend-top append-bottom">
+	{% for article in boucleArticles({ "idRubrique" : rubrique.getIdRubrique() }) %}
+	<div class="block span-20 prepend-2 append-2 last prepend-top append-bottom">
+		<div class="span-10 prepend-top">
+			<img src="{{ image(article.getPathAbsoluteLocalLogo()).resize(300,300 / loop.index) }}" alt="{{ article.titre }}">
+		</div>
+		<div class="span-10 last">
+			<h{{ loop.index}} class="block-title">{{ article.titre }}</h{{ loop.index}}>
+			<div class="block-content">
+				{{ article.texte | raw }}
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

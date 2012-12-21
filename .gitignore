@@ -13,4 +13,5 @@ web/*
 !web/tinymce/
 !web/css_static/
 !web/images/
+!web/.htaccess
 .project 

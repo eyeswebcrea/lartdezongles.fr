@@ -1,0 +1,12 @@
+		<ul class="referencement">
+			{% for article in boucleArticles({ "idRubrique" : idRubrique }) %}
+				<li>
+					<a href="{{ path('EyeswebcreaReferencement_referencement', {'slug' : article.urlSite })}}">{{ article.titre }}</a>
+				</li>
+			{% endfor %}
+			{% for rubrique in boucleRubriques({ "idParent" : 1 }) %}
+				<li>
+					<a href="{{ path('EyeswebcreaReferencement_referencement', {'slug' : rubrique.getIdRubrique() })}}">{{ rubrique.titre }}</a>
+				</li>
+			{% endfor %}
+		</ul>

@@ -1,0 +1,17 @@
+# Symfony files to ignore
+app/cache/*
+app/logs/*
+spip/local/*
+spip/tmp/*
+spip/local/cache-vignettes/*
+# On ne gardes que les bootstrap et le fichier robot google dans le dossier web
+web/*
+!web/app.php
+!web/app_dev.php
+!web/config.php
+!web/robots.txt
+!web/tinymce/
+!web/css_static/
+!web/images/
+!web/.htaccess
+.project 

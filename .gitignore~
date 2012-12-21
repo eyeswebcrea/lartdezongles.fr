@@ -14,5 +14,4 @@ web/*
 !web/css_static/
 !web/images/
 !web/.htaccess
-!web/google*.html
 .project 

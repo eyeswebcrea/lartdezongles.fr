@@ -1,0 +1,62 @@
+.slides.slides-design-standartvignette ul.pagination li a {
+	color: gray;
+	text-shadow: 1px 1px 1px white;
+}
+
+.slides.slides-design-standartvignette {
+	position: relative;
+}
+
+.slides.slides-design-standartvignette .slide-item-texte
+{
+	text-align: center;
+	background: gray;
+	padding: 5px;
+}
+
+.slides.slides-design-standartvignette div#conteneur-bandeau  img {
+	box-shadow: -1px 1px 5px gray;
+}
+
+.slides.slides-design-standartvignette ul.pagination {
+	position: absolute; 
+	top: 0px;
+	display: block;
+	/* background: #CCCCC1; */
+	margin: 0px;
+
+	z-index: 50;
+	width: 100%;
+
+}
+
+.slides.slides-design-standartvignette ul.pagination li a {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 5px;
+	display: block;
+	text-decoration: none;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	text-shadow: none;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.slides.slides-design-standartvignette ul.pagination li a img {
+	border: solid white 5px;
+}
+
+.slides.slides-design-standartvignette ul.pagination li a:hover img {
+	border: solid black 2px;
+}
+
+ul.pagination li {
+	float: left;
+	list-style: none;
+}
+
